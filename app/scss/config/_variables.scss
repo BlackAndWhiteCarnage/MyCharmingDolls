@@ -1,0 +1,33 @@
+/**
+ * Variables
+ */
+@use 'scss/unit' as u;
+
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+$fonts: (
+  primary: (
+    'Sedgwick Ave Display',
+    cursive,
+  ),
+  secondary: (
+    'Raleway',
+    sans-serif,
+  ),
+);
+
+$colors: (
+  black: #000,
+
+  red: #ff0000,
+
+  white: #fff,
+);
+
+$breakpoints: (
+  xs: 480,
+  sm: 768,
+  md: 992,
+  lg: 1220,
+);

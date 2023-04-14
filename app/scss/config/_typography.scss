@@ -1,0 +1,16 @@
+/**
+ * Typography setup
+ */
+
+$heading-tags: (h1, h2, h3, h4, h5, h6);
+
+$styles: (
+  example: (
+    font-size: 34,
+    line-height: 32,
+    xs: (
+      font-size: 28,
+      line-height: 26,
+    ),
+  ),
+);
