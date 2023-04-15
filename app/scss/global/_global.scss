@@ -7,8 +7,8 @@
 
 :root {
   --theme-color-background: #{color.get(white)};
-  --theme-color-text-primary: #{color.get(grey)};
-  --theme-color-text-secondary: #{color.get(purple)};
+  --theme-color-primary: #{color.get(grey)};
+  --theme-color-secondary: #{color.get(purple)};
 }
 
 *,

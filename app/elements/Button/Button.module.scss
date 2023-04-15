@@ -38,7 +38,7 @@
 }
 
 .primaryVariant {
-  background: var(--theme-color-text-secondary);
+  background: var(--theme-color-secondary);
   color: var(--theme-color-background);
 
   .arrow path {
@@ -48,9 +48,9 @@
 
 .secondaryVariant {
   background: var(--theme-color-background);
-  color: var(--theme-color-text-primary);
+  color: var(--theme-color-primary);
 
   .arrow path {
-    fill: var(--theme-color-text-primary);
+    fill: var(--theme-color-primary);
   }
 }

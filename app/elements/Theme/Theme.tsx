@@ -21,8 +21,8 @@ const Theme: FC<ThemeProps> = ({
 	<div
 		style={{
 			'--theme-color-background': background,
-			'--theme-color-text-primary': primary,
-			'--theme-color-text-secondary': secondary,
+			'--theme-color-primary': primary,
+			'--theme-color-secondary': secondary,
 		}}
 	>
 		{children}
