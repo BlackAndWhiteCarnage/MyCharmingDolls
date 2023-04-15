@@ -26,7 +26,6 @@ const Link: FC<LinkProps> = ({
 		{...{
 			as,
 			href,
-			legacyBehavior,
 			locale,
 			onClick,
 			onMouseEnter,
@@ -37,6 +36,7 @@ const Link: FC<LinkProps> = ({
 			scroll,
 			shallow,
 		}}
+		legacyBehavior
 	>
 		<a {...linkProps}>{children}</a>
 	</NextLink>
