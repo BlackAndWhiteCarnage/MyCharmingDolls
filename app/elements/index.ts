@@ -5,6 +5,7 @@ export { default as Info } from './Info';
 export { default as Link } from './Link';
 export { default as LinkedIcon } from './LinkedIcon';
 export { default as List } from './List';
+export { default as Logo } from './Logo';
 export { default as PolaroidImage } from './PolaroidImage';
 export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
