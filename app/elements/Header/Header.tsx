@@ -16,9 +16,6 @@ type HeaderProps = {
 	level?: 1 | 2;
 };
 
-/**
- * Header component
- */
 const Header: FC<HeaderProps> = ({ level = 1, title }) => {
 	const H = level === 1 ? 'h1' : 'h2';
 
