@@ -22,20 +22,22 @@ type HeaderProps = {
 const Header: FC<HeaderProps> = ({ level = 1, title }) => {
 	const H = level === 1 ? 'h1' : 'h2';
 
-	const fotmatedTitle = title.split('*').map((titleChunk, index) =>
-		index % 2 === 0 ? (
-			titleChunk
-		) : (
-			<span
-				key={`${titleChunk}-${index}`}
-				className={classes.hasSecondaryColor}
-			>
-				{titleChunk}
-			</span>
-		)
+	return (
+		<H className={classes.title}>
+			{title.split('*').map((titleChunk, index) =>
+				index % 2 === 0 ? (
+					titleChunk
+				) : (
+					<span
+						key={`${titleChunk}-${index}`}
+						className={classes.hasSecondaryColor}
+					>
+						{titleChunk}
+					</span>
+				)
+			)}
+		</H>
 	);
-
-	return <H className={classes.title}>{fotmatedTitle}</H>;
 };
 
 export default Header;
