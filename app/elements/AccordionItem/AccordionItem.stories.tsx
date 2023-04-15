@@ -13,6 +13,12 @@ import { DefaultProps as ListProps } from '@/elements/List/List.stories';
 import { List } from '@/elements';
 import AccordionItem from '.';
 
+const disable = {
+	table: {
+		disable: true,
+	},
+};
+
 export default {
 	title: 'Components/AccordionItem',
 	component: AccordionItem,
@@ -27,6 +33,10 @@ export default {
 			</div>
 		),
 	],
+	argTypes: {
+		children: disable,
+		onToggle: disable,
+	},
 } satisfies Meta<typeof AccordionItem>;
 
 const AccordionItemStory: ArgsStoryFn<

@@ -12,6 +12,13 @@ export default {
 	title: 'Components/List',
 	component: List,
 	excludeStories: ['DefaultProps'],
+	argTypes: {
+		listItems: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 } satisfies Meta<typeof List>;
 
 export const DefaultProps = {

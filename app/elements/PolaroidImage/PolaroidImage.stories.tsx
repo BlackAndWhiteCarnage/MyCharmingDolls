@@ -13,6 +13,13 @@ import PolaroidImage from '.';
 export default {
 	title: 'Components/PolaroidImage',
 	component: PolaroidImage,
+	argTypes: {
+		image: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 } satisfies Meta<typeof PolaroidImage>;
 
 export const Narrow: StoryObj<typeof PolaroidImage> = {
