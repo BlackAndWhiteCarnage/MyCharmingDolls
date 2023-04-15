@@ -1,0 +1,16 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: block;
+  width: u.rem-calc(140);
+
+  @include bp.down(sm) {
+    width: u.rem-calc(100);
+  }
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+}
