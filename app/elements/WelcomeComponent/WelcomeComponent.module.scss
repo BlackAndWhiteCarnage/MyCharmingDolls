@@ -50,11 +50,11 @@
 .theme-dark {
   background: c.get(black);
   box-shadow: 0 0 u.rem-calc(20) u.rem-calc(8) rgba(255, 255, 255, 0.05);
-  color: c.get(white);
+  color: c.get(white-3);
 }
 
 .theme-light {
-  background: c.get(white);
+  background: c.get(white-3);
   box-shadow: 0 0 u.rem-calc(20) u.rem-calc(8) rgba(0, 0, 0, 0.05);
   color: c.get(black);
 }
