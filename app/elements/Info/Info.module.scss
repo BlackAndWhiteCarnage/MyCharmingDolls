@@ -1,0 +1,13 @@
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+.info {
+  align-items: center;
+  color: color.get(red);
+  display: flex;
+  gap: u.rem-calc(12);
+}
+
+.icon {
+  width: u.rem-calc(20);
+}
