@@ -5,6 +5,12 @@
 @use 'scss/color';
 @use 'scss/font';
 
+:root {
+  --theme-color-background: #{color.get(white)};
+  --theme-color-text-primary: #{color.get(grey)};
+  --theme-color-text-secondary: #{color.get(purple)};
+}
+
 *,
 *::before,
 *::after {

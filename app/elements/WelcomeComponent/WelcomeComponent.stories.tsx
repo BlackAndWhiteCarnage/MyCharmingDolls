@@ -6,7 +6,7 @@ import { StoryObj, Meta, StoryFn } from '@storybook/react';
 /**
  * Internal dependencies
  */
-import { ReactComponent as SomeIcon } from '@/images/icons/home.svg';
+import { ReactComponent as SomeIcon } from '@/images/icons/arrow.svg';
 import WelcomeComponent from '.';
 
 export default {
