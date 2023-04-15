@@ -5,7 +5,7 @@ interface CustomCSSProperties {}
 declare module 'react' {
 	export interface CSSProperties extends Partial<CustomCSSProperties> {
 		'--theme-color-background': string;
-		'--theme-color-text-primary': string;
-		'--theme-color-text-secondary': string;
+		'--theme-color-primary': string;
+		'--theme-color-secondary': string;
 	}
 }
