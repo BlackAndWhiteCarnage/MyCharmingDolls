@@ -6,7 +6,7 @@
 @use 'scss/font';
 
 :root {
-  --theme-color-background: #{color.get(white-3)};
+  --theme-color-background: #{color.get(grey-3)};
   --theme-color-primary: #{color.get(grey)};
   --theme-color-secondary: #{color.get(purple)};
 }
