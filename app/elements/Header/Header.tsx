@@ -28,14 +28,14 @@ const Header: FC<HeaderProps> = ({ level = 1, title }) => {
 		) : (
 			<span
 				key={`${titleChunk}-${index}`}
-				className={classes.hasThemeColor}
+				className={classes.hasSecondaryColor}
 			>
 				{titleChunk}
 			</span>
 		)
 	);
 
-	return <H>{fotmatedTitle}</H>;
+	return <H className={classes.title}>{fotmatedTitle}</H>;
 };
 
 export default Header;

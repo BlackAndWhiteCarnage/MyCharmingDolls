@@ -1,3 +1,7 @@
-.hasThemeColor {
+.title {
+  color: var(--theme-color-text-primary);
+}
+
+.hasSecondaryColor {
   color: var(--theme-color-text-secondary);
 }
