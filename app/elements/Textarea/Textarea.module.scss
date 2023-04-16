@@ -1,0 +1,5 @@
+@use 'scss/placeholders/form-field';
+
+.field {
+  @extend %form-field;
+}
