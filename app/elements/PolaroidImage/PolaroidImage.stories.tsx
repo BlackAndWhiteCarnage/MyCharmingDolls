@@ -46,7 +46,10 @@ export const Wide: StoryObj<typeof PolaroidImage> = {
 		</div>
 	),
 	args: {
-		...DefaultProps,
+		image: {
+			src: MyImage.src,
+			alt: '',
+		},
 		variant: 'wide',
 	},
 };
