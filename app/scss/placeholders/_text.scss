@@ -1,0 +1,27 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+%text {
+  font-size: u.rem-calc(24);
+  font-weight: 600;
+  line-height: u.rem-calc(28);
+  margin: u.rem-calc(60) 0;
+
+  @include bp.down(xs) {
+    font-size: u.rem-calc(16);
+    line-height: u.rem-calc(18);
+    margin: u.rem-calc(40) 0;
+  }
+}
+
+%text-block {
+  color: var(--theme-color-primary);
+
+  &:not(:last-child) {
+    margin-bottom: u.rem-calc(30);
+
+    @include bp.down(lg) {
+      margin-bottom: u.rem-calc(18);
+    }
+  }
+}

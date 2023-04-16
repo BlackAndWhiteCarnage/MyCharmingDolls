@@ -14,7 +14,7 @@ $transition: 0.2s;
   transition: $transition;
   width: $size;
 
-  @include bp.down(sm) {
+  @include bp.down(xs) {
     height: $size-mobile;
     width: $size-mobile;
   }
