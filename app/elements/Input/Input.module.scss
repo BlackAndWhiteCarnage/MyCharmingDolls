@@ -1,31 +1,9 @@
 @use 'scss/color';
-@use 'scss/font';
+@use 'scss/placeholders/form-field';
 @use 'scss/unit' as u;
 
 .field {
-  border-radius: u.rem-calc(12);
-  font-family: font.get(primary);
-  font-weight: 600;
-  transition: 0.25s;
-  width: 100%;
-  border: none;
-  box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(0, 0, 0, 0.1);
-  padding: u.rem-calc(18);
-  color: var(--theme-color-primary);
-  background: var(--theme-color-background);
-
-  &:focus {
-    outline: none;
-  }
-
-  &:disabled {
-    filter: blur(u.rem-calc(2));
-    cursor: not-allowed;
-  }
-}
-
-.input {
-  position: relative;
+  @extend %form-field;
 }
 
 .hasError .field {
