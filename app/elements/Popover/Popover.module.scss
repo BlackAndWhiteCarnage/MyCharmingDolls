@@ -1,8 +1,7 @@
-@use 'scss/color';
 @use 'scss/unit' as u;
 
 .popover {
-  background: color.get(grey-1);
+  background: var(--theme-color-background);
   border-radius: u.rem-calc(12);
   box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(88, 88, 88, 0.15);
   opacity: 0;

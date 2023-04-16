@@ -32,6 +32,7 @@ export default {
 			</div>
 		),
 	],
+	excludeStories: ['DefaultProps'],
 } satisfies Meta<typeof ProductsList>;
 
 const productsData = [
@@ -40,7 +41,7 @@ const productsData = [
 	{ image: { src: DollMiniature3.src, alt: '' }, href: '' },
 ];
 
-const args = {
+export const DefaultProps = {
 	products: Array.from({ length: 18 }, (_, index) =>
 		index === 0
 			? { ...productsData[0], isActive: true }
@@ -49,5 +50,5 @@ const args = {
 };
 
 export const Default: StoryObj<typeof ProductsList> = {
-	args,
+	args: DefaultProps,
 };

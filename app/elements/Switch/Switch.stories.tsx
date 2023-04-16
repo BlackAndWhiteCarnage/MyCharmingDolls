@@ -29,6 +29,7 @@ export default {
 			options: ['1', '2', '3'],
 		},
 	},
+	excludeStories: ['DefaultProps'],
 };
 
 const SwitchStory: ArgsStoryFn<ReactRenderer, ComponentProps<typeof Switch>> = (
@@ -44,15 +45,19 @@ const SwitchStory: ArgsStoryFn<ReactRenderer, ComponentProps<typeof Switch>> = (
 	);
 };
 
+export const DefaultProps = {
+	options: {
+		'1': 'All',
+		'2': 'Adopted',
+		'3': 'Not Adopted',
+	},
+	activeOption: '1',
+};
+
 export const Default: StoryObj<typeof Switch> = {
 	render: SwitchStory,
 	args: {
 		label: 'Show:',
-		options: {
-			'1': 'All',
-			'2': 'Adopted',
-			'3': 'Not Adopted',
-		},
-		activeOption: '1',
+		...DefaultProps,
 	},
 };

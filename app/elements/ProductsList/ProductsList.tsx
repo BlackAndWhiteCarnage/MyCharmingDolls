@@ -13,7 +13,7 @@ import { ImageData } from '@/types';
 import { Link } from '@/elements';
 import classes from './ProductsList.module.scss';
 
-type ProductsListProps = {
+export type ProductsListProps = {
 	products: Array<{
 		image: ImageData;
 		isActive?: boolean | null;

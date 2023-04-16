@@ -1,0 +1,18 @@
+@use 'scss/placeholders/navigation-item';
+@use 'scss/unit' as u;
+
+.button {
+  @extend %navigation-item;
+  @extend %is-active;
+}
+
+.icon path {
+  fill: var(--theme-color-primary);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(20);
+  padding: u.rem-calc(22) u.rem-calc(18);
+}

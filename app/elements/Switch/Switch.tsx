@@ -9,7 +9,7 @@ import classnames from 'classnames/bind';
  */
 import classes from './Switch.module.scss';
 
-type SwitchProps<T extends Record<string, string>> = {
+export type SwitchProps<T extends Record<string, string>> = {
 	activeOption: keyof T;
 	label?: string;
 	onChange?: (activeOption: keyof T) => void;
