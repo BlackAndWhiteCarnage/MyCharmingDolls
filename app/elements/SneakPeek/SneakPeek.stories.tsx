@@ -6,11 +6,11 @@ import { StoryObj, Meta, StoryFn } from '@storybook/react';
 /**
  * Internal dependencies
  */
-import SneakPeak from './SneakPeak';
+import SneakPeek from './SneakPeek';
 
 export default {
-	title: 'Elements/SneakPeak',
-	component: SneakPeak,
+	title: 'Elements/SneakPeek',
+	component: SneakPeek,
 	decorators: [
 		(Story: StoryFn) => (
 			<div
@@ -22,9 +22,9 @@ export default {
 			</div>
 		),
 	],
-} satisfies Meta<typeof SneakPeak>;
+} satisfies Meta<typeof SneakPeek>;
 
-export const Default: StoryObj<typeof SneakPeak> = {
+export const Default: StoryObj<typeof SneakPeek> = {
 	args: {
 		textBlocks: [
 			'your worst nightmare, said the dark and creepy doll, as she sat in the dusty corner of the antique shop.',

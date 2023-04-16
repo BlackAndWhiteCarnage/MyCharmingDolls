@@ -7,15 +7,15 @@ import classnames from 'classnames/bind';
 /**
  * Internal dependencies
  */
-import classes from './SneakPeak.module.scss';
+import classes from './SneakPeek.module.scss';
 
 const cx = classnames.bind(classes);
 
-type SneakPeakProps = {
+type SneakPeekProps = {
 	textBlocks: Array<string>;
 };
 
-const SneakPeak: FC<SneakPeakProps> = ({ textBlocks }) => (
+const SneakPeek: FC<SneakPeekProps> = ({ textBlocks }) => (
 	<div className={cx('wrapper', 'is-style-p')}>
 		{textBlocks.map((text, index) => (
 			<p
@@ -30,4 +30,4 @@ const SneakPeak: FC<SneakPeakProps> = ({ textBlocks }) => (
 	</div>
 );
 
-export default SneakPeak;
+export default SneakPeek;
