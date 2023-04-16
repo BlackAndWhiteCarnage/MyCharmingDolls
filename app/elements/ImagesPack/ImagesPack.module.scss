@@ -1,0 +1,102 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+@keyframes throw-image-1 {
+  0% {
+    bottom: -100%;
+    transform: scale(2) translateX(-50%) rotate(0deg) skew(10deg, 10deg);
+  }
+  100% {
+    bottom: 0;
+    transform: scale(1) translateX(-50%) rotate(17deg);
+  }
+}
+
+@keyframes throw-image-2 {
+  0% {
+    top: 100%;
+    right: -20%;
+    transform: scale(2) translateX(-50%) rotate(30deg) skew(10deg, 30deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes throw-image-3 {
+  0% {
+    top: 100%;
+    transform: scale(2) translateX(-50%) rotate(30deg) skew(30deg, 20deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(8deg);
+  }
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.wrapper {
+  background: blue;
+  width: u.rem-calc(900);
+  height: u.rem-calc(1000);
+
+  &.animate {
+    .image-number-1 {
+      opacity: 1;
+      transition: 0.35s 0.3s;
+      animation: throw-image-1 0.5s 0.3s forwards;
+    }
+    .image-number-2 {
+      opacity: 1;
+      transition: 0.35s 0.2s;
+      animation: throw-image-2 0.7s 0.1s forwards;
+    }
+    .image-number-3 {
+      opacity: 1;
+      transition: 0.35s;
+      animation: throw-image-3 0.7s forwards;
+    }
+  }
+}
+
+.image {
+  position: absolute;
+}
+
+.image-number-1 {
+  width: 53%;
+  z-index: 3;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(17deg);
+  opacity: 0;
+}
+
+.image-number-2 {
+  width: 54%;
+  z-index: 2;
+  right: 0;
+  transform: rotate(14deg);
+  opacity: 0;
+}
+
+.image-number-3 {
+  width: 58%;
+  z-index: 1;
+  transform: rotate(8deg);
+  opacity: 0;
+}
