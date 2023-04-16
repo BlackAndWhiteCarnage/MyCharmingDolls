@@ -1,5 +1,11 @@
+@use 'scss/breakpoint' as bp;
+
 .title {
   color: var(--theme-color-primary);
+
+  @include bp.down(lg) {
+    text-align: center;
+  }
 }
 
 .hasSecondaryColor {

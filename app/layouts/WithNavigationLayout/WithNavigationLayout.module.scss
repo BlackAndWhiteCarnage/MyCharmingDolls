@@ -1,23 +1,24 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/unit' as u;
 
-.navigation {
-  position: fixed;
+.wrapper {
+  margin: auto;
+  max-width: u.rem-calc(1600);
+  padding: u.rem-calc(40);
 
   @include bp.down(md) {
-    margin-bottom: u.rem-calc(50);
-    position: static;
+    padding: u.rem-calc(20);
+  }
+
+  @include bp.down(sm) {
+    padding: u.rem-calc(15);
   }
 }
 
+.navigation {
+  width: fit-content;
+}
+
 .content {
-  margin-left: u.rem-calc(200);
-
-  @include bp.down(lg) {
-    margin-left: u.rem-calc(160);
-  }
-
-  @include bp.down(md) {
-    margin: 0;
-  }
+  margin: auto;
 }
