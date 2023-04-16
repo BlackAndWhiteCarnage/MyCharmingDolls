@@ -7,7 +7,6 @@ import { StoryObj, Meta } from '@storybook/react';
  * Internal dependencies
  */
 import DollImage from '@/images/example-doll.png';
-import MyImage from '@/images/me.jpg';
 import PolaroidImage from '.';
 
 export default {
@@ -20,7 +19,15 @@ export default {
 			},
 		},
 	},
+	excludeStories: ['DefaultProps'],
 } satisfies Meta<typeof PolaroidImage>;
+
+export const DefaultProps = {
+	image: {
+		src: DollImage.src,
+		alt: '',
+	},
+};
 
 export const Narrow: StoryObj<typeof PolaroidImage> = {
 	render: (args) => (
@@ -28,12 +35,7 @@ export const Narrow: StoryObj<typeof PolaroidImage> = {
 			<PolaroidImage {...args} />
 		</div>
 	),
-	args: {
-		image: {
-			src: DollImage.src,
-			alt: '',
-		},
-	},
+	args: DefaultProps,
 };
 
 export const Wide: StoryObj<typeof PolaroidImage> = {
@@ -43,10 +45,7 @@ export const Wide: StoryObj<typeof PolaroidImage> = {
 		</div>
 	),
 	args: {
-		image: {
-			src: MyImage.src,
-			alt: '',
-		},
+		...DefaultProps,
 		variant: 'wide',
 	},
 };
