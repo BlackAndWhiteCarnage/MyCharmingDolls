@@ -22,12 +22,12 @@ const WideLayout: FC = () => (
 		<div className={classes.inner}>
 			<div className={classes.content}>
 				<Header title="Hi im *Nora*" />
-				<article className={classes.text}>
-					<p className={cx('textBlock', 'is-style-p')}>
+				<div className={classes.text}>
+					<p className={classes.textBlock}>
 						your worst nightmare, said the dark and creepy doll, as
 						she sat in the dusty corner of the antique shop.
 					</p>
-					<p className={cx('textBlock', 'is-style-p')}>
+					<p className={classes.textBlock}>
 						Nora had been sitting there for years, waiting for
 						someone to take her home. She had a long and tragic
 						history - she was crafted by a reclusive toy maker who
@@ -35,31 +35,31 @@ const WideLayout: FC = () => (
 						perfect doll. But the toy maker died suddenly, leaving
 						Nora alone in the dusty old house.
 					</p>
-					<p className={cx('textBlock', 'is-style-p')}>
+					<p className={classes.textBlock}>
 						Nora had been passed from one owner to another, but
 						nobody seemed to want her. They were all afraid of her
 						eerie personality and gothic attire. Nora longed for a
 						new owner who would appreciate her unique beauty and
 						embrace her dark side.
 					</p>
-					<p className={cx('textBlock', 'is-style-p')}>
+					<p className={classes.textBlock}>
 						But as the years passed, Nora began to lose hope. She
 						watched as other toys were sold and taken to new homes,
 						while she remained in the corner - forgotten and alone.
 					</p>
-					<p className={cx('textBlock', 'is-style-p')}>
+					<p className={classes.textBlock}>
 						And yet, Nora refused to give up. She knew that
 						somewhere out there, there was someone who would see
 						past her eerie appearance and love her for who she was.
 					</p>
-					<p className={cx('textBlock', 'is-style-p')}>
+					<p className={classes.textBlock}>
 						And now she's searching for a new owner - someone who
 						will give her a new home and a new purpose. Someone who
 						will love her and cherish her, no matter how dark and
 						creepy she may seem. And she knows that one day, that
 						person will come along and take her home.
 					</p>
-				</article>
+				</div>
 				<div className={classes.accordions}>
 					<AccordionItem
 						label="The work done includes"

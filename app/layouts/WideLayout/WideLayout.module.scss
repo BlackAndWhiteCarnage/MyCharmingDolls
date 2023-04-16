@@ -1,5 +1,6 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/unit' as u;
+@use 'scss/placeholders/text';
 
 .wrapper {
   margin: auto;
@@ -43,23 +44,11 @@
 }
 
 .text {
-  margin: u.rem-calc(60) 0;
-
-  @include bp.down(sm) {
-    margin: u.rem-calc(40) 0;
-  }
+  @extend %text;
 }
 
 .textBlock {
-  color: var(--theme-color-primary);
-
-  &:not(:last-child) {
-    margin-bottom: u.rem-calc(30);
-
-    @include bp.down(lg) {
-      margin-bottom: u.rem-calc(18);
-    }
-  }
+  @extend %text-block;
 }
 
 .accordions {
