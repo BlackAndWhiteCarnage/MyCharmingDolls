@@ -10,7 +10,7 @@ import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';
 import LinkedIcon from '.';
 
 export default {
-	title: 'Components/LinkedIcon',
+	title: 'Elements/LinkedIcon',
 	component: LinkedIcon,
 	argTypes: {
 		icon: {

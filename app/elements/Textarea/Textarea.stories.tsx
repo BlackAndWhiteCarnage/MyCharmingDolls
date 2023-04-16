@@ -9,7 +9,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import Textarea from './Textarea';
 
 export default {
-	title: 'Components/Textarea',
+	title: 'Elements/Textarea',
 	component: Textarea,
 } satisfies Meta<typeof Textarea>;
 

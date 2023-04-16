@@ -10,7 +10,7 @@ import DollImage from '@/images/example-doll.png';
 import PolaroidImage from '.';
 
 export default {
-	title: 'Components/PolaroidImage',
+	title: 'Elements/PolaroidImage',
 	component: PolaroidImage,
 	argTypes: {
 		image: {

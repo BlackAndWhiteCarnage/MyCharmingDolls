@@ -1,7 +1,6 @@
 export { default as AccordionItem } from './AccordionItem';
 export { default as Button } from './Button';
 export { default as Form } from './Form';
-export { default as FormField } from './FormField';
 export { default as Header } from './Header';
 export { default as Info } from './Info';
 export { default as Input } from './Input';

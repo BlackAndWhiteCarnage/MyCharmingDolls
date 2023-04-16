@@ -11,7 +11,7 @@ import { PolaroidImage } from '@/elements';
 import Slider from '.';
 
 export default {
-	title: 'Components/Slider',
+	title: 'Elements/Slider',
 	component: Slider,
 };
 

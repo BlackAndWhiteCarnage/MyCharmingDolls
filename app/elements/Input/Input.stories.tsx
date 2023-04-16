@@ -10,7 +10,7 @@ import { Form } from '@/elements';
 import Input from '.';
 
 export default {
-	title: 'Components/Input',
+	title: 'Elements/Input',
 	component: Input,
 	decorators: [
 		(Story: StoryFn) => (

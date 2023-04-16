@@ -9,7 +9,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import Info from '.';
 
 export default {
-	title: 'Components/Info',
+	title: 'Elements/Info',
 	component: Info,
 } satisfies Meta<typeof Info>;
 

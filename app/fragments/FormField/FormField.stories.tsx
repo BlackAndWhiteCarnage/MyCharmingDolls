@@ -11,7 +11,7 @@ import { getEmailValidationRules } from '@/utils/validation';
 import FormField from '.';
 
 export default {
-	title: 'Components/FormField',
+	title: 'Fragments/FormField',
 	component: FormField,
 	decorators: [
 		(Story: StoryFn) => (

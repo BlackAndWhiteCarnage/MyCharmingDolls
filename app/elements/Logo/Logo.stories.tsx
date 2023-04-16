@@ -9,7 +9,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import Logo from '.';
 
 export default {
-	title: 'Components/Logo',
+	title: 'Elements/Logo',
 	component: Logo,
 } satisfies Meta<typeof Logo>;
 

@@ -18,7 +18,7 @@ const disable = {
 };
 
 export default {
-	title: 'Components/Switch',
+	title: 'Elements/Switch',
 	component: Switch,
 	argTypes: {
 		onChange: disable,

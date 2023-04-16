@@ -15,7 +15,7 @@ const disabled = {
 };
 
 export default {
-	title: 'Components/Popover',
+	title: 'Elements/Popover',
 	component: Popover,
 	argTypes: {
 		button: disabled,

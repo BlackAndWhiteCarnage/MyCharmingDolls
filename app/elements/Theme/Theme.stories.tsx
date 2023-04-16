@@ -11,7 +11,7 @@ import classes from './Story.module.scss';
 import Theme from '.';
 
 export default {
-	title: 'Components/Theme',
+	title: 'Elements/Theme',
 	component: Theme,
 } satisfies Meta<typeof Theme>;
 

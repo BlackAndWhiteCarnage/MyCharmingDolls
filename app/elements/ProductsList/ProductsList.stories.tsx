@@ -12,7 +12,7 @@ import DollMiniature3 from '@/images/doll-miniature-3.png';
 import ProductsList from '.';
 
 export default {
-	title: 'Components/ProductsList',
+	title: 'Elements/ProductsList',
 	component: ProductsList,
 	argTypes: {
 		products: {

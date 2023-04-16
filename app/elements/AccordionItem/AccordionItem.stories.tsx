@@ -20,7 +20,7 @@ const disable = {
 };
 
 export default {
-	title: 'Components/AccordionItem',
+	title: 'Elements/AccordionItem',
 	component: AccordionItem,
 	decorators: [
 		(Story: StoryFn) => (

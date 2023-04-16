@@ -9,7 +9,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import Header from '.';
 
 export default {
-	title: 'Components/Header',
+	title: 'Elements/Header',
 	component: Header,
 } satisfies Meta<typeof Header>;
 

@@ -9,7 +9,7 @@ import { StoryObj, Meta, StoryFn } from '@storybook/react';
 import PriceBox from '.';
 
 export default {
-	title: 'Components/PriceBox',
+	title: 'Elements/PriceBox',
 	component: PriceBox,
 	decorators: [
 		(Story: StoryFn) => (

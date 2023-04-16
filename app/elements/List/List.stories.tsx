@@ -9,7 +9,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import List from '.';
 
 export default {
-	title: 'Components/List',
+	title: 'Elements/List',
 	component: List,
 	excludeStories: ['DefaultProps'],
 	argTypes: {
