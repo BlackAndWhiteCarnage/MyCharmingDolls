@@ -8,7 +8,7 @@
   gap: u.rem-calc(10);
   width: fit-content;
 
-  @include bp.down(sm) {
+  @include bp.down(md) {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
@@ -19,7 +19,7 @@
   list-style: none;
   margin-left: u.rem-calc(16);
 
-  @include bp.down(sm) {
+  @include bp.down(md) {
     display: flex;
     gap: u.rem-calc(15);
     height: fit-content;

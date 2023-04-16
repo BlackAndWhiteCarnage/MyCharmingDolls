@@ -1,0 +1,23 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.navigation {
+  position: fixed;
+
+  @include bp.down(md) {
+    margin-bottom: u.rem-calc(50);
+    position: static;
+  }
+}
+
+.content {
+  margin-left: u.rem-calc(200);
+
+  @include bp.down(lg) {
+    margin-left: u.rem-calc(160);
+  }
+
+  @include bp.down(md) {
+    margin: 0;
+  }
+}
