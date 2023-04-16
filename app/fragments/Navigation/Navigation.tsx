@@ -6,18 +6,14 @@ import { FC } from 'react';
 /**
  * Internal dependencies
  */
+import { LinkData } from '@/types';
 import { Logo, Link } from '@/elements';
 import { ProductsFilters } from '@/fragments';
 import { ProductsFiltersProps } from '@/fragments/ProductsFilters/ProductsFilters';
 import classes from './Navigation.module.scss';
 
-type LinkProps = {
-	href: string;
-	label: string;
-};
-
 type NavigationProps = {
-	links: Array<LinkProps>;
+	links: Array<LinkData>;
 	showProductsList?: boolean;
 } & ProductsFiltersProps;
 
@@ -26,7 +22,7 @@ const Navigation: FC<NavigationProps> = ({
 	showProductsList,
 	...props
 }) => {
-	const link = ({ href, label }: LinkProps) => (
+	const link = ({ href, label }: LinkData) => (
 		<Link href={href} className={classes.link}>
 			{label}
 		</Link>
