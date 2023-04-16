@@ -1,0 +1,38 @@
+@use 'scss/font';
+@use 'scss/unit' as u;
+
+%navigation-item {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--theme-color-primary);
+  cursor: pointer;
+  display: flex;
+  font-family: font.get(primary);
+  font-size: u.rem-calc(20);
+  font-weight: 800;
+  gap: u.rem-calc(6);
+  line-height: u.rem-calc(23);
+  position: relative;
+  text-decoration: none;
+  transition: 0.1s;
+
+  &:hover {
+    color: var(--theme-color-secondary);
+    transform: scale(1.05);
+
+    path {
+      fill: var(--theme-color-secondary);
+    }
+  }
+}
+
+%is-active::before {
+  background: var(--theme-color-secondary);
+  border-radius: u.rem-calc(4);
+  bottom: u.rem-calc(-2);
+  content: '';
+  height: u.rem-calc(3);
+  position: absolute;
+  width: 100%;
+}

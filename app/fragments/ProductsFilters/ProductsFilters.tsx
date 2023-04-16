@@ -2,7 +2,6 @@
  * External dependencies
  */
 import { FC } from 'react';
-import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
@@ -13,12 +12,10 @@ import { Switch, ProductsList, Popover } from '@/elements';
 import { SwitchProps } from '@/elements/Switch/Switch';
 import classes from './ProductsFilters.module.scss';
 
-type ProductsFiltersProps = {
+export type ProductsFiltersProps = {
 	products: ProductsListProps;
 	switchProps: Omit<SwitchProps<Record<string, string>>, 'label'>;
 };
-
-const cx = classnames.bind(classes);
 
 const ProductsFilters: FC<ProductsFiltersProps> = ({
 	products,
@@ -26,10 +23,7 @@ const ProductsFilters: FC<ProductsFiltersProps> = ({
 }) => (
 	<Popover
 		button={
-			<button
-				data-target="popup-element"
-				className={cx('button', 'is-style-label')}
-			>
+			<button data-target="popup-element" className={classes.button}>
 				Dolls
 				<DropdownIcon className={classes.icon} />
 			</button>

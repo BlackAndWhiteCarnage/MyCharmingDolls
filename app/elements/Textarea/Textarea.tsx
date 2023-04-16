@@ -15,9 +15,6 @@ type TextareaProps = {
 	id: string;
 } & InputHTMLAttributes<HTMLTextAreaElement>;
 
-/**
- * Textarea component
- */
 const Textarea: FC<TextareaProps> = ({ ...props }) => (
 	<div className={classes.textarea}>
 		<textarea {...props} className={cx('field', 'is-style-p')} />

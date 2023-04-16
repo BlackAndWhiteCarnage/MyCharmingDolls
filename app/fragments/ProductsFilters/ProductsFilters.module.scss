@@ -1,27 +1,9 @@
-@use 'scss/color';
-@use 'scss/font';
+@use 'scss/placeholders/navigation-item';
 @use 'scss/unit' as u;
 
 .button {
-  align-items: center;
-  background: none;
-  border: none;
-  color: var(--theme-color-primary);
-  cursor: pointer;
-  display: flex;
-  font-family: font.get(primary);
-  gap: u.rem-calc(6);
-  position: relative;
-
-  &::before {
-    background: var(--theme-color-secondary);
-    border-radius: u.rem-calc(4);
-    bottom: u.rem-calc(-2);
-    content: '';
-    height: u.rem-calc(3);
-    position: absolute;
-    width: 100%;
-  }
+  @extend %navigation-item;
+  @extend %is-active;
 }
 
 .icon path {
