@@ -1,6 +1,7 @@
 export { default as AccordionItem } from './AccordionItem';
 export { default as Button } from './Button';
 export { default as Header } from './Header';
+export { default as ImagesPack } from './ImagesPack';
 export { default as Info } from './Info';
 export { default as Link } from './Link';
 export { default as LinkedIcon } from './LinkedIcon';
