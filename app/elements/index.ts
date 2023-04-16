@@ -12,6 +12,7 @@ export { default as PolaroidImage } from './PolaroidImage';
 export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
 export { default as ProductsList } from './ProductsList';
+export { default as SneakPeek } from './SneakPeek';
 export { default as Switch } from './Switch';
 export { default as Textarea } from './Textarea';
 export { default as Theme } from './Theme';
