@@ -13,7 +13,7 @@ import { paths } from '@/config';
 import classes from './WithNavigationLayout.module.scss';
 
 const WithNavigationLayout: FC<PropsWithChildren> = ({ children }) => (
-	<>
+	<div className={classes.wrapper}>
 		<div className={classes.navigation}>
 			<Navigation
 				links={paths}
@@ -22,7 +22,7 @@ const WithNavigationLayout: FC<PropsWithChildren> = ({ children }) => (
 			/>
 		</div>
 		<div className={classes.content}>{children}</div>
-	</>
+	</div>
 );
 
 export default WithNavigationLayout;

@@ -46,6 +46,7 @@
 .slide {
   max-width: u.rem-calc(542);
   transition: 0.45s;
+  width: 100%;
 
   &:not(.middleSlide, .leftSlide, .rightSlide) {
     opacity: 0;

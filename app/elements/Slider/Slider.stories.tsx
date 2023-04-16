@@ -13,10 +13,13 @@ import Slider from '.';
 export default {
 	title: 'Elements/Slider',
 	component: Slider,
+	excludeStories: ['DefaultProps'],
+};
+
+export const DefaultProps = {
+	children: new Array(9).fill(<PolaroidImage {...PolaroidImageProps} />),
 };
 
 export const Default: StoryObj<typeof Slider> = {
-	args: {
-		children: new Array(9).fill(<PolaroidImage {...PolaroidImageProps} />),
-	},
+	args: DefaultProps,
 };

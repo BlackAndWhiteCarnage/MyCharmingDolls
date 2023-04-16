@@ -1,0 +1,92 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  margin: auto;
+  width: 100%;
+}
+
+.slider {
+  margin-bottom: u.rem-calc(140);
+  width: 100%;
+
+  @include bp.down(lg) {
+    margin-bottom: u.rem-calc(80);
+  }
+}
+
+.inner {
+  display: flex;
+  gap: u.rem-calc(40);
+  justify-content: space-between;
+  position: relative;
+
+  @include bp.down(xl) {
+    margin: auto;
+  }
+
+  @include bp.down(lg) {
+    flex-direction: column;
+  }
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(20);
+  }
+}
+
+.content {
+  max-width: u.rem-calc(800);
+
+  @include bp.down(lg) {
+    max-width: unset;
+  }
+}
+
+.text {
+  margin: u.rem-calc(60) 0;
+
+  @include bp.down(sm) {
+    margin: u.rem-calc(40) 0;
+  }
+}
+
+.textBlock {
+  color: var(--theme-color-primary);
+
+  &:not(:last-child) {
+    margin-bottom: u.rem-calc(30);
+
+    @include bp.down(lg) {
+      margin-bottom: u.rem-calc(18);
+    }
+  }
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(20);
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(15);
+  }
+}
+
+.sticky {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(20);
+  height: fit-content;
+  max-width: u.rem-calc(460);
+  position: sticky;
+  top: u.rem-calc(20);
+  width: 100%;
+
+  @include bp.down(lg) {
+    max-width: unset;
+  }
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(10);
+  }
+}
