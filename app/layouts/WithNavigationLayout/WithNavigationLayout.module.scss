@@ -3,22 +3,23 @@
 
 .wrapper {
   margin: auto;
-  max-width: u.rem-calc(1600);
-  padding: u.rem-calc(40);
 
-  @include bp.down(md) {
-    padding: u.rem-calc(20);
-  }
+  &:not(.isFullScreen) {
+    max-width: u.rem-calc(1600);
+    padding: 0 u.rem-calc(40);
 
-  @include bp.down(sm) {
-    padding: u.rem-calc(15);
+    @include bp.down(md) {
+      padding: 0 u.rem-calc(20);
+    }
+
+    @include bp.down(sm) {
+      padding: 0 u.rem-calc(15);
+    }
   }
 }
 
 .navigation {
+  position: relative;
+  z-index: 9999;
   width: fit-content;
-}
-
-.content {
-  margin: auto;
 }

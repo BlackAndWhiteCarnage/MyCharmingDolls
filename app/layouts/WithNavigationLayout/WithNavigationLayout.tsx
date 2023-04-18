@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { FC, PropsWithChildren } from 'react';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
@@ -12,16 +13,31 @@ import { Navigation } from '@/fragments';
 import { paths } from '@/config';
 import classes from './WithNavigationLayout.module.scss';
 
-const WithNavigationLayout: FC<PropsWithChildren> = ({ children }) => (
-	<div className={classes.wrapper}>
+type WithNavigationLayoutProps = PropsWithChildren<{
+	isFullScreen?: boolean;
+}>;
+
+const cx = classnames.bind(classes);
+
+const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
+	children,
+	isFullScreen = false,
+}) => (
+	<div
+		className={cx('wrapper', {
+			isFullScreen,
+		})}
+	>
 		<div className={classes.navigation}>
-			<Navigation
+			{/* To powoduję bład, Slider przeskakuje */}
+			{/* <Navigation
+				showProductsList
 				links={paths}
 				products={ProductsProps}
 				switchProps={SwithcProps}
-			/>
+			/> */}
 		</div>
-		<div className={classes.content}>{children}</div>
+		{children}
 	</div>
 );
 

@@ -17,7 +17,7 @@ export default {
 	},
 	decorators: [
 		(Story: StoryFn) => (
-			<WithNavigationLayout>
+			<WithNavigationLayout isFullScreen={true}>
 				<Story />
 			</WithNavigationLayout>
 		),

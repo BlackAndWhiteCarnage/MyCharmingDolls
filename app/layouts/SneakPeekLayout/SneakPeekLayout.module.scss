@@ -2,49 +2,108 @@
 @use 'scss/placeholders/text';
 @use 'scss/unit' as u;
 
-.wrapper {
-  margin: auto;
-  max-width: u.rem-calc(800);
+// body {
+//   @include bp.down(lg) {
+//     overflow-y: auto;
+//   }
+// }
+
+.swiper {
+  overflow: visible !important;
+  max-height: 100vh;
+}
+
+.container {
+  pointer-events: none;
   width: 100%;
 }
 
-.hero {
-  margin-bottom: u.rem-calc(140);
-  transform: rotate(-3deg);
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: u.rem-calc(60);
+  opacity: 0;
+  height: 100%;
+  transition: 1s;
+  margin: auto;
+  max-width: u.rem-calc(1600);
+
+  padding: 0 u.rem-calc(40);
+
+  @include bp.down(md) {
+    padding: 0 u.rem-calc(20);
+  }
+
+  @include bp.down(sm) {
+    padding: 0 u.rem-calc(15);
+  }
 
   @include bp.down(lg) {
-    margin-bottom: u.rem-calc(80);
+    flex-direction: column;
+  }
+
+  @include bp.down(md) {
+    gap: u.rem-calc(20);
   }
 }
 
-.ctaButton {
-  margin-top: u.rem-calc(40);
+.middleSlide {
+  opacity: 1;
+  pointer-events: all;
 }
 
-.text {
-  @extend %text;
+.nextSlide {
+  transform: scale(1.2) rotate(45deg) !important;
+  transform-origin: bottom left;
 }
 
-.textBlock {
-  @extend %text-block;
+.lastSlide {
+  transform: scale(1.2) rotate(-45deg) !important;
+  transform-origin: bottom left;
 }
 
-.socialMedia {
+.content {
+  max-width: u.rem-calc(700);
   display: flex;
   flex-direction: column;
-  gap: u.rem-calc(40);
-  width: fit-content;
+  gap: u.rem-calc(30);
+
+  @include bp.down(xl) {
+    max-width: u.rem-calc(600);
+  }
+
+  @include bp.down(lg) {
+    order: 2;
+    margin-top: u.rem-calc(80);
+  }
 
   @include bp.down(xs) {
-    gap: u.rem-calc(10);
+    margin-top: u.rem-calc(40);
   }
 }
 
-.links {
+.buttons {
   display: flex;
-  gap: u.rem-calc(30);
+  flex-direction: column;
+  gap: u.rem-calc(20);
+}
+
+.button {
+  width: fit-content;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @include bp.down(lg) {
+    min-height: u.rem-calc(600);
+    order: 1;
+    margin-top: u.rem-calc(50);
+  }
 
   @include bp.down(xs) {
-    gap: u.rem-calc(10);
+    min-height: u.rem-calc(400);
   }
 }
