@@ -29,6 +29,6 @@
   z-index: 9999;
 
   @include bp.down(lg) {
-    margin-left: u.rem-calc(30);
+    padding-left: u.rem-calc(30);
   }
 }
