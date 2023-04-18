@@ -36,8 +36,16 @@
     width: u.rem-calc(10);
   }
 
-  :global(.swiper-slide-next, ) {
+  :global(.swiper-slide-next) {
     z-index: -1;
+  }
+
+  :global(.atropos-scale) {
+    pointer-events: none;
+  }
+
+  :global(.atropos-rotate) {
+    pointer-events: all;
   }
 }
 
