@@ -28,14 +28,14 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 			isFullScreen,
 		})}
 	>
-		{/* <div className={classes.navigation}>
+		<div className={classes.navigation}>
 			<Navigation
 				showProductsList
 				links={paths}
 				products={ProductsProps}
 				switchProps={SwithcProps}
 			/>
-		</div> */}
+		</div>
 		{children}
 	</div>
 );

@@ -1,18 +1,18 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/placeholders/text';
 @use 'scss/unit' as u;
+@use 'scss/config/variables' as v;
 
 .swiper {
-  overflow: hidden;
   height: 100vh !important;
   max-height: 100vh;
   max-width: 100vw;
+  overflow: hidden;
 
   @include bp.down(lg) {
+    height: 100% !important;
     max-height: unset;
     min-height: 100vh;
-    height: 100% !important;
-    overflow-y: auto;
   }
 }
 
@@ -22,30 +22,30 @@
 }
 
 .wrapper {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: u.rem-calc(60);
-  opacity: 0;
   height: 100%;
-  transition: 0.8s;
   margin: auto;
   max-width: u.rem-calc(1600);
+  opacity: 0;
   padding: 0 u.rem-calc(40);
-
-  @include bp.down(md) {
-    padding: 0 u.rem-calc(20);
-  }
-
-  @include bp.down(sm) {
-    padding: 0 u.rem-calc(15);
-  }
+  transition: 0.8s;
 
   @include bp.down(lg) {
     flex-direction: column;
+    padding: v.$padding-y-mobile;
   }
 
   @include bp.down(md) {
     gap: u.rem-calc(20);
+    padding-left: u.rem-calc(20);
+    padding-right: u.rem-calc(20);
+  }
+
+  @include bp.down(sm) {
+    padding-left: u.rem-calc(15);
+    padding-right: u.rem-calc(15);
   }
 }
 
@@ -65,18 +65,18 @@
 }
 
 .content {
-  max-width: u.rem-calc(700);
   display: flex;
   flex-direction: column;
   gap: u.rem-calc(30);
+  max-width: u.rem-calc(700);
 
   @include bp.down(xl) {
     max-width: u.rem-calc(600);
   }
 
   @include bp.down(lg) {
-    order: 2;
     margin-top: u.rem-calc(80);
+    order: 2;
   }
 
   @include bp.down(xs) {
@@ -95,14 +95,14 @@
 }
 
 .images {
-  width: 100%;
   height: 100%;
   position: relative;
+  width: 100%;
 
   @include bp.down(lg) {
+    margin-top: u.rem-calc(50);
     min-height: u.rem-calc(600);
     order: 1;
-    margin-top: u.rem-calc(50);
   }
 
   @include bp.down(xs) {

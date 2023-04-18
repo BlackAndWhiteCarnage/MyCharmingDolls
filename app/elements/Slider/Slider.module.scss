@@ -65,13 +65,13 @@
 
 .slide {
   max-width: u.rem-calc(542);
-  width: 100%;
   transition: 0.4s;
+  width: 100%;
 
   &:not(.middleSlide, .leftSlide, .rightSlide) {
-    transition: 0.4s !important;
     opacity: 0;
     transform: translateY(u.rem-calc(200)) scale(0.6) !important;
+    transition: 0.4s !important;
   }
 }
 

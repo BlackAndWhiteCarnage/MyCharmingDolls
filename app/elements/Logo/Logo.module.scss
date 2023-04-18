@@ -3,9 +3,11 @@
 
 .wrapper {
   display: block;
-  width: u.rem-calc(140);
+  margin-right: u.rem-calc(40);
+  width: u.rem-calc(130);
 
   @include bp.down(sm) {
+    margin: 0;
     width: u.rem-calc(100);
   }
 }

@@ -36,3 +36,7 @@ $breakpoints: (
   lg: 1220,
   xl: 1650,
 );
+
+$max-width: u.rem-calc(1600);
+$padding-y: u.rem-calc(100) 0 u.rem-calc(60) 0;
+$padding-y-mobile: u.rem-calc(120) 0 u.rem-calc(40) 0;

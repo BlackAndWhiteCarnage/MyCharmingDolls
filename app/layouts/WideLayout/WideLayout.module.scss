@@ -1,10 +1,16 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/unit' as u;
 @use 'scss/placeholders/text';
+@use 'scss/config/variables' as v;
 
 .wrapper {
   margin: auto;
+  padding: v.$padding-y;
   width: 100%;
+
+  @include bp.down(lg) {
+    padding: v.$padding-y-mobile;
+  }
 }
 
 .slider {
