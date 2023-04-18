@@ -28,15 +28,14 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 			isFullScreen,
 		})}
 	>
-		<div className={classes.navigation}>
-			{/* To powoduję bład, Slider przeskakuje */}
-			{/* <Navigation
+		{/* <div className={classes.navigation}>
+			<Navigation
 				showProductsList
 				links={paths}
 				products={ProductsProps}
 				switchProps={SwithcProps}
-			/> */}
-		</div>
+			/>
+		</div> */}
 		{children}
 	</div>
 );

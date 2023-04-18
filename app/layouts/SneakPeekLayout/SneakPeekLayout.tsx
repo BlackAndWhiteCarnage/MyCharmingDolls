@@ -1,14 +1,15 @@
 /**
  * External dependencies
  */
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Mousewheel, Keyboard } from 'swiper';
+import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
 import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
  */
+import { useOnResizeCallback } from '@/hooks';
 import { Button, Header, ImagesPack, SneakPeek } from '@/elements';
 import { DefaultProps as ImagesPackProps } from '@/elements/ImagesPack/ImagesPack.stories';
 import classes from './SneakPeekLayout.module.scss';
@@ -17,9 +18,13 @@ const cx = classnames.bind(classes);
 
 const SneakPeekLayout: FC = () => {
 	const items = new Array(9).fill(ImagesPackProps);
+	const [swiper, setSwiper] = useState<SwiperCore | null>(null);
+
+	useOnResizeCallback(() => swiper?.update());
 
 	return (
 		<Swiper
+			onSwiper={setSwiper}
 			keyboard={{
 				enabled: true,
 				onlyInViewport: false,
@@ -27,24 +32,18 @@ const SneakPeekLayout: FC = () => {
 			}}
 			loop
 			speed={1000}
-			modules={[Mousewheel, Pagination, Keyboard]}
+			modules={[Mousewheel, Keyboard]}
 			className={classes.swiper}
 			mousewheel
 			touchEventsTarget="container"
 			breakpoints={{
-				1221: {
-					direction: 'vertical',
-				},
 				1220: {
-					direction: 'horizontal',
+					direction: 'vertical',
 				},
 			}}
 			autoHeight
 			slidesPerView={1}
 			centeredSlides
-			pagination={{
-				clickable: true,
-			}}
 			initialSlide={1}
 		>
 			{items.map((props, index) => (
