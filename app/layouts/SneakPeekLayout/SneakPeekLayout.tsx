@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel, Keyboard } from 'swiper';
 import classnames from 'classnames/bind';
@@ -16,14 +16,6 @@ import classes from './SneakPeekLayout.module.scss';
 const cx = classnames.bind(classes);
 
 const SneakPeekLayout: FC = () => {
-	// const [activeIndex, setActiveIndex] = useState(1);
-
-	useEffect(() => {
-		document.body.style.overflowY = 'hidden';
-
-		return () => (document.body.style.overflowY = 'auto');
-	}, []);
-
 	const items = new Array(9).fill(ImagesPackProps);
 
 	return (

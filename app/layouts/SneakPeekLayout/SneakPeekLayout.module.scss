@@ -2,15 +2,10 @@
 @use 'scss/placeholders/text';
 @use 'scss/unit' as u;
 
-// body {
-//   @include bp.down(lg) {
-//     overflow-y: auto;
-//   }
-// }
-
 .swiper {
-  overflow: visible !important;
+  overflow: hidden;
   max-height: 100vh;
+  max-width: 100vw;
 }
 
 .container {
