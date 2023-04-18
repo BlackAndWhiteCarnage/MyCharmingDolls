@@ -16,7 +16,11 @@ import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
 
 const NarrowLayout: FC = () => (
 	<div className={classes.wrapper}>
-		<Atropos shadow={false} className={classes.atropos}>
+		<Atropos
+			shadow={false}
+			className={classes.atropos}
+			rotateTouch="scroll-y"
+		>
 			<div className={classes.hero}>
 				<PolaroidImage
 					image={{

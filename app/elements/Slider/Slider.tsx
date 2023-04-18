@@ -23,6 +23,7 @@ const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
 	return (
 		<div className={cx('wrapper', className)}>
 			<Atropos
+				rotateTouch="scroll-y"
 				rotateYMax={6}
 				rotateXMax={6}
 				shadow={false}
