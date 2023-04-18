@@ -1,0 +1,135 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/placeholders/text';
+@use 'scss/unit' as u;
+
+@keyframes throw-image-1 {
+  0% {
+    bottom: -100%;
+    transform: scale(2) translateX(-50%) rotate(0deg) skew(10deg, 10deg);
+  }
+  100% {
+    bottom: u.rem-calc(-100);
+    right: u.rem-calc(200);
+    transform: scale(1) rotate(12deg);
+  }
+}
+
+@keyframes throw-image-2 {
+  0% {
+    top: 100%;
+    right: -20%;
+    transform: scale(2) translateX(-50%) rotate(30deg) skew(10deg, 30deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+  100% {
+    right: u.rem-calc(-100);
+    top: u.rem-calc(-80);
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes throw-image-3 {
+  0% {
+    top: 100%;
+    transform: scale(2) translateX(-50%) rotate(30deg) skew(30deg, 20deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+  100% {
+    top: u.rem-calc(-50);
+    transform: rotate(13deg);
+  }
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: u.rem-calc(1000);
+  height: u.rem-calc(1000);
+  transform: scale(var(--scale)) translate(-50%, -50%);
+  transform-origin: top left;
+
+  &.animate {
+    .image-number-1 {
+      opacity: 1;
+      transition: 0.35s 1s;
+      animation: throw-image-1 0.5s 1s forwards;
+    }
+    .image-number-2 {
+      opacity: 1;
+      transition: 0.35s 0.6s;
+      animation: throw-image-2 0.5s 0.6s forwards;
+    }
+    .image-number-3 {
+      opacity: 1;
+      transition: 0.35s 0.8s;
+      animation: throw-image-3 0.5s 0.8s forwards;
+    }
+  }
+}
+
+.inner {
+  // background: black;
+  // position: relative;
+}
+
+.image {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.image-number-1 {
+  bottom: u.rem-calc(-100);
+  right: u.rem-calc(200);
+  max-width: u.rem-calc(580);
+  transform: rotate(12deg);
+  z-index: 3;
+
+  @include bp.down(lg) {
+    transform: rotate(-10deg);
+    max-width: u.rem-calc(630);
+  }
+}
+
+.image-number-2 {
+  max-width: u.rem-calc(620);
+  right: u.rem-calc(-100);
+  top: u.rem-calc(-80);
+  transform: rotate(8deg);
+  z-index: 1;
+
+  @include bp.down(lg) {
+    max-width: u.rem-calc(700);
+    right: u.rem-calc(-160);
+  }
+
+  @include bp.down(sm) {
+    right: u.rem-calc(-100);
+    max-width: u.rem-calc(620);
+  }
+}
+
+.image-number-3 {
+  max-width: u.rem-calc(560);
+  top: u.rem-calc(-50);
+  transform: rotate(13deg);
+  left: 0;
+  z-index: 2;
+
+  @include bp.down(lg) {
+    left: u.rem-calc(-200);
+    max-width: u.rem-calc(690);
+    transform: rotate(-5deg);
+  }
+
+  @include bp.down(sm) {
+    left: u.rem-calc(-100);
+    max-width: u.rem-calc(620);
+  }
+}

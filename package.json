@@ -18,6 +18,7 @@
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.1.0",
     "@popperjs/core": "^2.11.7",
+    "atropos": "^1.0.2",
     "classnames": "^2.3.2",
     "next": "13.3.0",
     "node-sass": "^8.0.0",

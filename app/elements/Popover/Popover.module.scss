@@ -8,6 +8,7 @@
   pointer-events: none;
   position: relative;
   transition: 0.25s;
+  z-index: 9999;
 }
 
 .isOpen {

@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { FC } from 'react';
+import Atropos from 'atropos/react';
 
 /**
  * Internal dependencies
@@ -15,18 +16,25 @@ import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
 
 const NarrowLayout: FC = () => (
 	<div className={classes.wrapper}>
-		<div className={classes.hero}>
-			<PolaroidImage
-				image={{
-					src: MyImage.src,
-					alt: '',
-				}}
-				variant="wide"
-			/>
-		</div>
+		<Atropos shadow={false} className={classes.atropos}>
+			<div className={classes.hero}>
+				<PolaroidImage
+					image={{
+						src: MyImage.src,
+						alt: '',
+					}}
+					variant="wide"
+				/>
+			</div>
+		</Atropos>
 		<article className={classes.aboutMe}>
 			<Header title="Hi I'm *Weronika*" />
-			<Button hasArrow hasFullWidth className={classes.ctaButton}>
+			<Button
+				hasArrow
+				hasFullWidth
+				className={classes.ctaButton}
+				href="/dolls"
+			>
 				See My Workarts
 			</Button>
 			<div className={classes.text}>

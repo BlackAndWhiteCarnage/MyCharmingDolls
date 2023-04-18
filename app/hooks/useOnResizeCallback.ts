@@ -3,17 +3,12 @@
  */
 import { useEffect, useCallback } from 'react';
 
-const useOnResizeCallback = (callback: () => void, invokeInitially = true) => {
+const useOnResizeCallback = (callback: () => void, invokeInitially = false) => {
 	const memoizedCallback = useCallback(callback, [callback]);
 
 	useEffect(() => {
 		invokeInitially && callback();
-		/**
-		 * We can ignore this warning cause callback should
-		 * run only initially without any care that it will change later.
-		 */
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [callback, invokeInitially]);
 
 	useEffect(() => {
 		const handleResize = () => memoizedCallback();

@@ -5,6 +5,7 @@ import { FC, ReactElement, useState } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
 import classnames from 'classnames/bind';
+import Atropos from 'atropos/react';
 
 /**
  * Internal dependencies
@@ -19,36 +20,46 @@ type SliderProps = {
 const cx = classnames.bind(classes);
 
 const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
-	const [activeIndex, setActiveIndex] = useState<number>();
-
 	return (
 		<div className={cx('wrapper', className)}>
-			<Swiper
-				modules={[Pagination]}
-				className={classes.swiperWrapper}
-				slidesPerView="auto"
-				centeredSlides
-				pagination={{
-					clickable: true,
-				}}
-				initialSlide={1}
-				onRealIndexChange={(el) => setActiveIndex(el.realIndex)}
-				onBeforeInit={(el) => setActiveIndex(el.realIndex)}
-				{...props}
+			<Atropos
+				rotateYMax={6}
+				rotateXMax={6}
+				shadow={false}
+				className={classes.innerWrap}
 			>
-				{children.map((item, index) => (
-					<SwiperSlide
-						className={cx('slide', {
-							middleSlide: activeIndex === index,
-							rightSlide: activeIndex === index + 1,
-							leftSlide: activeIndex === index - 1,
-						})}
-						key={index}
-					>
-						{item}
-					</SwiperSlide>
-				))}
-			</Swiper>
+				<Swiper
+					modules={[Pagination]}
+					className={classes.swiperWrapper}
+					slidesPerView="auto"
+					centeredSlides
+					pagination={{
+						clickable: true,
+					}}
+					initialSlide={1}
+					slideToClickedSlide
+					{...props}
+				>
+					{children.map((item, index) => (
+						<SwiperSlide
+							key={index}
+							className={classes.slideWrapper}
+						>
+							{({ isActive, isNext, isPrev }) => (
+								<div
+									className={cx('slide', {
+										middleSlide: isActive,
+										rightSlide: isNext,
+										leftSlide: isPrev,
+									})}
+								>
+									{item}
+								</div>
+							)}
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</Atropos>
 		</div>
 	);
 };

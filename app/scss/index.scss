@@ -1,7 +1,8 @@
 /**
  * Load global modules
  */
+@use 'swiper/scss/pagination';
+@use 'swiper/scss';
+@use 'atropos/css';
 @use 'global/global';
 @use 'global/typography';
-@use 'swiper/scss';
-@use 'swiper/scss/pagination';

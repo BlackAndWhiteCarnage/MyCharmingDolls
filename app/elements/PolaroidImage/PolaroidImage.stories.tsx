@@ -6,7 +6,8 @@ import { StoryObj, Meta } from '@storybook/react';
 /**
  * Internal dependencies
  */
-import DollImage from '@/images/example-doll.png';
+import DollImage from '@/images/example-doll-1.png';
+import MyImage from '@/images/me.jpg';
 import PolaroidImage from '.';
 
 export default {
@@ -45,7 +46,10 @@ export const Wide: StoryObj<typeof PolaroidImage> = {
 		</div>
 	),
 	args: {
-		...DefaultProps,
+		image: {
+			src: MyImage.src,
+			alt: '',
+		},
 		variant: 'wide',
 	},
 };
