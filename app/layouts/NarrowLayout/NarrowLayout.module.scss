@@ -1,11 +1,17 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/placeholders/text';
 @use 'scss/unit' as u;
+@use 'scss/config/variables' as v;
 
 .wrapper {
   margin: auto;
   max-width: u.rem-calc(800);
+  padding: v.$padding-y;
   width: 100%;
+
+  @include bp.down(lg) {
+    padding: v.$padding-y-mobile;
+  }
 }
 
 .atropos {

@@ -19,7 +19,16 @@
 }
 
 .navigation {
-  position: relative;
+  left: 50%;
+  margin: auto;
+  max-width: u.rem-calc(1600);
+  position: absolute;
+  top: u.rem-calc(20);
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 9999;
-  width: fit-content;
+
+  @include bp.down(lg) {
+    margin-left: u.rem-calc(30);
+  }
 }

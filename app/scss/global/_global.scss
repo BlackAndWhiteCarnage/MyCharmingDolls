@@ -20,9 +20,9 @@
 }
 
 body {
+  background: var(--theme-color-background);
   font-family: font.get(primary);
   overflow-x: hidden;
-  background: var(--theme-color-background);
 }
 
 html {

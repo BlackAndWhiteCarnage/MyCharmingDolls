@@ -5,14 +5,12 @@
 .wrapper {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  flex-direction: row;
   gap: u.rem-calc(10);
   justify-content: space-between;
-  transform: translateX(u.rem-calc(-20));
-  width: 100%;
+  transform: translateX(u.rem-calc(20));
+  width: fit-content;
 
-  @include bp.down(md) {
+  @include bp.down(lg) {
     transform: translateX(u.rem-calc(-10));
   }
 }

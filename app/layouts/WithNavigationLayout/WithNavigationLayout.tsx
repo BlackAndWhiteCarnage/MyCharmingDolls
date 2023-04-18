@@ -29,13 +29,12 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 		})}
 	>
 		<div className={classes.navigation}>
-			{/* To powoduję bład, Slider przeskakuje */}
-			{/* <Navigation
+			<Navigation
 				showProductsList
 				links={paths}
 				products={ProductsProps}
 				switchProps={SwithcProps}
-			/> */}
+			/>
 		</div>
 		{children}
 	</div>
