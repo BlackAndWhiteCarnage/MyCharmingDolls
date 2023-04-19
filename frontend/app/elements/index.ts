@@ -13,6 +13,7 @@ export { default as PolaroidImage } from './PolaroidImage';
 export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
 export { default as ProductsList } from './ProductsList';
+export { default as Providers } from './Providers';
 export { default as Slider } from './Slider';
 export { default as SneakPeek } from './SneakPeek';
 export { default as Switch } from './Switch';

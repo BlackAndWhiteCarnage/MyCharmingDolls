@@ -1,7 +1,12 @@
 /**
  * External dependencies
  */
-import { PropsWithChildren } from 'react';
+import { ReactNode } from 'react';
+
+/**
+ * Internal dependencies
+ */
+import { Providers } from '@/elements';
 import '@/scss/index.scss';
 
 export const metadata = {
@@ -9,9 +14,11 @@ export const metadata = {
 	description: 'Description',
 };
 
-const RootLayout = ({ children }: PropsWithChildren) => (
+const RootLayout = ({ children }: { children: ReactNode }) => (
 	<html lang="en">
-		<body>{children}</body>
+		<body>
+			<Providers>{children}</Providers>
+		</body>
 	</html>
 );
 

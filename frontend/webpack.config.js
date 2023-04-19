@@ -5,8 +5,12 @@ const svgrRule = require('./svgr-rule');
 module.exports = (config) => {
 	config.module.rules.push(svgrRule);
 
-	config.plugins = [
-		...config.plugins,
+	config.module.rules.push({
+		test: /\.svg$/,
+		use: ['@svgr/webpack', 'svgo-loader'],
+	});
+
+	config.plugins.push(
 		new CopyPlugin({
 			patterns: [
 				{
@@ -14,8 +18,8 @@ module.exports = (config) => {
 					to: path.resolve(__dirname, 'public/images'),
 				},
 			],
-		}),
-	];
+		})
+	);
 
 	return config;
 };

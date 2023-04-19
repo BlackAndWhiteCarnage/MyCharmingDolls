@@ -1,0 +1,21 @@
+query Dolls {
+  dolls {
+    data {
+      attributes {
+        isSold
+        name
+        description
+        images {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        workDone
+        includedItems
+        slug
+      }
+    }
+  }
+}

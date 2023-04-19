@@ -12,14 +12,18 @@
     "lint:scripts": "eslint --ext .ts,.tsx,.js,.jsx .",
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
     "lint": "npm-run-all lint:*",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "generate:schema": "graphql-codegen --config codegen.yml",
+    "generate:types": "graphql-codegen -c codegen.types.yml"
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.1.0",
     "@popperjs/core": "^2.11.7",
     "atropos": "^1.0.2",
+    "babel-loader": "^9.1.2",
     "classnames": "^2.3.2",
+    "graphql": "^16.6.0",
     "next": "13.3.0",
     "node-sass": "^8.0.0",
     "react": "18.2.0",
@@ -29,10 +33,17 @@
     "react-popper": "^2.3.0",
     "sass": "^1.62.0",
     "swiper": "^9.2.2",
-    "typescript": "5.0.4",
+    "typescript": "^5.0.4",
     "yup": "^1.1.1"
   },
   "devDependencies": {
+    "@apollo/client": "^3.7.12",
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/client-preset": "^3.0.0",
+    "@graphql-codegen/introspection": "^3.0.1",
+    "@graphql-codegen/typescript": "^3.0.3",
+    "@graphql-codegen/typescript-operations": "^3.0.3",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-links": "^7.0.4",
     "@storybook/addon-viewport": "^7.0.4",
@@ -66,6 +77,8 @@
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-order": "^6.0.3",
     "stylelint-prettier": "^3.0.0",
+    "svgo-loader": "^4.0.0",
+    "undici": "5.5.1",
     "url-loader": "^4.1.1"
   }
 }
