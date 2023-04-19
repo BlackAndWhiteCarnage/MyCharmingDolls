@@ -4,6 +4,7 @@
 
 @use 'scss/color';
 @use 'scss/font';
+@use 'scss/breakpoint' as bp;
 
 :root {
   --theme-color-background: #{color.get(grey-3)};
@@ -26,8 +27,11 @@ body {
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
+
+  @include bp.down(lg) {
+    overflow-x: hidden;
+  }
 }
 
 a {
