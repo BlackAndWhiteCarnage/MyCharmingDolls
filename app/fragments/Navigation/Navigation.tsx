@@ -29,7 +29,7 @@ const Navigation: FC<NavigationProps> = ({
 	);
 
 	return (
-		<nav className={classes.wrapper}>
+		<div className={classes.wrapper}>
 			<Logo />
 			<ul className={classes.linksList}>
 				{links.map((linkProps, index) => (
@@ -43,7 +43,7 @@ const Navigation: FC<NavigationProps> = ({
 					<li>{link({ href: '/dolls', label: 'Dolls' })}</li>
 				)}
 			</ul>
-		</nav>
+		</div>
 	);
 };
 

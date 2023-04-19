@@ -30,7 +30,7 @@
   max-width: u.rem-calc(1600);
   opacity: 0;
   padding: 0 u.rem-calc(40);
-  transition: 0.8s;
+  transition: transform 0.8s, opacity 0.8s;
 
   @include bp.down(lg) {
     flex-direction: column;

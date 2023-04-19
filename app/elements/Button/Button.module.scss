@@ -41,7 +41,7 @@
   gap: u.rem-calc(10);
   justify-content: center;
   padding: u.rem-calc(10) u.rem-calc(18);
-  transition: 0.2s;
+  transition: box-shadow 0.2s, color 0.2s, background 0.2s, transform 0.2s;
 
   @include bp.down(xs) {
     padding: u.rem-calc(11) u.rem-calc(16);

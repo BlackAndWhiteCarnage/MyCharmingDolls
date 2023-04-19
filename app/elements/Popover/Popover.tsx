@@ -52,7 +52,6 @@ const Popover: FC<PopoverProps> = ({
 				name: 'preventOverflow',
 				options: {
 					padding: 15,
-					tether: false,
 				},
 			},
 		],

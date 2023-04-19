@@ -17,7 +17,7 @@ import classes from './SneakPeekLayout.module.scss';
 const cx = classnames.bind(classes);
 
 const SneakPeekLayout: FC = () => {
-	const items = new Array(9).fill(ImagesPackProps);
+	const items = new Array(3).fill(ImagesPackProps);
 	const [swiper, setSwiper] = useState<SwiperCore | null>(null);
 
 	useOnResizeCallback(() => swiper?.update());
@@ -30,7 +30,6 @@ const SneakPeekLayout: FC = () => {
 				onlyInViewport: false,
 				pageUpDown: true,
 			}}
-			loop
 			speed={1000}
 			modules={[Mousewheel, Keyboard]}
 			className={classes.swiper}
