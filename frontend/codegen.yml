@@ -4,3 +4,4 @@ generates:
   ./graphql.schema.json:
     plugins:
       - 'introspection'
+debug: true

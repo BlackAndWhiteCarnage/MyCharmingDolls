@@ -939,9 +939,11 @@ export type UsersPermissionsUserRelationResponseCollection = {
 	data: Array<UsersPermissionsUserEntity>;
 };
 
-export type DollsQueryVariables = Exact<{ [key: string]: never }>;
+export type GetDollBySlugQueryVariables = Exact<{
+	slug: Scalars['String'];
+}>;
 
-export type DollsQuery = {
+export type GetDollBySlugQuery = {
 	__typename?: 'Query';
 	dolls?: {
 		__typename?: 'DollEntityResponseCollection';
@@ -952,6 +954,7 @@ export type DollsQuery = {
 				isSold: boolean;
 				name: string;
 				description: string;
+				price: number;
 				workDone: string;
 				includedItems: string;
 				slug: string;
@@ -970,9 +973,41 @@ export type DollsQuery = {
 	} | null;
 };
 
-export const DollsDocument = gql`
-	query Dolls {
-		dolls {
+export type DollsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type DollsQuery = {
+	__typename?: 'Query';
+	dolls?: {
+		__typename?: 'DollEntityResponseCollection';
+		data: Array<{
+			__typename?: 'DollEntity';
+			attributes?: {
+				__typename?: 'Doll';
+				name: string;
+				isSold: boolean;
+				description: string;
+				price: number;
+				workDone: string;
+				includedItems: string;
+				slug: string;
+				images: {
+					__typename?: 'UploadFileRelationResponseCollection';
+					data: Array<{
+						__typename?: 'UploadFileEntity';
+						attributes?: {
+							__typename?: 'UploadFile';
+							url: string;
+						} | null;
+					}>;
+				};
+			} | null;
+		}>;
+	} | null;
+};
+
+export const GetDollBySlugDocument = gql`
+	query getDollBySlug($slug: String!) {
+		dolls(filters: { slug: { eq: $slug } }) {
 			data {
 				attributes {
 					isSold
@@ -985,6 +1020,82 @@ export const DollsDocument = gql`
 							}
 						}
 					}
+					price
+					workDone
+					includedItems
+					slug
+				}
+			}
+		}
+	}
+`;
+
+/**
+ * __useGetDollBySlugQuery__
+ *
+ * To run a query within a React component, call `useGetDollBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetDollBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetDollBySlugQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetDollBySlugQuery(
+	baseOptions: Apollo.QueryHookOptions<
+		GetDollBySlugQuery,
+		GetDollBySlugQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useQuery<GetDollBySlugQuery, GetDollBySlugQueryVariables>(
+		GetDollBySlugDocument,
+		options
+	);
+}
+export function useGetDollBySlugLazyQuery(
+	baseOptions?: Apollo.LazyQueryHookOptions<
+		GetDollBySlugQuery,
+		GetDollBySlugQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useLazyQuery<GetDollBySlugQuery, GetDollBySlugQueryVariables>(
+		GetDollBySlugDocument,
+		options
+	);
+}
+export type GetDollBySlugQueryHookResult = ReturnType<
+	typeof useGetDollBySlugQuery
+>;
+export type GetDollBySlugLazyQueryHookResult = ReturnType<
+	typeof useGetDollBySlugLazyQuery
+>;
+export type GetDollBySlugQueryResult = Apollo.QueryResult<
+	GetDollBySlugQuery,
+	GetDollBySlugQueryVariables
+>;
+export const DollsDocument = gql`
+	query Dolls {
+		dolls {
+			data {
+				attributes {
+					name
+					isSold
+					description
+					images {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
+					price
 					workDone
 					includedItems
 					slug

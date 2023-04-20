@@ -1,9 +1,9 @@
-query Dolls {
-  dolls {
+query getDollBySlug($slug: String!) {
+  dolls(filters: { slug: { eq: $slug } }) {
     data {
       attributes {
-        name
         isSold
+        name
         description
         images {
           data {
