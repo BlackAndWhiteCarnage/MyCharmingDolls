@@ -1,0 +1,14 @@
+overwrite: true
+schema: graphql.schema.json
+documents: 'app/graphql/**/*.{gql,graphql}'
+generates:
+  app/generated/graphql.ts:
+    hooks:
+      afterOneFileWrite:
+        - eslint --fix
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo':
+          addDocBlocks: true
+          withHooks: true

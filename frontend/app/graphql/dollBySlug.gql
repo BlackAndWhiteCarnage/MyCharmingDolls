@@ -1,0 +1,22 @@
+query getDollBySlug($slug: String!) {
+  dolls(filters: { slug: { eq: $slug } }) {
+    data {
+      attributes {
+        isSold
+        name
+        description
+        images {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        price
+        workDone
+        includedItems
+        slug
+      }
+    }
+  }
+}
