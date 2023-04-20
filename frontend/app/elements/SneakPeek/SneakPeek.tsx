@@ -1,32 +1,25 @@
-/**
- * External dependencies
- */
 import { FC } from 'react';
 import classnames from 'classnames/bind';
+import ReactMarkdown from 'react-markdown';
 
-/**
- * Internal dependencies
- */
 import classes from './SneakPeek.module.scss';
 
 const cx = classnames.bind(classes);
 
 type SneakPeekProps = {
-	textBlocks: Array<string>;
+	limit?: 2 | 3;
+	text: string;
 };
 
-const SneakPeek: FC<SneakPeekProps> = ({ textBlocks }) => (
+const SneakPeek: FC<SneakPeekProps> = ({ limit = 2, text }) => (
 	<div className={cx('wrapper', 'is-style-p')}>
-		{textBlocks.map((text, index) => (
-			<p
-				key={`${text}-${index}`}
-				className={cx('textBlock', {
-					fadeOut: index === textBlocks.length - 1,
-				})}
-			>
-				{text}
-			</p>
-		))}
+		<ReactMarkdown>
+			{text
+				.split(/\n+/)
+				.filter((block) => block.trim().length > 0)
+				.slice(0, limit)
+				.join('\n\n')}
+		</ReactMarkdown>
 	</div>
 );
 

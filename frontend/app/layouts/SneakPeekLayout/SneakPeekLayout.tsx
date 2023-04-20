@@ -90,12 +90,7 @@ const SneakPeekLayout: FC = () => {
 							>
 								<div className={classes.content}>
 									<Header title={`Hi I'm *${name}*`} />
-									<SneakPeek
-										textBlocks={[
-											'your worst nightmare, said the dark and creepy doll, as she sat in the dusty corner of the antique shop.',
-											'Nora had been sitting there for years, waiting for someone to take her home. She had a long and tragic history - she was crafted by a reclusive toy maker who poured all of his love and madness into creating the perfect doll. But the toy maker died suddenly, leaving Nora alone in the dusty old house...',
-										]}
-									/>
+									<SneakPeek text={description} />
 									<div className={classes.buttons}>
 										<Button
 											hasArrow

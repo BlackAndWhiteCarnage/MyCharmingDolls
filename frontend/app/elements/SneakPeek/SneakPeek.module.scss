@@ -2,18 +2,8 @@
 @use 'scss/breakpoint' as bp;
 
 .wrapper {
-  color: var(--theme-color-primary);
-  display: flex;
-  flex-direction: column;
-  gap: u.rem-calc(18);
-
-  @include bp.down(sm) {
-    gap: u.rem-calc(15);
-  }
-}
-
-.fadeOut {
   position: relative;
+  color: var(--theme-color-primary);
 
   &::before {
     background: linear-gradient(

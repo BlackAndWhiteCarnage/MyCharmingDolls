@@ -30,6 +30,7 @@
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-markdown": "^8.0.7",
     "react-popper": "^2.3.0",
     "sass": "^1.62.0",
     "swiper": "^9.2.2",
