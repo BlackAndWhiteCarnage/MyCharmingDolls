@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { FC } from 'react';
-import classnames from 'classnames/bind';
+import ReactMarkdown from 'react-markdown';
 
 /**
  * External dependencies
@@ -10,22 +10,11 @@ import classnames from 'classnames/bind';
 import classes from './List.module.scss';
 
 type ListProps = {
-	listItems: Array<string>;
+	text: string;
 };
 
-const cx = classnames.bind(classes);
-
-const List: FC<ListProps> = ({ listItems }) => (
-	<ul className={classes.list}>
-		{listItems.map((listItem, index) => (
-			<li
-				className={cx('listItem', 'is-style-list-item')}
-				key={`${listItem}-${index}`}
-			>
-				{listItem}
-			</li>
-		))}
-	</ul>
+const List: FC<ListProps> = ({ text }) => (
+	<ReactMarkdown className={classes.list}>{text}</ReactMarkdown>
 );
 
 export default List;

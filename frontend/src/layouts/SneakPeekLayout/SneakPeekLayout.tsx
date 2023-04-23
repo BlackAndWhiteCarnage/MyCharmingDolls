@@ -124,12 +124,12 @@ const SneakPeekLayout: FC<{
 								>
 									<div className={classes.content}>
 										<Header title={`Hi I'm *${name}*`} />
-										<SneakPeek text={description} />
+										<SneakPeek text={description} limit />
 										<div className={classes.buttons}>
 											<Button
 												hasArrow
 												className={classes.button}
-												href="/doll"
+												href={`/doll/${dollSlug}`}
 											>
 												Read more & meet {name}
 											</Button>

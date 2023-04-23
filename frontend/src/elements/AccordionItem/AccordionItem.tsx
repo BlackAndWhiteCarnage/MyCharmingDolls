@@ -11,7 +11,7 @@ import { useOnResizeCallback } from '@/hooks';
 import { ReactComponent as DropdownIcon } from '@/images/icons/dropdown.svg';
 import classes from './AccordionItem.module.scss';
 
-type AccordionItemProps = PropsWithChildren<{
+export type AccordionItemProps = PropsWithChildren<{
 	label: string;
 	onToggle: (value: boolean) => void;
 	open?: boolean;

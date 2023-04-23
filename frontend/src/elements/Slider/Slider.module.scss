@@ -31,6 +31,10 @@
     background: var(--theme-color-secondary) !important;
   }
 
+  :global(.atropos-inner) {
+    overflow: visible !important;
+  }
+
   :global(.swiper-pagination-bullet) {
     height: u.rem-calc(10);
     width: u.rem-calc(10);
@@ -47,10 +51,6 @@
   :global(.atropos-rotate) {
     pointer-events: all;
   }
-}
-
-.innerWrap * {
-  overflow: visible !important;
 }
 
 .swiperWrapper {

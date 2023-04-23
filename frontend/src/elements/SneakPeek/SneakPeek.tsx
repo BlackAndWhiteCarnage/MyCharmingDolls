@@ -1,24 +1,32 @@
+/**
+ * External dependencies
+ */
 import { FC } from 'react';
 import classnames from 'classnames/bind';
 import ReactMarkdown from 'react-markdown';
 
+/**
+ * Internal dependencies
+ */
 import classes from './SneakPeek.module.scss';
 
 const cx = classnames.bind(classes);
 
 type SneakPeekProps = {
-	limit?: 2 | 3;
+	limit?: boolean;
 	text: string;
 };
 
-const SneakPeek: FC<SneakPeekProps> = ({ limit = 2, text }) => (
+const SneakPeek: FC<SneakPeekProps> = ({ limit = false, text }) => (
 	<div className={cx('wrapper', 'is-style-p')}>
 		<ReactMarkdown>
-			{text
-				.split(/\n+/)
-				.filter((block) => block.trim().length > 0)
-				.slice(0, limit)
-				.join('\n\n')}
+			{limit
+				? text
+						.split(/\n+/)
+						.filter((block) => block.trim().length > 0)
+						.slice(0, 2)
+						.join('\n\n')
+				: text}
 		</ReactMarkdown>
 	</div>
 );

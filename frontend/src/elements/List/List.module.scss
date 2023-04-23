@@ -3,30 +3,32 @@
 @use 'scss/unit' as u;
 
 .list {
-  list-style: none;
-}
+  li {
+    color: var(--theme-color-primary);
 
-.listItem {
-  color: var(--theme-color-primary);
+    &:not(:last-child) {
+      margin-bottom: u.rem-calc(12);
+    }
 
-  &:not(:last-child) {
-    margin-bottom: u.rem-calc(12);
-  }
+    &::marker {
+      content: '';
+    }
 
-  &::before {
-    background: var(--theme-color-secondary);
-    border-radius: 50%;
-    content: '';
-    display: inline-block;
-    height: u.rem-calc(8);
-    margin-right: u.rem-calc(18);
-    min-width: u.rem-calc(8);
-    vertical-align: middle;
+    &::before {
+      background: var(--theme-color-secondary);
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: u.rem-calc(8);
+      margin-right: u.rem-calc(18);
+      min-width: u.rem-calc(8);
+      vertical-align: middle;
 
-    @include bp.down(sm) {
-      height: u.rem-calc(6);
-      margin-right: u.rem-calc(4);
-      min-width: u.rem-calc(6);
+      @include bp.down(sm) {
+        height: u.rem-calc(6);
+        margin-right: u.rem-calc(4);
+        min-width: u.rem-calc(6);
+      }
     }
   }
 }
