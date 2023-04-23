@@ -87,7 +87,9 @@ const WideLayout = ({ slug }: { slug: string }) => {
 							label={`${name} is already adopted or reserved!`}
 						/>
 					)}
-					<Button variant="secondary">Browse other dolls</Button>
+					<Button variant="secondary" href="/dolls">
+						Browse other dolls
+					</Button>
 				</div>
 			</div>
 		</div>

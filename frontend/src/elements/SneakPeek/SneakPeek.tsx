@@ -25,7 +25,7 @@ const SneakPeek: FC<SneakPeekProps> = ({ limit = false, text }) => (
 						.split(/\n+/)
 						.filter((block) => block.trim().length > 0)
 						.slice(0, 2)
-						.join('\n\n')
+						.join('\n\n') + '...'
 				: text}
 		</ReactMarkdown>
 	</div>
