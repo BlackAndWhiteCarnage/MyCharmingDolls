@@ -14,6 +14,8 @@ import {
 } from '@/elements';
 import PriceBox from '@/elements/PriceBox/PriceBox';
 import { useGetDollBySlugQuery } from '@/generated/graphql';
+import { changeTheme } from '@/utils';
+import { useEffect } from 'react';
 
 const WideLayout = ({ slug }: { slug: string }) => {
 	const { data, loading, error } = useGetDollBySlugQuery({
@@ -23,6 +25,15 @@ const WideLayout = ({ slug }: { slug: string }) => {
 	});
 
 	const dollAttributes = data?.dolls?.data[0].attributes;
+
+	useEffect(() => {
+		if (dollAttributes) {
+			const { primaryColor, secondaryColor, backgroundColor } =
+				dollAttributes;
+
+			changeTheme(primaryColor, secondaryColor, backgroundColor);
+		}
+	}, [dollAttributes]);
 
 	if (!data || loading || !dollAttributes) return <div>Loading...</div>;
 

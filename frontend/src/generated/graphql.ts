@@ -969,6 +969,9 @@ export type GetDollBySlugQuery = {
 				workDone: string;
 				includedItems: string;
 				slug: string;
+				primaryColor: string;
+				secondaryColor: string;
+				backgroundColor: string;
 				images: {
 					__typename?: 'UploadFileRelationResponseCollection';
 					data: Array<{
@@ -1048,6 +1051,9 @@ export const GetDollBySlugDocument = gql`
 					workDone
 					includedItems
 					slug
+					primaryColor
+					secondaryColor
+					backgroundColor
 				}
 			}
 		}
