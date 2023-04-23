@@ -4,7 +4,8 @@
   "info": {
     "singularName": "doll",
     "pluralName": "dolls",
-    "displayName": "doll"
+    "displayName": "doll",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,12 +26,12 @@
       "required": true
     },
     "images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "price": {
       "type": "integer",
@@ -48,6 +49,14 @@
       "type": "uid",
       "required": true,
       "targetField": "name"
+    },
+    "placeholder": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
