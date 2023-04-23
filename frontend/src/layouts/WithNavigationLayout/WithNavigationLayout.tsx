@@ -15,6 +15,7 @@ import { useDolls } from '@/hooks';
 import classes from './WithNavigationLayout.module.scss';
 
 type WithNavigationLayoutProps = PropsWithChildren<{
+	showProductsList?: boolean;
 	isFullScreen?: boolean;
 }>;
 
@@ -22,6 +23,7 @@ const cx = classnames.bind(classes);
 
 const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 	children,
+	showProductsList = false,
 	isFullScreen = false,
 }) => {
 	const { dolls, loading, error } = useDolls();
@@ -36,7 +38,7 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 			<div className={classes.navigation}>
 				{!loading && dolls && dolls.length > 0 && !error ? (
 					<Navigation
-						showProductsList
+						showProductsList={showProductsList}
 						links={paths}
 						products={dolls?.map(({ attributes }) => ({
 							image: {

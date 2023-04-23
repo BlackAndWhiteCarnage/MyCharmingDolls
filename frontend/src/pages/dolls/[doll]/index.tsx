@@ -9,7 +9,7 @@ export type DollsProps = {
 };
 
 const Dolls: NextPage<DollsProps> = ({ initialSlug }) => (
-	<WithNavigationLayout isFullScreen>
+	<WithNavigationLayout isFullScreen showProductsList>
 		<SneakPeekLayout initialSlug={initialSlug} />
 	</WithNavigationLayout>
 );

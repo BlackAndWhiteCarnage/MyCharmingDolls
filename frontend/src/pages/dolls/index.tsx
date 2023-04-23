@@ -4,7 +4,7 @@
 import { SneakPeekLayout, WithNavigationLayout } from '@/layouts';
 
 const Dolls = () => (
-	<WithNavigationLayout isFullScreen>
+	<WithNavigationLayout isFullScreen showProductsList>
 		<SneakPeekLayout />
 	</WithNavigationLayout>
 );
