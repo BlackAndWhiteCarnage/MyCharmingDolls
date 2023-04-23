@@ -51,11 +51,23 @@
       "targetField": "name"
     },
     "placeholder": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primaryColor": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryColor": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "string",
       "required": true
     }
   }
