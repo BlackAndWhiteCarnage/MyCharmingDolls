@@ -2,7 +2,7 @@ overwrite: true
 schema: graphql.schema.json
 documents: 'src/graphql/**/*.{gql,graphql}'
 generates:
-  app/generated/graphql.ts:
+  src/generated/graphql.ts:
     hooks:
       afterOneFileWrite:
         - eslint --fix
