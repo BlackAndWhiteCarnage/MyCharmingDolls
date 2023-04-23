@@ -41,7 +41,7 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 						products={dolls?.map(({ attributes }) => ({
 							image: {
 								src:
-									attributes?.images.data[0].attributes
+									attributes?.placeholder.data?.attributes
 										?.url || '',
 								alt: '',
 							},

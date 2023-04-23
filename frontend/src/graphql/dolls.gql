@@ -12,6 +12,13 @@ query Dolls {
             }
           }
         }
+        placeholder {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
         price
         workDone
         includedItems

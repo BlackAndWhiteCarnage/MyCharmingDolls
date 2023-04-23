@@ -80,6 +80,7 @@ export type Doll = {
 	includedItems: Scalars['String'];
 	isSold: Scalars['Boolean'];
 	name: Scalars['String'];
+	placeholder: UploadFileEntityResponse;
 	price: Scalars['Int'];
 	publishedAt?: Maybe<Scalars['DateTime']>;
 	slug: Scalars['String'];
@@ -133,6 +134,7 @@ export type DollInput = {
 	includedItems?: InputMaybe<Scalars['String']>;
 	isSold?: InputMaybe<Scalars['Boolean']>;
 	name?: InputMaybe<Scalars['String']>;
+	placeholder?: InputMaybe<Scalars['ID']>;
 	price?: InputMaybe<Scalars['Int']>;
 	publishedAt?: InputMaybe<Scalars['DateTime']>;
 	slug?: InputMaybe<Scalars['String']>;
@@ -1000,6 +1002,16 @@ export type DollsQuery = {
 						} | null;
 					}>;
 				};
+				placeholder: {
+					__typename?: 'UploadFileEntityResponse';
+					data?: {
+						__typename?: 'UploadFileEntity';
+						attributes?: {
+							__typename?: 'UploadFile';
+							url: string;
+						} | null;
+					} | null;
+				};
 			} | null;
 		}>;
 	} | null;
@@ -1089,6 +1101,13 @@ export const DollsDocument = gql`
 					isSold
 					description
 					images {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
+					placeholder {
 						data {
 							attributes {
 								url
