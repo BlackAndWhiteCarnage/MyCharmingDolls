@@ -1,0 +1,63 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/placeholders/text';
+@use 'scss/unit' as u;
+@use 'scss/config/variables' as v;
+
+.wrapper {
+  margin: auto;
+  max-width: u.rem-calc(800);
+  padding: v.$padding-y;
+  width: 100%;
+
+  @include bp.down(lg) {
+    padding: v.$padding-y-mobile;
+  }
+}
+
+.atropos {
+  transform: rotate(-3deg);
+
+  * {
+    overflow: visible;
+  }
+}
+
+.hero {
+  margin-bottom: u.rem-calc(140);
+
+  @include bp.down(lg) {
+    margin-bottom: u.rem-calc(80);
+  }
+}
+
+.ctaButton {
+  margin-top: u.rem-calc(40);
+}
+
+.text {
+  @extend %text;
+}
+
+.textBlock {
+  @extend %text-block;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(40);
+  width: fit-content;
+
+  @include bp.down(xs) {
+    gap: u.rem-calc(10);
+  }
+}
+
+.links {
+  display: flex;
+  gap: u.rem-calc(30);
+
+  @include bp.down(xs) {
+    gap: u.rem-calc(10);
+  }
+}

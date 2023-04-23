@@ -1,0 +1,20 @@
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(10);
+}
+
+.label {
+  color: var(--theme-color-primary);
+}
+
+.asterisk {
+  color: color.get(red);
+}
+
+.error {
+  color: color.get(red);
+}

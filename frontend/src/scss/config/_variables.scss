@@ -1,0 +1,42 @@
+/**
+ * Variables
+ */
+@use 'scss/unit' as u;
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$fonts: (
+  primary: (
+    'Dosis',
+    sans-serif,
+  ),
+  secondary: (
+    'Pacifico',
+    cursive,
+  ),
+);
+
+$colors: (
+  white: #ffffff,
+
+  grey: #585858,
+  grey-2: #dbdbdb,
+  grey-3: #f8f8f8,
+
+  purple: #8f1cb0,
+
+  red: #ff0000,
+);
+
+$breakpoints: (
+  xs: 480,
+  sm: 768,
+  md: 992,
+  lg: 1220,
+  xl: 1650,
+);
+
+$max-width: u.rem-calc(1600);
+$padding-y: u.rem-calc(100) 0 u.rem-calc(60) 0;
+$padding-y-mobile: u.rem-calc(120) 0 u.rem-calc(40) 0;

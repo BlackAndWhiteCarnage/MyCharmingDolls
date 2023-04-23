@@ -1,0 +1,38 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+@mixin image($aspectRatio: 0.8, $height: 92%) {
+  aspect-ratio: $aspectRatio / 1;
+
+  .image {
+    height: $height;
+  }
+}
+
+.wrapper {
+  background: color.get(white);
+  box-shadow: 0 u.rem-calc(4) u.rem-calc(40) rgba(88, 88, 88, 0.15);
+  padding: u.rem-calc(30) u.rem-calc(34);
+  width: 100%;
+
+  @include bp.down(sm) {
+    padding: u.rem-calc(25) u.rem-calc(15);
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.image {
+  position: relative;
+}
+
+.narrowVariant {
+  @include image();
+}
+
+.wideVariant {
+  @include image(1.3);
+}

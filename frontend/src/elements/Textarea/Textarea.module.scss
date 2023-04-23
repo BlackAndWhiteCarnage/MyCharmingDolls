@@ -1,0 +1,9 @@
+@use 'scss/placeholders/form-field';
+@use 'scss/unit' as u;
+
+.field {
+  @extend %form-field;
+
+  height: u.rem-calc(220);
+  resize: none;
+}

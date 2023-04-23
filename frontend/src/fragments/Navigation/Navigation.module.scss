@@ -1,0 +1,30 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/placeholders/navigation-item';
+@use 'scss/unit' as u;
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: u.rem-calc(10);
+  justify-content: space-between;
+  transform: translateX(u.rem-calc(20));
+  width: fit-content;
+
+  @include bp.down(lg) {
+    transform: translateX(u.rem-calc(-10));
+  }
+}
+
+.linksList {
+  display: flex;
+  gap: u.rem-calc(15);
+  height: fit-content;
+  list-style: none;
+  margin-left: u.rem-calc(16);
+}
+
+.link {
+  @extend %navigation-item;
+
+  width: fit-content;
+}
