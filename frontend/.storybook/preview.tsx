@@ -8,7 +8,7 @@ import React, { FC } from 'react';
 /**
  * Internal dependencies
  */
-import '../app/scss/storybook.scss';
+import '../src/scss/storybook.scss';
 import viewports from './viewports';
 
 export const parameters: Parameters = {
