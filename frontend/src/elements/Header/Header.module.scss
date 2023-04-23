@@ -2,6 +2,7 @@
 
 .title {
   color: var(--theme-color-primary);
+  transition: color 0.5s;
 
   @include bp.down(lg) {
     text-align: center;
@@ -10,4 +11,5 @@
 
 .hasSecondaryColor {
   color: var(--theme-color-secondary);
+  transition: color 0.5s;
 }

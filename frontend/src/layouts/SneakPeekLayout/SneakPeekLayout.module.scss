@@ -54,16 +54,6 @@
   pointer-events: all;
 }
 
-.nextSlide {
-  transform: scale(1.2) rotate(45deg) !important;
-  transform-origin: bottom left;
-}
-
-.lastSlide {
-  transform: scale(1.2) rotate(-45deg) !important;
-  transform-origin: bottom left;
-}
-
 .content {
   display: flex;
   flex-direction: column;

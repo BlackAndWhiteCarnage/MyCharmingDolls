@@ -33,7 +33,6 @@
   border: none;
   border: u.rem-calc(2) solid transparent;
   border-radius: u.rem-calc(35);
-  box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(88, 88, 88, 0.15);
   cursor: pointer;
   display: flex;
   font-family: font.get(secondary);
@@ -41,14 +40,13 @@
   gap: u.rem-calc(10);
   justify-content: center;
   padding: u.rem-calc(10) u.rem-calc(18);
-  transition: box-shadow 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+  transition: color 0.5s, background 0.5s, transform 0.2s;
 
   @include bp.down(xs) {
     padding: u.rem-calc(11) u.rem-calc(16);
   }
 
   &:hover {
-    box-shadow: 0 u.rem-calc(4) u.rem-calc(20) rgba(88, 88, 88, 0.4);
     transform: scale(1.02);
   }
 

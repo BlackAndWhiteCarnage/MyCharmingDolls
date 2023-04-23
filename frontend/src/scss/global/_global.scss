@@ -24,6 +24,7 @@ body {
   background: var(--theme-color-background);
   font-family: font.get(primary);
   overflow-x: hidden;
+  transition: background 0.5s;
 }
 
 html {

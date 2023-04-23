@@ -3,8 +3,8 @@
 
 .wrapper {
   background: var(--theme-color-background);
+  border: u.rem-calc(2) solid var(--theme-color-secondary);
   border-radius: u.rem-calc(12);
-  box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(0, 0, 0, 0.1);
   padding: u.rem-calc(20);
 
   @include bp.down(sm) {

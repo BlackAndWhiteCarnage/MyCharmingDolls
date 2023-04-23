@@ -12,22 +12,4 @@
       margin-bottom: u.rem-calc(10);
     }
   }
-
-  &::before {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0,
-      var(--theme-color-background) 100%
-    );
-    bottom: u.rem-calc(-2);
-    content: '';
-    height: u.rem-calc(82);
-    left: 0;
-    position: absolute;
-    width: 100%;
-
-    @include bp.down(sm) {
-      height: u.rem-calc(50);
-    }
-  }
 }

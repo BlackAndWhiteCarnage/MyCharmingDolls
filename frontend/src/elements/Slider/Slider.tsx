@@ -27,6 +27,7 @@ const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
 				rotateYMax={6}
 				rotateXMax={6}
 				shadow={false}
+				highlight={false}
 				className={classes.innerWrap}
 			>
 				<Swiper

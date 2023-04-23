@@ -10,17 +10,18 @@
 
 .label {
   color: var(--theme-color-primary);
+  transition: color 0.5s;
 }
 
 .switch {
   align-items: center;
   background: var(--theme-color-background);
   border-radius: u.rem-calc(35);
-  box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(88, 88, 88, 0.2);
   display: flex;
   max-height: u.rem-calc(28);
   padding: u.rem-calc(8) u.rem-calc(4);
   position: relative;
+  transition: background 0.5s;
   width: fit-content;
   z-index: 2;
 }
@@ -33,12 +34,13 @@
   font-family: font.get(primary);
   padding: u.rem-calc(2) u.rem-calc(8);
   position: relative;
+  transition: color 0.5s;
   white-space: nowrap;
 }
 
 .isActive .item {
   color: var(--theme-color-background);
-  transition: 0.25s ease;
+  transition: color 0.5s;
 }
 
 .wrap {
@@ -52,6 +54,6 @@
   border-radius: u.rem-calc(35);
   min-height: u.rem-calc(22);
   position: absolute;
-  transition: 0.25s cubic-bezier(0.4, 1.35, 0.55, 1);
+  transition: 0.25s cubic-bezier(0.4, 1.35, 0.55, 1), background 0.5s;
   z-index: -1;
 }

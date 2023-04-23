@@ -2,12 +2,12 @@
 
 .popover {
   background: var(--theme-color-background);
+  border: u.rem-calc(2) solid var(--theme-color-secondary);
   border-radius: u.rem-calc(12);
-  box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(88, 88, 88, 0.15);
   opacity: 0;
   pointer-events: none;
   position: relative;
-  transition: opacity 0.25s;
+  transition: opacity 0.25s, background 0.5s, border-color 0.5s;
   z-index: 9999;
 }
 

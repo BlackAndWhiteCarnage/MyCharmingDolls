@@ -11,6 +11,7 @@ import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
  * Internal dependencies
  */
 import { Button, Header, ImagesPack, SneakPeek, Info } from '@/elements';
+import { changeTheme } from '@/utils';
 import { DollsProps } from '@/pages/dolls/[doll]';
 import { useDolls, useUpdateUrl, useFindDollIndex } from '@/hooks';
 import classes from './SneakPeekLayout.module.scss';
@@ -93,6 +94,9 @@ const SneakPeekLayout: FC<{
 					images,
 					slug: dollSlug,
 					isSold,
+					primaryColor,
+					secondaryColor,
+					backgroundColor,
 				} = data.attributes;
 
 				return (
@@ -101,60 +105,69 @@ const SneakPeekLayout: FC<{
 						className={classes.container}
 						data-history={dollSlug}
 					>
-						{({ isActive, isNext, isPrev }) => (
-							<div
-								data-history={`dolls/${dollSlug}`}
-								className={cx('wrapper', {
-									middleSlide: isActive,
-									nextSlide: isNext,
-									lastSlide: isPrev,
-								})}
-							>
-								<div className={classes.content}>
-									<Header title={`Hi I'm *${name}*`} />
-									<SneakPeek text={description} />
-									<div className={classes.buttons}>
-										<Button
-											hasArrow
-											className={classes.button}
-											href="/doll"
-										>
-											Read more & meet {name}
-										</Button>
-										{!isSold ? (
+						{({ isActive, isNext, isPrev }) => {
+							isActive &&
+								changeTheme(
+									primaryColor,
+									secondaryColor,
+									backgroundColor
+								);
+
+							return (
+								<div
+									data-history={`dolls/${dollSlug}`}
+									className={cx('wrapper', {
+										middleSlide: isActive,
+										nextSlide: isNext,
+										lastSlide: isPrev,
+									})}
+								>
+									<div className={classes.content}>
+										<Header title={`Hi I'm *${name}*`} />
+										<SneakPeek text={description} />
+										<div className={classes.buttons}>
 											<Button
-												variant="secondary"
+												hasArrow
 												className={classes.button}
+												href="/doll"
 											>
-												Adopt her now!
+												Read more & meet {name}
 											</Button>
-										) : (
-											<Info
-												label={`${name} is already adopted or reserved!`}
-											/>
-										)}
+											{!isSold ? (
+												<Button
+													variant="secondary"
+													className={classes.button}
+												>
+													Adopt her now!
+												</Button>
+											) : (
+												<Info
+													label={`${name} is already adopted or reserved!`}
+												/>
+											)}
+										</div>
+									</div>
+									<div
+										id="images-pack-wrapper"
+										className={classes.images}
+									>
+										<ImagesPack
+											images={images.data
+												.filter(
+													({ attributes }) =>
+														attributes?.url
+												)
+												.slice(0, 3)
+												.map(({ attributes }) => ({
+													src: attributes?.url || '',
+													alt: '',
+												}))}
+											animate={isActive}
+										/>
 									</div>
 								</div>
-								<div
-									id="images-pack-wrapper"
-									className={classes.images}
-								>
-									<ImagesPack
-										images={images.data
-											.filter(
-												({ attributes }) =>
-													attributes?.url
-											)
-											.slice(0, 3)
-											.map(({ attributes }) => ({
-												src: attributes?.url || '',
-												alt: '',
-											}))}
-										animate={isActive}
-									/>
-								</div>
-							</div>
-						)}
+							);
+						}}
 					</SwiperSlide>
 				);
 			})}
