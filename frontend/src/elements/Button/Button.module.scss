@@ -81,4 +81,6 @@
     var(--theme-color-primary),
     var(--theme-color-background)
   );
+
+  border: u.rem-calc(2) solid var(--theme-color-primary);
 }
