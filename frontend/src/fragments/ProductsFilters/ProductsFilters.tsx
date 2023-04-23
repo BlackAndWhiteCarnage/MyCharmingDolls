@@ -13,7 +13,7 @@ import { SwitchProps } from '@/elements/Switch/Switch';
 import classes from './ProductsFilters.module.scss';
 
 export type ProductsFiltersProps = {
-	products: ProductsListProps;
+	products: ProductsListProps['products'];
 	switchProps: Omit<SwitchProps<Record<string, string>>, 'label'>;
 };
 
@@ -31,7 +31,7 @@ const ProductsFilters: FC<ProductsFiltersProps> = ({
 	>
 		<div className={classes.filters}>
 			<Switch label="Filter:" {...switchProps} />
-			<ProductsList {...products} />
+			<ProductsList products={products} />
 		</div>
 	</Popover>
 );

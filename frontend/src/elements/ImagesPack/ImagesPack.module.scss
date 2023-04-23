@@ -5,7 +5,7 @@
 @keyframes throw-image-1 {
   0% {
     bottom: -100%;
-    transform: scale(2) translateX(-50%) rotate(0deg) skew(10deg, 10deg);
+    transform: scale(1.2) translateX(-50%) rotate(0deg);
   }
 
   100% {
@@ -19,7 +19,7 @@
   0% {
     right: -20%;
     top: 100%;
-    transform: scale(2) translateX(-50%) rotate(30deg) skew(10deg, 30deg);
+    transform: scale(1.2) translateX(-50%) rotate(30deg);
   }
 
   60% {
@@ -36,7 +36,7 @@
 @keyframes throw-image-3 {
   0% {
     top: 100%;
-    transform: scale(2) translateX(-50%) rotate(30deg) skew(30deg, 20deg);
+    transform: scale(1.2) translateX(-50%) rotate(30deg);
   }
 
   60% {
@@ -61,21 +61,21 @@
 
   &.animate {
     .image-number-1 {
-      animation: throw-image-1 0.5s 1s forwards;
+      animation: throw-image-1 0.5s 0.5s forwards;
       opacity: 1;
-      transition: 0.35s 1s;
+      transition: 0.35s 0.5s;
     }
 
     .image-number-2 {
-      animation: throw-image-2 0.5s 0.6s forwards;
+      animation: throw-image-2 0.5s 0.45s forwards;
       opacity: 1;
-      transition: 0.35s 0.6s;
+      transition: 0.35s 0.45s;
     }
 
     .image-number-3 {
-      animation: throw-image-3 0.5s 0.8s forwards;
+      animation: throw-image-3 0.5s 0.4s forwards;
       opacity: 1;
-      transition: 0.35s 0.8s;
+      transition: 0.35s 0.4s;
     }
   }
 }

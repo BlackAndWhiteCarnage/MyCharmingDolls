@@ -1,9 +1,10 @@
 /**
  * External dependencies
  */
-import { FC, useEffect, useCallback, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import classnames from 'classnames/bind';
+import { useRouter } from 'next/router';
 import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
 
 /**
@@ -11,7 +12,7 @@ import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
  */
 import { Button, Header, ImagesPack, SneakPeek, Info } from '@/elements';
 import { DollsProps } from '@/pages/dolls/[doll]';
-import { useDolls, useUpdateUrl } from '@/hooks';
+import { useDolls, useUpdateUrl, useFindDollIndex } from '@/hooks';
 import classes from './SneakPeekLayout.module.scss';
 
 const cx = classnames.bind(classes);
@@ -27,31 +28,20 @@ const SneakPeekLayout: FC<{
 	const swiperRef = useRef<SwiperCore>();
 	const { dolls, loading, error } = useDolls();
 	const updateUrl = useUpdateUrl();
+	const { doll: currentUrl } = useRouter().query;
 
-	const hasInitialSlug = typeof initialSlug === 'string';
-
-	const findDollIndex = useCallback(
-		(slug: string) =>
-			dolls && dolls.length > 0
-				? dolls.findIndex((doll) => doll.attributes!.slug === slug)
-				: 0,
-		[dolls]
-	);
+	const findDollIndex =
+		useRef<(slug: string | string[] | undefined) => number>();
+	findDollIndex.current = useFindDollIndex();
 
 	useEffect(() => {
-		const handlePopState = () => {
+		if (findDollIndex.current) {
 			const slugFromUrl = window.location.pathname.split('/').pop();
 
 			slugFromUrl &&
-				swiperRef.current?.slideTo(findDollIndex(slugFromUrl));
-		};
-
-		window.addEventListener('popstate', handlePopState);
-
-		return () => {
-			window.removeEventListener('popstate', handlePopState);
-		};
-	}, [findDollIndex]);
+				swiperRef.current?.slideTo(findDollIndex.current(slugFromUrl));
+		}
+	}, [currentUrl]);
 
 	if (!dolls || loading) return <div>Loading...</div>;
 
@@ -64,14 +54,11 @@ const SneakPeekLayout: FC<{
 				onlyInViewport: false,
 				pageUpDown: true,
 			}}
-			speed={1400}
-			preventInteractionOnTransition
-			onTransitionEnd={(e) => {
+			speed={1000}
+			onSlideChange={(e) => {
 				const newUrl = `/dolls/${
 					e.slides[e.realIndex].dataset.history
 				}`;
-
-				const currentUrl = window.location.pathname;
 
 				swiperRef.current &&
 					newUrl !== currentUrl &&
@@ -87,13 +74,13 @@ const SneakPeekLayout: FC<{
 				},
 			}}
 			autoHeight
-			initialSlide={hasInitialSlug ? findDollIndex(initialSlug) : 0}
+			initialSlide={findDollIndex.current(initialSlug)}
 			slidesPerView={1}
 			centeredSlides
 			onInit={(instance) => {
 				swiperRef.current = instance;
 
-				!hasInitialSlug &&
+				typeof initialSlug !== 'string' &&
 					updateUrl('replace', `/dolls/${dolls[0].attributes!.slug}`);
 			}}
 		>
@@ -132,7 +119,7 @@ const SneakPeekLayout: FC<{
 											className={classes.button}
 											href="/doll"
 										>
-											Read more & meet Nora
+											Read more & meet {name}
 										</Button>
 										{!isSold ? (
 											<Button
