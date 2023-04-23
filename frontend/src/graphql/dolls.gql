@@ -23,6 +23,9 @@ query Dolls {
         workDone
         includedItems
         slug
+        primaryColor
+        secondaryColor
+        backgroundColor
       }
     }
   }

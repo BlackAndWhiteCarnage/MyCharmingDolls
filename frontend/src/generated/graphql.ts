@@ -74,6 +74,7 @@ export type DateTimeFilterInput = {
 
 export type Doll = {
 	__typename?: 'Doll';
+	backgroundColor: Scalars['String'];
 	createdAt?: Maybe<Scalars['DateTime']>;
 	description: Scalars['String'];
 	images: UploadFileRelationResponseCollection;
@@ -82,7 +83,9 @@ export type Doll = {
 	name: Scalars['String'];
 	placeholder: UploadFileEntityResponse;
 	price: Scalars['Int'];
+	primaryColor: Scalars['String'];
 	publishedAt?: Maybe<Scalars['DateTime']>;
+	secondaryColor: Scalars['String'];
 	slug: Scalars['String'];
 	updatedAt?: Maybe<Scalars['DateTime']>;
 	workDone: Scalars['String'];
@@ -113,6 +116,7 @@ export type DollEntityResponseCollection = {
 
 export type DollFiltersInput = {
 	and?: InputMaybe<Array<InputMaybe<DollFiltersInput>>>;
+	backgroundColor?: InputMaybe<StringFilterInput>;
 	createdAt?: InputMaybe<DateTimeFilterInput>;
 	description?: InputMaybe<StringFilterInput>;
 	id?: InputMaybe<IdFilterInput>;
@@ -122,13 +126,16 @@ export type DollFiltersInput = {
 	not?: InputMaybe<DollFiltersInput>;
 	or?: InputMaybe<Array<InputMaybe<DollFiltersInput>>>;
 	price?: InputMaybe<IntFilterInput>;
+	primaryColor?: InputMaybe<StringFilterInput>;
 	publishedAt?: InputMaybe<DateTimeFilterInput>;
+	secondaryColor?: InputMaybe<StringFilterInput>;
 	slug?: InputMaybe<StringFilterInput>;
 	updatedAt?: InputMaybe<DateTimeFilterInput>;
 	workDone?: InputMaybe<StringFilterInput>;
 };
 
 export type DollInput = {
+	backgroundColor?: InputMaybe<Scalars['String']>;
 	description?: InputMaybe<Scalars['String']>;
 	images?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
 	includedItems?: InputMaybe<Scalars['String']>;
@@ -136,7 +143,9 @@ export type DollInput = {
 	name?: InputMaybe<Scalars['String']>;
 	placeholder?: InputMaybe<Scalars['ID']>;
 	price?: InputMaybe<Scalars['Int']>;
+	primaryColor?: InputMaybe<Scalars['String']>;
 	publishedAt?: InputMaybe<Scalars['DateTime']>;
+	secondaryColor?: InputMaybe<Scalars['String']>;
 	slug?: InputMaybe<Scalars['String']>;
 	workDone?: InputMaybe<Scalars['String']>;
 };
@@ -992,6 +1001,9 @@ export type DollsQuery = {
 				workDone: string;
 				includedItems: string;
 				slug: string;
+				primaryColor: string;
+				secondaryColor: string;
+				backgroundColor: string;
 				images: {
 					__typename?: 'UploadFileRelationResponseCollection';
 					data: Array<{
@@ -1118,6 +1130,9 @@ export const DollsDocument = gql`
 					workDone
 					includedItems
 					slug
+					primaryColor
+					secondaryColor
+					backgroundColor
 				}
 			}
 		}
