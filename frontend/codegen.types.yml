@@ -1,6 +1,6 @@
 overwrite: true
 schema: graphql.schema.json
-documents: 'app/graphql/**/*.{gql,graphql}'
+documents: 'src/graphql/**/*.{gql,graphql}'
 generates:
   app/generated/graphql.ts:
     hooks:
