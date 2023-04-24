@@ -1,6 +1,7 @@
 export { default as Accordion } from './Accordion';
 export { default as AccordionItem } from './AccordionItem';
 export { default as Button } from './Button';
+export { default as DollsContextProvider } from './DollsContextProvider';
 export { default as Form } from './Form';
 export { default as Header } from './Header';
 export { default as ImagesPack } from './ImagesPack';

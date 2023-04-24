@@ -1,10 +1,10 @@
 /**
  * External dependencies
  */
-import { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import classnames from 'classnames/bind';
 import { useRouter } from 'next/router';
+import classnames from 'classnames/bind';
 import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
 
 /**
@@ -12,8 +12,9 @@ import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
  */
 import { Button, Header, ImagesPack, SneakPeek, Info } from '@/elements';
 import { changeTheme } from '@/utils';
+import { DollsContext } from '@/elements/DollsContextProvider/DollsContextProvider';
 import { DollsProps } from '@/pages/dolls/[doll]';
-import { useDolls, useUpdateUrl, useFindDollIndex } from '@/hooks';
+import { useUpdateUrl, useFindDollIndex } from '@/hooks';
 import classes from './SneakPeekLayout.module.scss';
 
 const cx = classnames.bind(classes);
@@ -26,8 +27,9 @@ const cx = classnames.bind(classes);
 const SneakPeekLayout: FC<{
 	initialSlug?: DollsProps['initialSlug'];
 }> = ({ initialSlug }) => {
+	const { dolls, loading, error } = useContext(DollsContext);
+
 	const swiperRef = useRef<SwiperCore>();
-	const { dolls, loading, error } = useDolls();
 	const updateUrl = useUpdateUrl();
 	const { doll: currentUrl } = useRouter().query;
 
@@ -44,7 +46,7 @@ const SneakPeekLayout: FC<{
 		}
 	}, [currentUrl]);
 
-	if (!dolls || loading) return <div>Loading...</div>;
+	if (dolls.length <= 0 || loading) return <div>Loading...</div>;
 
 	if (error) return <div>Error!</div>;
 

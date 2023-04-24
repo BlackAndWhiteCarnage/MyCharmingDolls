@@ -1,17 +1,17 @@
 /**
  * External dependencies
  */
-import { FC, PropsWithChildren } from 'react';
-import classnames from 'classnames/bind';
+import { FC, PropsWithChildren, useContext } from 'react';
 import { useRouter } from 'next/router';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
  */
 import { DefaultProps as SwithcProps } from '@/elements/Switch/Switch.stories';
+import { DollsContext } from '@/elements/DollsContextProvider/DollsContextProvider';
 import { Navigation } from '@/fragments';
 import { paths } from '@/config';
-import { useDolls } from '@/hooks';
 import classes from './WithNavigationLayout.module.scss';
 
 type WithNavigationLayoutProps = PropsWithChildren<{
@@ -26,8 +26,9 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 	showProductsList = false,
 	isFullScreen = false,
 }) => {
-	const { dolls, loading, error } = useDolls();
-	const { doll: currentUrl } = useRouter().query;
+	const { dolls, loading, error } = useContext(DollsContext);
+
+	const { doll } = useRouter().query;
 
 	return (
 		<div
@@ -36,23 +37,23 @@ const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
 			})}
 		>
 			<div className={classes.navigation}>
-				{!loading && dolls && dolls.length > 0 && !error ? (
-					<Navigation
-						showProductsList={showProductsList}
-						links={paths}
-						products={dolls?.map(({ attributes }) => ({
-							image: {
-								src:
-									attributes?.placeholder.data?.attributes
-										?.url || '',
-								alt: '',
-							},
-							isActive: currentUrl === attributes?.slug,
-							href: `/dolls/${attributes?.slug}`,
-						}))}
-						switchProps={SwithcProps}
-					/>
-				) : null}
+				<Navigation
+					showProductsList={
+						!loading && dolls && dolls.length > 0 && !error
+					}
+					links={paths}
+					products={dolls?.map(({ attributes }) => ({
+						image: {
+							src:
+								attributes?.placeholder.data?.attributes?.url ||
+								'',
+							alt: '',
+						},
+						isActive: doll === attributes?.slug,
+						href: `/dolls/${attributes?.slug}`,
+					}))}
+					switchProps={SwithcProps}
+				/>
 			</div>
 			{children}
 		</div>

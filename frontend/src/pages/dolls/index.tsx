@@ -1,12 +1,15 @@
 /**
  * Internal dependencies
  */
+import { DollsContextProvider } from '@/elements';
 import { SneakPeekLayout, WithNavigationLayout } from '@/layouts';
 
 const Dolls = () => (
-	<WithNavigationLayout isFullScreen showProductsList>
-		<SneakPeekLayout />
-	</WithNavigationLayout>
+	<DollsContextProvider>
+		<WithNavigationLayout isFullScreen showProductsList>
+			<SneakPeekLayout />
+		</WithNavigationLayout>
+	</DollsContextProvider>
 );
 
 export default Dolls;
