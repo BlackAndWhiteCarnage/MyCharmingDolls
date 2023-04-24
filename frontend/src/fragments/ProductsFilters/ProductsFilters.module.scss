@@ -6,8 +6,12 @@
   @extend %is-active;
 }
 
-.icon path {
-  fill: var(--theme-color-primary);
+.icon {
+  pointer-events: none;
+
+  path {
+    fill: var(--theme-color-primary);
+  }
 }
 
 .filters {
