@@ -2,8 +2,7 @@
 @use 'scss/breakpoint' as bp;
 
 .wrapper {
-  background: var(--theme-color-background);
-  border: u.rem-calc(2) solid var(--theme-color-secondary);
+  background: var(--theme-color-secondary);
   border-radius: u.rem-calc(12);
   padding: u.rem-calc(20);
 
@@ -27,9 +26,9 @@
 }
 
 .label {
-  color: var(--theme-color-primary);
+  color: var(--theme-color-background);
 }
 
 .price {
-  color: var(--theme-color-secondary);
+  color: var(--theme-color-background);
 }

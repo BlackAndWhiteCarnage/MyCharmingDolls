@@ -9,7 +9,7 @@
 }
 
 .label {
-  color: var(--theme-color-primary);
+  color: var(--theme-color-background);
   transition: color 0.5s;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .isActive .item {
-  color: var(--theme-color-background);
+  color: var(--theme-color-primary);
   transition: color 0.5s;
 }
 
