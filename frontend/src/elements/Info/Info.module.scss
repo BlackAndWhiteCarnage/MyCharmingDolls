@@ -3,11 +3,15 @@
 
 .info {
   align-items: center;
-  color: color.get(red);
+  color: var(--theme-color-primary);
   display: flex;
   gap: u.rem-calc(12);
 }
 
 .icon {
   width: u.rem-calc(20);
+
+  path {
+    fill: var(--theme-color-primary);
+  }
 }
