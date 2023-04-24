@@ -1032,6 +1032,53 @@ export type DollsQuery = {
 	} | null;
 };
 
+export type GetDollsBySoldStatusQueryVariables = Exact<{
+	status: Scalars['Boolean'];
+}>;
+
+export type GetDollsBySoldStatusQuery = {
+	__typename?: 'Query';
+	dolls?: {
+		__typename?: 'DollEntityResponseCollection';
+		data: Array<{
+			__typename?: 'DollEntity';
+			attributes?: {
+				__typename?: 'Doll';
+				name: string;
+				isSold: boolean;
+				description: string;
+				price: number;
+				workDone: string;
+				includedItems: string;
+				slug: string;
+				primaryColor: string;
+				secondaryColor: string;
+				backgroundColor: string;
+				images: {
+					__typename?: 'UploadFileRelationResponseCollection';
+					data: Array<{
+						__typename?: 'UploadFileEntity';
+						attributes?: {
+							__typename?: 'UploadFile';
+							url: string;
+						} | null;
+					}>;
+				};
+				placeholder: {
+					__typename?: 'UploadFileEntityResponse';
+					data?: {
+						__typename?: 'UploadFileEntity';
+						attributes?: {
+							__typename?: 'UploadFile';
+							url: string;
+						} | null;
+					} | null;
+				};
+			} | null;
+		}>;
+	} | null;
+};
+
 export const GetDollBySlugDocument = gql`
 	query getDollBySlug($slug: String!) {
 		dolls(filters: { slug: { eq: $slug } }) {
@@ -1183,4 +1230,89 @@ export type DollsLazyQueryHookResult = ReturnType<typeof useDollsLazyQuery>;
 export type DollsQueryResult = Apollo.QueryResult<
 	DollsQuery,
 	DollsQueryVariables
+>;
+export const GetDollsBySoldStatusDocument = gql`
+	query getDollsBySoldStatus($status: Boolean!) {
+		dolls(filters: { isSold: { eq: $status } }) {
+			data {
+				attributes {
+					name
+					isSold
+					description
+					images {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
+					placeholder {
+						data {
+							attributes {
+								url
+							}
+						}
+					}
+					price
+					workDone
+					includedItems
+					slug
+					primaryColor
+					secondaryColor
+					backgroundColor
+				}
+			}
+		}
+	}
+`;
+
+/**
+ * __useGetDollsBySoldStatusQuery__
+ *
+ * To run a query within a React component, call `useGetDollsBySoldStatusQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetDollsBySoldStatusQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetDollsBySoldStatusQuery({
+ *   variables: {
+ *      status: // value for 'status'
+ *   },
+ * });
+ */
+export function useGetDollsBySoldStatusQuery(
+	baseOptions: Apollo.QueryHookOptions<
+		GetDollsBySoldStatusQuery,
+		GetDollsBySoldStatusQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useQuery<
+		GetDollsBySoldStatusQuery,
+		GetDollsBySoldStatusQueryVariables
+	>(GetDollsBySoldStatusDocument, options);
+}
+export function useGetDollsBySoldStatusLazyQuery(
+	baseOptions?: Apollo.LazyQueryHookOptions<
+		GetDollsBySoldStatusQuery,
+		GetDollsBySoldStatusQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useLazyQuery<
+		GetDollsBySoldStatusQuery,
+		GetDollsBySoldStatusQueryVariables
+	>(GetDollsBySoldStatusDocument, options);
+}
+export type GetDollsBySoldStatusQueryHookResult = ReturnType<
+	typeof useGetDollsBySoldStatusQuery
+>;
+export type GetDollsBySoldStatusLazyQueryHookResult = ReturnType<
+	typeof useGetDollsBySoldStatusLazyQuery
+>;
+export type GetDollsBySoldStatusQueryResult = Apollo.QueryResult<
+	GetDollsBySoldStatusQuery,
+	GetDollsBySoldStatusQueryVariables
 >;

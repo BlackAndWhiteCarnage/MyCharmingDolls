@@ -1,0 +1,32 @@
+query getDollsBySoldStatus($status: Boolean!) {
+  dolls(filters: { isSold: { eq: $status } }) {
+    data {
+      attributes {
+        name
+        isSold
+        description
+        images {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        placeholder {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        price
+        workDone
+        includedItems
+        slug
+        primaryColor
+        secondaryColor
+        backgroundColor
+      }
+    }
+  }
+}
