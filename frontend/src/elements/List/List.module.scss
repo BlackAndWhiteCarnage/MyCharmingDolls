@@ -1,13 +1,25 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/color';
 @use 'scss/unit' as u;
+@use 'scss/font';
 
 .list {
   li {
+    @include font.size(18, 18);
+
+    font-weight: bold;
     color: var(--theme-color-primary);
 
+    @include bp.down(xs) {
+      @include font.size(14, 14);
+    }
+
     &:not(:last-child) {
-      margin-bottom: u.rem-calc(12);
+      margin-bottom: u.rem-calc(20);
+
+      @include bp.down(xs) {
+        margin-bottom: u.rem-calc(15);
+      }
     }
 
     &::marker {
@@ -15,7 +27,7 @@
     }
 
     &::before {
-      background: var(--theme-color-secondary);
+      background: var(--theme-color-primary);
       border-radius: 50%;
       content: '';
       display: inline-block;
