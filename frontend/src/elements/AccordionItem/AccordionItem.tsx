@@ -32,7 +32,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
 			contentRef.current.removeAttribute('style');
 			contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
 		}
-	});
+	}, true);
 
 	return (
 		<div
