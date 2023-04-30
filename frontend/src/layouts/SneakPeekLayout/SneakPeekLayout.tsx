@@ -13,7 +13,7 @@ import SwiperCore, { Mousewheel, Keyboard } from 'swiper';
 import { Button, Header, ImagesPack, SneakPeek, Info } from '@/elements';
 import { changeTheme } from '@/utils';
 import { DollsContext } from '@/elements/DollsContextProvider/DollsContextProvider';
-import { DollsProps } from '@/pages/dolls/[doll]';
+import { DollsProps } from '@/pages/dolls/[filter]/[doll]';
 import { useUpdateUrl, useFindDollIndex } from '@/hooks';
 import classes from './SneakPeekLayout.module.scss';
 
@@ -27,28 +27,42 @@ const cx = classnames.bind(classes);
 const SneakPeekLayout: FC<{
 	initialSlug?: DollsProps['initialSlug'];
 }> = ({ initialSlug }) => {
-	const { dolls, loading, error } = useContext(DollsContext);
+	const { filteredDolls, loading, error } = useContext(DollsContext);
 
 	const swiperRef = useRef<SwiperCore>();
 	const updateUrl = useUpdateUrl();
-	const { doll: currentUrl } = useRouter().query;
+	const { doll: currentDoll, filter } = useRouter().query;
 
 	const findDollIndex =
 		useRef<(slug: string | string[] | undefined) => number>();
 	findDollIndex.current = useFindDollIndex();
 
 	useEffect(() => {
-		if (findDollIndex.current) {
-			const slugFromUrl = window.location.pathname.split('/').pop();
+		!currentDoll &&
+			filteredDolls?.length &&
+			updateUrl(
+				'replace',
+				`/dolls/${filter}/${filteredDolls[0].attributes?.slug}`
+			);
+	}, [currentDoll, filteredDolls, initialSlug, filter, updateUrl]);
 
-			slugFromUrl &&
-				swiperRef.current?.slideTo(findDollIndex.current(slugFromUrl));
-		}
-	}, [currentUrl]);
+	useEffect(() => {
+		findDollIndex.current &&
+			currentDoll &&
+			filteredDolls &&
+			swiperRef.current?.slideTo(
+				filteredDolls.findIndex(
+					(doll) => doll.attributes!.slug === initialSlug
+				)
+			);
+	}, [currentDoll, filteredDolls, initialSlug]);
 
-	if (dolls.length <= 0 || loading) return <div>Loading...</div>;
+	if (!filteredDolls || !filteredDolls.length || loading)
+		return <div>Loading...</div>;
 
 	if (error) return <div>Error!</div>;
+
+	console.log(findDollIndex.current(initialSlug));
 
 	return (
 		<Swiper
@@ -59,12 +73,12 @@ const SneakPeekLayout: FC<{
 			}}
 			speed={1000}
 			onSlideChange={(e) => {
-				const newUrl = `/dolls/${
+				const newUrl = `/dolls/${filter}/${
 					e.slides[e.realIndex].dataset.history
 				}`;
 
 				swiperRef.current &&
-					newUrl !== currentUrl &&
+					newUrl !== currentDoll &&
 					updateUrl('push', newUrl);
 			}}
 			modules={[Mousewheel, Keyboard]}
@@ -80,14 +94,9 @@ const SneakPeekLayout: FC<{
 			initialSlide={findDollIndex.current(initialSlug)}
 			slidesPerView={1}
 			centeredSlides
-			onInit={(instance) => {
-				swiperRef.current = instance;
-
-				typeof initialSlug !== 'string' &&
-					updateUrl('replace', `/dolls/${dolls[0].attributes!.slug}`);
-			}}
+			onInit={(e) => (swiperRef.current = e)}
 		>
-			{dolls?.map((data, index) => {
+			{filteredDolls?.map((data, index) => {
 				if (!data.attributes) return null;
 
 				const {
@@ -117,7 +126,7 @@ const SneakPeekLayout: FC<{
 
 							return (
 								<div
-									data-history={`dolls/${dollSlug}`}
+									data-history={`dolls/${filter}/${dollSlug}`}
 									className={cx('wrapper', {
 										middleSlide: isActive,
 										nextSlide: isNext,

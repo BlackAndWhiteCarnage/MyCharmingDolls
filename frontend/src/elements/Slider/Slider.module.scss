@@ -27,6 +27,10 @@
     position: static;
   }
 
+  :global(.swiper) {
+    overflow: visible !important;
+  }
+
   :global(.swiper-pagination-bullet-active) {
     background: var(--theme-color-secondary) !important;
   }

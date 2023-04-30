@@ -49,8 +49,6 @@ const WideLayout = ({ slug }: { slug: string }) => {
 		images,
 	} = dollAttributes;
 
-	images.data.map(({ attributes }) => console.log(attributes?.url));
-
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.slider}>

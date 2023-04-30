@@ -2,19 +2,20 @@
  * External dependencies
  */
 import { NextPage, NextPageContext } from 'next';
+
+/**
+ * Internal dependencies
+ */
 import { SneakPeekLayout, WithNavigationLayout } from '@/layouts';
-import { DollsContextProvider } from '@/elements';
 
 export type DollsProps = {
 	initialSlug: string | string[] | undefined;
 };
 
 const Dolls: NextPage<DollsProps> = ({ initialSlug }) => (
-	<DollsContextProvider>
-		<WithNavigationLayout isFullScreen showProductsList>
-			<SneakPeekLayout initialSlug={initialSlug} />
-		</WithNavigationLayout>
-	</DollsContextProvider>
+	<WithNavigationLayout isFullScreen>
+		<SneakPeekLayout initialSlug={initialSlug} />
+	</WithNavigationLayout>
 );
 
 Dolls.getInitialProps = async ({ query }: NextPageContext) => {

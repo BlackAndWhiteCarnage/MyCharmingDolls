@@ -1,11 +1,21 @@
-import { useDolls } from '@/hooks';
+/**
+ * External dependencies
+ */
+import { useContext } from 'react';
+
+/**
+ * Internal dependencies
+ */
+import { DollsContext } from '@/elements/DollsContextProvider/DollsContextProvider';
 
 const useFindDollIndex = () => {
-	const { dolls } = useDolls();
+	const { filteredDolls } = useContext(DollsContext);
+
+	console.log(filteredDolls);
 
 	const findDollIndex = (slug: string | string[] | undefined) =>
-		typeof slug === 'string' && dolls
-			? dolls.findIndex((doll) => doll.attributes!.slug === slug)
+		typeof slug === 'string' && filteredDolls
+			? filteredDolls.findIndex((doll) => doll.attributes!.slug === slug)
 			: 0;
 
 	return findDollIndex;

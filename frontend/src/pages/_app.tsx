@@ -8,6 +8,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 /**
  * Internal dependencies
  */
+import { DollsContextProvider } from '@/elements';
 import '@/scss/index.scss';
 
 type ComponentWithLayout = AppProps & {
@@ -17,13 +18,15 @@ type ComponentWithLayout = AppProps & {
 };
 
 const client = new ApolloClient({
-	uri: 'http://localhost:4000/graphql', // adres endpointu GraphQL
+	uri: 'http://localhost:4000/graphql',
 	cache: new InMemoryCache(),
 });
 
 const App: FC<ComponentWithLayout> = ({ Component, pageProps }) => (
 	<ApolloProvider client={client}>
-		<Component {...pageProps} />
+		<DollsContextProvider>
+			<Component {...pageProps} />
+		</DollsContextProvider>
 	</ApolloProvider>
 );
 

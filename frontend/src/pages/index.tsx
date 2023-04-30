@@ -1,3 +1,6 @@
+/**
+ * Internal dependencies
+ */
 import { NarrowLayout, WithNavigationLayout } from '@/layouts';
 
 const Doll = () => (
