@@ -70,6 +70,7 @@
   }
 
   @include bp.down(xs) {
+    align-items: flex-start;
     margin-top: u.rem-calc(40);
   }
 }
@@ -96,6 +97,7 @@
   }
 
   @include bp.down(xs) {
+    margin-top: 0;
     min-height: u.rem-calc(400);
   }
 }
