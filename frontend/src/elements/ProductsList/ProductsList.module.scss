@@ -1,4 +1,5 @@
 @use 'scss/color';
+@use 'scss/config/variables' as v;
 @use 'scss/unit' as u;
 
 .wrapper {
@@ -26,6 +27,7 @@
   overflow: hidden;
   transition: 0.2s;
   width: u.rem-calc(48);
+  box-shadow: v.$shadow;
 
   &:hover {
     opacity: 1;
@@ -33,7 +35,7 @@
 }
 
 .isActive {
-  border: u.rem-calc(3) solid var(--theme-color-background);
+  border: u.rem-calc(3) solid var(--theme-color-secondary);
   opacity: 1;
 }
 

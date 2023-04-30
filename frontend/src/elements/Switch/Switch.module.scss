@@ -1,4 +1,5 @@
 @use 'scss/color';
+@use 'scss/config/variables' as v;
 @use 'scss/font';
 @use 'scss/unit' as u;
 
@@ -9,7 +10,7 @@
 }
 
 .label {
-  color: var(--theme-color-background);
+  color: var(--theme-color-primary);
   transition: color 0.5s;
 }
 
@@ -24,6 +25,7 @@
   transition: background 0.5s;
   width: fit-content;
   z-index: 2;
+  box-shadow: v.$shadow;
 }
 
 .item {
@@ -39,7 +41,7 @@
 }
 
 .isActive .item {
-  color: var(--theme-color-primary);
+  color: var(--theme-color-background);
   transition: color 0.5s;
 }
 

@@ -35,10 +35,9 @@ const WideLayout = ({ slug }: { slug: string }) => {
 
 	useEffect(() => {
 		if (dollAttributes) {
-			const { primaryColor, secondaryColor, backgroundColor } =
-				dollAttributes;
+			const { color } = dollAttributes;
 
-			changeTheme(primaryColor, secondaryColor, backgroundColor);
+			changeTheme(color);
 		}
 	}, [dollAttributes]);
 

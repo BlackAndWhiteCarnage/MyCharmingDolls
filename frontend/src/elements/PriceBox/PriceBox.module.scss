@@ -1,10 +1,12 @@
 @use 'scss/unit' as u;
 @use 'scss/breakpoint' as bp;
+@use 'scss/config/variables' as v;
 
 .wrapper {
-  background: var(--theme-color-secondary);
+  background: var(--theme-color-background);
   border-radius: u.rem-calc(12);
   padding: u.rem-calc(20);
+  box-shadow: v.$shadow;
 
   @include bp.down(sm) {
     padding: u.rem-calc(15);
@@ -26,9 +28,9 @@
 }
 
 .label {
-  color: var(--theme-color-background);
+  color: var(--theme-color-primary);
 }
 
 .price {
-  color: var(--theme-color-background);
+  color: var(--theme-color-primary);
 }

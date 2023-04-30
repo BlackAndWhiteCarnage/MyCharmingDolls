@@ -8,7 +8,7 @@
     @include font.size(18, 18);
 
     font-weight: bold;
-    color: var(--theme-color-background);
+    color: var(--theme-color-primary);
 
     @include bp.down(xs) {
       @include font.size(14, 14);
@@ -27,7 +27,7 @@
     }
 
     &::before {
-      background: var(--theme-color-background);
+      background: var(--theme-color-primary);
       border-radius: 50%;
       content: '';
       display: inline-block;

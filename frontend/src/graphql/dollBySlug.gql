@@ -16,9 +16,7 @@ query getDollBySlug($slug: String!) {
         workDone
         includedItems
         slug
-        primaryColor
-        secondaryColor
-        backgroundColor
+        color
       }
     }
   }

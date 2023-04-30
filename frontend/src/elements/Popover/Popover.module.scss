@@ -1,7 +1,9 @@
+@use 'scss/config/variables' as v;
 @use 'scss/unit' as u;
 
 .popover {
-  background: var(--theme-color-primary);
+  background: var(--theme-color-background);
+  box-shadow: v.$shadow;
   border-radius: u.rem-calc(12);
   opacity: 0;
   pointer-events: none;

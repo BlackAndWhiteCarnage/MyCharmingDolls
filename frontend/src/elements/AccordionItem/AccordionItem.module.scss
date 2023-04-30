@@ -1,5 +1,6 @@
 @use 'scss/breakpoint' as bp;
 @use 'scss/color';
+@use 'scss/config/variables' as v;
 @use 'scss/font';
 @use 'scss/unit' as u;
 
@@ -76,10 +77,11 @@ $transition: 0.25s;
 }
 
 .wrapper {
-  background: var(--theme-color-primary);
+  background: var(--theme-color-background);
   border-radius: $border-radius;
   overflow: hidden;
   transition: $transition;
+  box-shadow: v.$shadow;
 
   &:not(.isOpen) .content {
     height: 0 !important;

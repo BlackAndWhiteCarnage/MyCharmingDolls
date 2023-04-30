@@ -1,7 +1,8 @@
 @use 'scss/breakpoint' as bp;
-@use 'scss/unit' as u;
-@use 'scss/font';
 @use 'scss/color';
+@use 'scss/config/variables' as v;
+@use 'scss/font';
+@use 'scss/unit' as u;
 
 @mixin colors(
   $background: var(--theme-color-secondary),
@@ -41,6 +42,7 @@
   justify-content: center;
   padding: u.rem-calc(10) u.rem-calc(18);
   transition: color 0.5s, background 0.5s, transform 0.2s;
+  box-shadow: v.$shadow;
 
   @include bp.down(xs) {
     padding: u.rem-calc(11) u.rem-calc(16);

@@ -11,8 +11,6 @@ import { DollsContext } from '@/elements/DollsContextProvider/DollsContextProvid
 const useFindDollIndex = () => {
 	const { filteredDolls } = useContext(DollsContext);
 
-	console.log(filteredDolls);
-
 	const findDollIndex = (slug: string | string[] | undefined) =>
 		typeof slug === 'string' && filteredDolls
 			? filteredDolls.findIndex((doll) => doll.attributes!.slug === slug)

@@ -3,7 +3,7 @@
 
 .info {
   align-items: center;
-  color: var(--theme-color-primary);
+  color: color.get(red);
   display: flex;
   gap: u.rem-calc(12);
 }
@@ -12,6 +12,6 @@
   width: u.rem-calc(20);
 
   path {
-    fill: var(--theme-color-primary);
+    fill: color.get(red);
   }
 }

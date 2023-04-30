@@ -600,7 +600,7 @@
         "description": null,
         "fields": [
           {
-            "name": "backgroundColor",
+            "name": "color",
             "description": null,
             "args": [],
             "type": {
@@ -781,22 +781,6 @@
             "deprecationReason": null
           },
           {
-            "name": "primaryColor",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "publishedAt",
             "description": null,
             "args": [],
@@ -804,22 +788,6 @@
               "kind": "SCALAR",
               "name": "DateTime",
               "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "secondaryColor",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -1006,7 +974,7 @@
             "deprecationReason": null
           },
           {
-            "name": "backgroundColor",
+            "name": "color",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -1130,35 +1098,11 @@
             "deprecationReason": null
           },
           {
-            "name": "primaryColor",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilterInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "publishedAt",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "DateTimeFilterInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "secondaryColor",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilterInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -1213,7 +1157,7 @@
         "fields": null,
         "inputFields": [
           {
-            "name": "backgroundColor",
+            "name": "color",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -1313,35 +1257,11 @@
             "deprecationReason": null
           },
           {
-            "name": "primaryColor",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "publishedAt",
             "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "DateTime",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "secondaryColor",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
               "ofType": null
             },
             "defaultValue": null,

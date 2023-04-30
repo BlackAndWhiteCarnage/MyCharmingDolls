@@ -62,8 +62,6 @@ const SneakPeekLayout: FC<{
 
 	if (error) return <div>Error!</div>;
 
-	console.log(findDollIndex.current(initialSlug));
-
 	return (
 		<Swiper
 			keyboard={{
@@ -105,9 +103,7 @@ const SneakPeekLayout: FC<{
 					images,
 					slug: dollSlug,
 					isSold,
-					primaryColor,
-					secondaryColor,
-					backgroundColor,
+					color,
 				} = data.attributes;
 
 				return (
@@ -117,12 +113,7 @@ const SneakPeekLayout: FC<{
 						data-history={dollSlug}
 					>
 						{({ isActive, isNext, isPrev }) => {
-							isActive &&
-								changeTheme(
-									primaryColor,
-									secondaryColor,
-									backgroundColor
-								);
+							isActive && changeTheme(color);
 
 							return (
 								<div

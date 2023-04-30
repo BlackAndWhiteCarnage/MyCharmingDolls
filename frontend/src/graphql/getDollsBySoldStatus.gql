@@ -23,9 +23,7 @@ query getDollsBySoldStatus($status: Boolean!) {
         workDone
         includedItems
         slug
-        primaryColor
-        secondaryColor
-        backgroundColor
+        color
       }
     }
   }

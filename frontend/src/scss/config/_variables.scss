@@ -37,6 +37,8 @@ $breakpoints: (
   xl: 1650,
 );
 
+$shadow: 0 u.rem-calc(4) u.rem-calc(20) 0 rgba(66, 68, 90, 0.15);
+
 $max-width: u.rem-calc(1600);
 $padding-y: u.rem-calc(100) 0 u.rem-calc(60) 0;
 $padding-y-mobile: u.rem-calc(120) 0 u.rem-calc(40) 0;
