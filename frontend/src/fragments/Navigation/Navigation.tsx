@@ -68,7 +68,7 @@ const Navigation: FC = () => {
 						}}
 					/>
 				) : (
-					<li>{link({ href: '/dolls', label: 'Dolls' })}</li>
+					<li>{link({ href: '/dolls/all', label: 'Dolls' })}</li>
 				)}
 			</ul>
 		</div>

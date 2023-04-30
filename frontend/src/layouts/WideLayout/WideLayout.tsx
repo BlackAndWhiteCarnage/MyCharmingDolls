@@ -1,4 +1,10 @@
 /**
+ * External dependencies
+ */
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+/**
  * Internal dependencies
  */
 import classes from './WideLayout.module.scss';
@@ -15,7 +21,6 @@ import {
 import PriceBox from '@/elements/PriceBox/PriceBox';
 import { useGetDollBySlugQuery } from '@/generated/graphql';
 import { changeTheme } from '@/utils';
-import { useEffect } from 'react';
 
 const WideLayout = ({ slug }: { slug: string }) => {
 	const { data, loading, error } = useGetDollBySlugQuery({
@@ -23,6 +28,8 @@ const WideLayout = ({ slug }: { slug: string }) => {
 			slug,
 		},
 	});
+
+	const { back, push } = useRouter();
 
 	const dollAttributes = data?.dolls?.data[0].attributes;
 
@@ -96,7 +103,20 @@ const WideLayout = ({ slug }: { slug: string }) => {
 							label={`${name} is already adopted or reserved!`}
 						/>
 					)}
-					<Button variant="secondary" href="/dolls">
+					<Button
+						variant="secondary"
+						onClick={() => {
+							if (!sessionStorage.getItem('alreadyVisited')) {
+								sessionStorage.setItem(
+									'alreadyVisited',
+									'visited'
+								);
+								push(`/dolls/all/${slug}`);
+							} else {
+								back();
+							}
+						}}
+					>
 						Browse other dolls
 					</Button>
 				</div>

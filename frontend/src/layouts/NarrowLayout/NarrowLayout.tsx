@@ -43,7 +43,7 @@ const NarrowLayout: FC = () => {
 					hasArrow
 					hasFullWidth
 					className={classes.ctaButton}
-					href="/dolls"
+					href="/dolls/all"
 				>
 					See My Workarts
 				</Button>
