@@ -22,4 +22,8 @@
     cursor: not-allowed;
     filter: blur(u.rem-calc(2));
   }
+
+  &.hasError {
+    border: u.rem-calc(2) solid color.get(red);
+  }
 }

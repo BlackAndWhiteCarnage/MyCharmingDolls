@@ -21,6 +21,14 @@ export const getEmailValidationRules = () => ({
 	},
 });
 
+export const getMessageValidationRules = () => ({
+	...getRequiredRule(validationErrors.required),
+	pattern: {
+		value: /^[\s\S]{30,}$/,
+		message: validationErrors.message.pattern,
+	},
+});
+
 export const getRequiredValidation = () => ({
 	...getRequiredRule(validationErrors.required),
 });

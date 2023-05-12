@@ -11,7 +11,6 @@ import classnames from 'classnames/bind';
 import classes from './Input.module.scss';
 
 export type InputProps = {
-	id: string;
 	name: string;
 	validation?: RegisterOptions;
 } & InputHTMLAttributes<HTMLInputElement>;
@@ -29,14 +28,12 @@ const Input: FC<InputProps> = ({
 	const hasError = formContext.control.getFieldState(name).error;
 
 	return (
-		<div
-			className={cx('input', className, {
-				hasError,
-			})}
-		>
+		<div className={cx('input', className)}>
 			<input
 				{...props}
-				className={cx('field', 'is-style-label')}
+				className={cx('field', 'is-style-label', {
+					hasError,
+				})}
 				type={type}
 				{...(formContext &&
 					validation &&

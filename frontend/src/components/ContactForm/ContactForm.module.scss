@@ -1,0 +1,33 @@
+@use 'scss/color';
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(20);
+  padding: u.rem-calc(40) u.rem-calc(20);
+  position: relative;
+}
+
+.submitFeedback {
+  align-items: center;
+  color: var(--theme-color-primary);
+  display: flex;
+  height: 100%;
+  left: 0;
+  padding: u.rem-calc(20);
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  border-radius: u.rem-calc(20);
+  backdrop-filter: blur(u.rem-calc(20));
+
+  &.success {
+    background: rgba(20, 255, 59, 0.45);
+  }
+
+  &.error {
+    background: rgba(255, 20, 20, 0.45);
+  }
+}
