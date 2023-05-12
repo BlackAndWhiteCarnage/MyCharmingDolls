@@ -1,23 +1,27 @@
 /**
  * External dependencies
  */
-import { NextPageContext } from 'next';
+import { NextPage, NextPageContext } from 'next';
 
 /**
  * Internal dependencies
  */
 import { ProductDetailsLayout, WithNavigationLayout } from '@/layouts';
 
-const Doll = ({ slug }: { slug: string }) => (
+type DollProps = {
+	slug: string | string[] | undefined;
+};
+
+const Doll: NextPage<DollProps> = ({ slug }) => (
 	<WithNavigationLayout>
-		<ProductDetailsLayout slug={slug} />
+		{typeof slug === 'string' && <ProductDetailsLayout slug={slug} />}
 	</WithNavigationLayout>
 );
 
-Doll.getInitialProps = async ({ query }: NextPageContext) => {
-	return {
-		slug: query.slug,
-	};
-};
+Doll.getInitialProps = async ({
+	query,
+}: NextPageContext): Promise<DollProps> => ({
+	slug: query.slug,
+});
 
 export default Doll;

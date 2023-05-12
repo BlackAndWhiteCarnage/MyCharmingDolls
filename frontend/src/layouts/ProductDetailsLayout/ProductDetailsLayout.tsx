@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 /**
@@ -21,7 +21,11 @@ import { useGetDollBySlugQuery } from '@/generated/graphql';
 import PriceBox from '@/components/PriceBox/PriceBox';
 import classes from './ProductDetailsLayout.module.scss';
 
-const ProductDetailsLayout = ({ slug }: { slug: string }) => {
+type ProductDetailsLayoutProps = {
+	slug: string;
+};
+
+const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 	const { data, loading, error } = useGetDollBySlugQuery({
 		variables: {
 			slug,
