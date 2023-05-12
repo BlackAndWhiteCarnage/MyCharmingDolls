@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 /**
  * Internal dependencies
  */
-import classes from './ProductDetailsLayout.module.scss';
 import {
 	Slider,
 	Header,
@@ -20,6 +19,7 @@ import {
 import { changeTheme } from '@/utils';
 import { useGetDollBySlugQuery } from '@/generated/graphql';
 import PriceBox from '@/components/PriceBox/PriceBox';
+import classes from './ProductDetailsLayout.module.scss';
 
 const ProductDetailsLayout = ({ slug }: { slug: string }) => {
 	const { data, loading, error } = useGetDollBySlugQuery({
