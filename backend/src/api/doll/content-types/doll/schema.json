@@ -58,15 +58,7 @@
         "images"
       ]
     },
-    "primaryColor": {
-      "type": "string",
-      "required": true
-    },
-    "secondaryColor": {
-      "type": "string",
-      "required": true
-    },
-    "backgroundColor": {
+    "color": {
       "type": "string",
       "required": true
     }
