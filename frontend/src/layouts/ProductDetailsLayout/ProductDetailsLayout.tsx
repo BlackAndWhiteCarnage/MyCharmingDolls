@@ -8,13 +8,14 @@ import { useRouter } from 'next/router';
  * Internal dependencies
  */
 import {
-	Slider,
-	Header,
-	Button,
-	Info,
-	Description,
 	Accordion,
+	Button,
+	ContactForm,
+	Description,
+	Header,
+	Info,
 	PolaroidImage,
+	Slider,
 } from '@/components';
 import { changeTheme } from '@/utils';
 import { useGetDollBySlugQuery } from '@/generated/graphql';
@@ -122,6 +123,10 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 						Browse other dolls
 					</Button>
 				</div>
+			</div>
+			<div className={classes.contactForm}>
+				<Header title="Any questions?" level={2} />
+				<ContactForm />
 			</div>
 		</div>
 	);
