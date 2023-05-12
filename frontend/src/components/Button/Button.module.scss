@@ -1,0 +1,88 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/color';
+@use 'scss/config/variables' as v;
+@use 'scss/font';
+@use 'scss/unit' as u;
+
+@mixin colors(
+  $background: var(--theme-color-secondary),
+  $color: var(--theme-color-background),
+  $background-hover: var(--theme-color-background),
+  $color-hover: var(--theme-color-secondary),
+  $border-hover: null
+) {
+  background: $background;
+  color: $color;
+
+  .arrow path {
+    fill: $color;
+  }
+
+  &:hover {
+    background: $background-hover;
+    border-color: $border-hover;
+    color: $color-hover;
+
+    .arrow path {
+      fill: $color-hover;
+    }
+  }
+}
+
+.button {
+  align-items: center;
+  border: none;
+  border: u.rem-calc(2) solid transparent;
+  border-radius: u.rem-calc(35);
+  box-shadow: v.$shadow;
+  cursor: pointer;
+  display: flex;
+  font-family: font.get(secondary);
+  font-weight: 400;
+  gap: u.rem-calc(10);
+  justify-content: center;
+  padding: u.rem-calc(10) u.rem-calc(18);
+  transition: color 0.5s, background 0.5s, transform 0.2s;
+
+  @include bp.down(xs) {
+    padding: u.rem-calc(11) u.rem-calc(16);
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:disabled {
+    filter: blur(u.rem-calc(1));
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+.hasFullWidth {
+  width: 100%;
+}
+
+.arrow {
+  height: u.rem-calc(13);
+  width: u.rem-calc(18);
+
+  path {
+    transition: 0.2s;
+  }
+}
+
+.primaryVariant {
+  @include colors($border-hover: var(--theme-color-secondary));
+}
+
+.secondaryVariant {
+  @include colors(
+    var(--theme-color-background),
+    var(--theme-color-primary),
+    var(--theme-color-primary),
+    var(--theme-color-background)
+  );
+
+  border: u.rem-calc(2) solid var(--theme-color-primary);
+}

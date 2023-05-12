@@ -1,34 +1,52 @@
 @use 'scss/breakpoint' as bp;
+@use 'scss/config/variables' as v;
 @use 'scss/unit' as u;
 
 .wrapper {
   margin: auto;
+  max-width: u.rem-calc(1600);
+  padding: 0 u.rem-calc(40);
 
-  &:not(.isFullScreen) {
-    max-width: u.rem-calc(1600);
-    padding: 0 u.rem-calc(40);
+  @include bp.down(md) {
+    padding: 0 u.rem-calc(20);
+  }
 
-    @include bp.down(md) {
-      padding: 0 u.rem-calc(20);
-    }
-
-    @include bp.down(sm) {
-      padding: 0 u.rem-calc(15);
-    }
+  @include bp.down(sm) {
+    padding: 0 u.rem-calc(15);
   }
 }
 
 .navigation {
   left: 50%;
+  left: u.rem-calc(20);
   margin: auto;
-  max-width: u.rem-calc(1600);
-  position: absolute;
+  position: fixed;
   top: u.rem-calc(20);
-  transform: translateX(-50%);
-  width: 100%;
   z-index: 9999;
 
-  @include bp.down(lg) {
-    padding-left: u.rem-calc(30);
+  @include bp.down(sm) {
+    left: u.rem-calc(10);
+    top: u.rem-calc(10);
+  }
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 u.rem-calc(20);
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    backdrop-filter: blur(u.rem-calc(15));
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: u.rem-calc(100);
+    box-shadow: v.$shadow;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
   }
 }

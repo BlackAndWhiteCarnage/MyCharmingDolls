@@ -2,7 +2,6 @@
  * Internal dependencies
  */
 import { validationErrors } from '@/config';
-import { validationPatterns } from '.';
 
 export const getRequiredRule = (
 	message: string = validationErrors.required,
@@ -19,13 +18,6 @@ export const getEmailValidationRules = () => ({
 	pattern: {
 		value: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/,
 		message: validationErrors.email.pattern,
-	},
-});
-
-export const getPhoneValidationRules = () => ({
-	pattern: {
-		value: validationPatterns.tel,
-		message: validationErrors.tel.pattern,
 	},
 });
 

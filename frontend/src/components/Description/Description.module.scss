@@ -1,0 +1,20 @@
+@use 'scss/unit' as u;
+@use 'scss/breakpoint' as bp;
+
+.wrapper {
+  color: var(--theme-color-primary);
+  position: relative;
+
+  p:not(:last-child) {
+    margin-bottom: u.rem-calc(20);
+
+    @include bp.down(xs) {
+      margin-bottom: u.rem-calc(10);
+    }
+  }
+
+  ul,
+  li {
+    padding-left: u.rem-calc(20);
+  }
+}

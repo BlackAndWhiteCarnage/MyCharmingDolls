@@ -6,11 +6,11 @@ import { NextPageContext } from 'next';
 /**
  * Internal dependencies
  */
-import { WideLayout, WithNavigationLayout } from '@/layouts';
+import { ProductDetailsLayout, WithNavigationLayout } from '@/layouts';
 
 const Doll = ({ slug }: { slug: string }) => (
 	<WithNavigationLayout>
-		<WideLayout slug={slug} />
+		<ProductDetailsLayout slug={slug} />
 	</WithNavigationLayout>
 );
 

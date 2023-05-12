@@ -1,0 +1,12 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: block;
+  transform: translateY(u.rem-calc(5));
+  width: u.rem-calc(100);
+
+  @include bp.down(sm) {
+    width: u.rem-calc(80);
+  }
+}

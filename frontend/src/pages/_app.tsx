@@ -8,7 +8,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 /**
  * Internal dependencies
  */
-import { DollsContextProvider } from '@/elements';
+import { DollsContextProvider } from '@/components';
 import '@/scss/index.scss';
 
 type ComponentWithLayout = AppProps & {

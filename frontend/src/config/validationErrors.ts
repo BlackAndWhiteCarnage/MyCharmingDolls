@@ -1,12 +1,7 @@
 const errors = {
 	email: {
 		required: 'Please provide an email.',
-		pattern: 'Please provide a valid email address.',
-	},
-	tel: {
-		required: 'Please provide your phone number.',
-		pattern: 'Phone number is invalid.',
-		min: 'Phone number is too short.',
+		pattern: 'Email address is invalid.',
 	},
 	required: 'This field is required.',
 } as const;

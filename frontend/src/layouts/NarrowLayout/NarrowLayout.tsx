@@ -7,7 +7,7 @@ import Atropos from 'atropos/react';
 /**
  * Internal dependencies
  */
-import { Button, Header, PolaroidImage, LinkedIcon } from '@/elements';
+import { Button, Header, PolaroidImage, LinkedIcon } from '@/components';
 import { changeTheme } from '@/utils';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
 import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';

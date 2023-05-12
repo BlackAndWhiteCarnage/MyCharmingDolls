@@ -2,32 +2,24 @@
  * External dependencies
  */
 import { FC, PropsWithChildren } from 'react';
-import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
  */
 
-import { Navigation } from '@/fragments';
+import { Navigation } from '@/components';
 import classes from './WithNavigationLayout.module.scss';
 
 type WithNavigationLayoutProps = PropsWithChildren<{
 	isFullScreen?: boolean;
 }>;
 
-const cx = classnames.bind(classes);
-
-const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({
-	children,
-	isFullScreen = false,
-}) => (
-	<div
-		className={cx('wrapper', {
-			isFullScreen,
-		})}
-	>
+const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({ children }) => (
+	<div className={classes.wrapper}>
 		<div className={classes.navigation}>
-			<Navigation />
+			<div className={classes.inner}>
+				<Navigation />
+			</div>
 		</div>
 		{children}
 	</div>
