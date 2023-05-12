@@ -18,6 +18,7 @@ import {
 } from '@/components';
 import { DollsContext } from '@/components/DollsContextProvider/DollsContextProvider';
 import classes from './ProductsLayout.module.scss';
+import { DollEntity } from '@/generated/graphql';
 
 const cx = classnames.bind(classes);
 
@@ -37,7 +38,11 @@ const ProductsLayout: FC = () => {
 	);
 };
 
-const Product = ({ data }: any) => {
+type ProductProps = {
+	data: DollEntity;
+};
+
+const Product: FC<ProductProps> = ({ data }) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const [element, view] = useInView({ threshold: 0.35 });
 

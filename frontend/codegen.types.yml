@@ -12,3 +12,6 @@ generates:
       - 'typescript-react-apollo':
           addDocBlocks: true
           withHooks: true
+    config:
+      maybeValue: 'T'
+      avoidOptionals: true
