@@ -2,7 +2,6 @@
  * External dependencies
  */
 import { FC, ReactElement } from 'react';
-import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
 import classnames from 'classnames/bind';
 
@@ -19,48 +18,37 @@ type SliderProps = {
 
 const cx = classnames.bind(classes);
 
-const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
-	return (
-		<div className={cx('wrapper', className)}>
-			<AtroposWrapper
-				rotateYMax={6}
-				rotateXMax={6}
-				className={classes.innerWrap}
-			>
-				<Swiper
-					modules={[Pagination]}
-					className={classes.swiperWrapper}
-					slidesPerView="auto"
-					centeredSlides
-					pagination={{
-						clickable: true,
-					}}
-					initialSlide={1}
-					slideToClickedSlide
-					{...props}
-				>
-					{children.map((item, index) => (
-						<SwiperSlide
-							key={index}
-							className={classes.slideWrapper}
+const Slider: FC<SliderProps> = ({ children, className, ...props }) => (
+	<AtroposWrapper
+		rotateYMax={6}
+		rotateXMax={6}
+		className={cx('wrapper', className)}
+	>
+		<Swiper
+			className={classes.swiperWrapper}
+			slidesPerView="auto"
+			centeredSlides
+			initialSlide={1}
+			slideToClickedSlide
+			{...props}
+		>
+			{children.map((item, index) => (
+				<SwiperSlide key={index} className={classes.slideWrapper}>
+					{({ isActive, isNext, isPrev }) => (
+						<div
+							className={cx('slide', {
+								isActive,
+								isNext,
+								isPrev,
+							})}
 						>
-							{({ isActive, isNext, isPrev }) => (
-								<div
-									className={cx('slide', {
-										middleSlide: isActive,
-										rightSlide: isNext,
-										leftSlide: isPrev,
-									})}
-								>
-									{item}
-								</div>
-							)}
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</AtroposWrapper>
-		</div>
-	);
-};
+							{item}
+						</div>
+					)}
+				</SwiperSlide>
+			))}
+		</Swiper>
+	</AtroposWrapper>
+);
 
 export default Slider;
