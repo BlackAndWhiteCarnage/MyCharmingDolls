@@ -16,6 +16,7 @@ export { default as Navigation } from './Navigation';
 export { default as PolaroidImage } from './PolaroidImage';
 export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
+export { default as Product } from './Product';
 export { default as ProductsFilters } from './ProductsFilters';
 export { default as ProductsList } from './ProductsList';
 export { default as Providers } from './Providers';
