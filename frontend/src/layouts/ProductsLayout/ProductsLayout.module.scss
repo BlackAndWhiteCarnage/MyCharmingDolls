@@ -17,10 +17,10 @@
   display: flex;
   gap: u.rem-calc(60);
   margin: auto;
-  min-height: 100vh;
   opacity: 0;
   padding: 0 u.rem-calc(40);
   transition: transform 0.8s, opacity 0.8s;
+  height: 100vh;
 
   @include bp.down(lg) {
     flex-direction: column;
