@@ -11,6 +11,8 @@
 
 .submitFeedback {
   align-items: center;
+  backdrop-filter: blur(u.rem-calc(20));
+  border-radius: u.rem-calc(20);
   color: var(--theme-color-primary);
   display: flex;
   height: 100%;
@@ -20,8 +22,6 @@
   text-align: center;
   top: 0;
   width: 100%;
-  border-radius: u.rem-calc(20);
-  backdrop-filter: blur(u.rem-calc(20));
 
   &.success {
     background: rgba(20, 255, 59, 0.45);

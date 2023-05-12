@@ -17,15 +17,15 @@
 }
 
 .navigation {
-  width: 100%;
-  max-width: u.rem-calc(1600);
   left: 50%;
-  transform: translateX(-50%);
-  padding: 0 u.rem-calc(70);
   margin: auto;
-  top: u.rem-calc(20);
-  z-index: 9999;
+  max-width: u.rem-calc(1600);
+  padding: 0 u.rem-calc(70);
   position: fixed;
+  top: u.rem-calc(20);
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 9999;
 
   @include bp.down(lg) {
     padding: 0 u.rem-calc(20);
