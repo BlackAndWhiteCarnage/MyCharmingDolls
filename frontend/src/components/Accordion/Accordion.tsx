@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { FC, useState, useEffect } from 'react';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
@@ -11,11 +12,14 @@ import { AccordionItem } from '@/components';
 import classes from './Accordion.module.scss';
 
 type AccordionProps = {
+	className?: string;
 	expanded?: number;
 	items: Array<Omit<AccordionItemProps, 'onToggle'>>;
 };
 
-const Accordion: FC<AccordionProps> = ({ expanded = 0, items }) => {
+const cx = classnames.bind(classes);
+
+const Accordion: FC<AccordionProps> = ({ className, expanded = 0, items }) => {
 	const [expandedItem, setExpandedItem] = useState<number>();
 
 	useEffect(
@@ -25,7 +29,7 @@ const Accordion: FC<AccordionProps> = ({ expanded = 0, items }) => {
 	);
 
 	return (
-		<div className={classes.wrapper}>
+		<div className={cx('wrapper', className)}>
 			{items.map((props, index) => (
 				<AccordionItem
 					{...props}

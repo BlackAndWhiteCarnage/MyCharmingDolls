@@ -13,12 +13,17 @@ import classes from './Description.module.scss';
 const cx = classnames.bind(classes);
 
 type DescriptionProps = {
+	className?: string;
 	limit?: boolean;
 	text: string;
 };
 
-const Description: FC<DescriptionProps> = ({ limit = false, text }) => (
-	<div className={cx('wrapper', 'is-style-p')}>
+const Description: FC<DescriptionProps> = ({
+	className,
+	limit = false,
+	text,
+}) => (
+	<div className={cx('wrapper', 'is-style-p', className)}>
 		<ReactMarkdown>
 			{limit
 				? text

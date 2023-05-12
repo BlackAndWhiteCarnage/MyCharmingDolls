@@ -25,7 +25,7 @@
 .inner {
   display: flex;
   gap: u.rem-calc(40);
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: relative;
 
   @include bp.down(xl) {
@@ -49,12 +49,8 @@
   }
 }
 
-.text {
+.description {
   @extend %text;
-}
-
-.textBlock {
-  @extend %text-block;
 }
 
 .accordions {
