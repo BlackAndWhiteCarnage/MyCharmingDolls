@@ -1,11 +1,11 @@
 /**
  * Internal dependencies
  */
-import { NarrowLayout, WithNavigationLayout } from '@/layouts';
+import { AboutMeLayout, WithNavigationLayout } from '@/layouts';
 
 const Doll = () => (
 	<WithNavigationLayout>
-		<NarrowLayout />
+		<AboutMeLayout />
 	</WithNavigationLayout>
 );
 

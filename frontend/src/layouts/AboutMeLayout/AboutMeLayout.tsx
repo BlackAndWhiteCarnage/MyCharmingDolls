@@ -17,10 +17,10 @@ import { changeTheme } from '@/utils';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
 import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';
 import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
-import classes from './NarrowLayout.module.scss';
+import classes from './AboutMeLayout.module.scss';
 import MyImage from '@/images/me.jpg';
 
-const NarrowLayout: FC = () => {
+const AboutMeLayout: FC = () => {
 	useEffect(() => {
 		changeTheme();
 	}, []);
@@ -99,4 +99,4 @@ const NarrowLayout: FC = () => {
 	);
 };
 
-export default NarrowLayout;
+export default AboutMeLayout;
