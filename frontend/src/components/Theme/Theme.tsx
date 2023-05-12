@@ -1,24 +1,25 @@
 /**
  * External dependencies
  */
-import { FC, PropsWithChildren } from 'react';
+import { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 export type ThemeProps = PropsWithChildren<{
 	background?: string;
 	className?: string;
 	primary?: string;
 	secondary?: string;
-}>;
+}> &
+	HTMLAttributes<HTMLDivElement>;
 
 const Theme: FC<ThemeProps> = ({
 	background = 'inherit',
 	children,
-	className,
 	primary = 'inherit',
 	secondary = 'inherit',
+	...props
 }) => (
 	<div
-		className={className}
+		{...props}
 		style={{
 			'--theme-color-background': background,
 			'--theme-color-primary': primary,

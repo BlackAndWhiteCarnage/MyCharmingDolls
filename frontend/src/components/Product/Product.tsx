@@ -40,52 +40,47 @@ const Product: FC<ProductProps> = ({ data }) => {
 	} = data.attributes;
 
 	return (
-		<Theme secondary={color}>
-			<div
-				id={dollSlug}
-				ref={element}
-				className={cx('wrapper', {
-					isInView: view,
-				})}
-			>
-				<div className={classes.content}>
-					<Header title={`Hi I'm *${name}*`} />
-					<Description text={description} limit />
-					<div className={classes.buttons}>
-						<Button
-							hasArrow
-							className={classes.button}
-							href={`/doll/${dollSlug}`}
-						>
-							Read more & meet {name}
+		<Theme
+			secondary={color}
+			id={dollSlug}
+			className={cx('wrapper', {
+				isInView: view,
+			})}
+		>
+			<div className={classes.content} ref={element}>
+				<Header title={`Hi I'm *${name}*`} />
+				<Description text={description} limit />
+				<div className={classes.buttons}>
+					<Button
+						hasArrow
+						className={classes.button}
+						href={`/doll/${dollSlug}`}
+					>
+						Read more & meet {name}
+					</Button>
+					{!isSold ? (
+						<Button variant="secondary" className={classes.button}>
+							Adopt her now!
 						</Button>
-						{!isSold ? (
-							<Button
-								variant="secondary"
-								className={classes.button}
-							>
-								Adopt her now!
-							</Button>
-						) : (
-							<Info
-								label={`${name} is already adopted or reserved!`}
-							/>
-						)}
-					</div>
+					) : (
+						<Info
+							label={`${name} is already adopted or reserved!`}
+						/>
+					)}
 				</div>
-				<div className={classes.images} ref={ref}>
-					<ImagesPack
-						parentRef={ref}
-						images={images.data
-							.filter(({ attributes }) => attributes.url)
-							.slice(0, 3)
-							.map(({ attributes }) => ({
-								src: attributes.url,
-								alt: '',
-							}))}
-						animate={view}
-					/>
-				</div>
+			</div>
+			<div className={classes.images} ref={ref}>
+				<ImagesPack
+					parentRef={ref}
+					images={images.data
+						.filter(({ attributes }) => attributes.url)
+						.slice(0, 3)
+						.map(({ attributes }) => ({
+							src: attributes.url,
+							alt: '',
+						}))}
+					animate={view}
+				/>
 			</div>
 		</Theme>
 	);
