@@ -2,6 +2,7 @@ export { default as Accordion } from './Accordion';
 export { default as AccordionItem } from './AccordionItem';
 export { default as AtroposWrapper } from './AtroposWrapper';
 export { default as Button } from './Button';
+export { default as ContactForm } from './ContactForm';
 export { default as Description } from './Description';
 export { default as DollsContextProvider } from './DollsContextProvider';
 export { default as Form } from './Form';
