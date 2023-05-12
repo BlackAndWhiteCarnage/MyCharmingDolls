@@ -10,11 +10,7 @@ import { FC, PropsWithChildren } from 'react';
 import { Navigation } from '@/components';
 import classes from './WithNavigationLayout.module.scss';
 
-type WithNavigationLayoutProps = PropsWithChildren<{
-	isFullScreen?: boolean;
-}>;
-
-const WithNavigationLayout: FC<WithNavigationLayoutProps> = ({ children }) => (
+const WithNavigationLayout: FC<PropsWithChildren> = ({ children }) => (
 	<div className={classes.wrapper}>
 		<div className={classes.navigation}>
 			<div className={classes.inner}>
