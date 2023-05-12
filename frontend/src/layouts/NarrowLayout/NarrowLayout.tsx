@@ -2,12 +2,17 @@
  * External dependencies
  */
 import { FC, useEffect } from 'react';
-import Atropos from 'atropos/react';
 
 /**
  * Internal dependencies
  */
-import { Button, Header, PolaroidImage, LinkedIcon } from '@/components';
+import {
+	AtroposWrapper,
+	Button,
+	Header,
+	PolaroidImage,
+	LinkedIcon,
+} from '@/components';
 import { changeTheme } from '@/utils';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
 import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';
@@ -22,11 +27,7 @@ const NarrowLayout: FC = () => {
 
 	return (
 		<div className={classes.wrapper}>
-			<Atropos
-				shadow={false}
-				className={classes.atropos}
-				rotateTouch="scroll-y"
-			>
+			<AtroposWrapper className={classes.atropos}>
 				<div className={classes.hero}>
 					<PolaroidImage
 						image={{
@@ -36,7 +37,7 @@ const NarrowLayout: FC = () => {
 						variant="wide"
 					/>
 				</div>
-			</Atropos>
+			</AtroposWrapper>
 			<article className={classes.aboutMe}>
 				<Header title="Hi I'm *Weronika*" />
 				<Button

@@ -5,11 +5,11 @@ import { FC, ReactElement } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide, SwiperProps } from 'swiper/react';
 import classnames from 'classnames/bind';
-import Atropos from 'atropos/react';
 
 /**
  * Internal dependencies
  */
+import { AtroposWrapper } from '@/components';
 import classes from './Slider.module.scss';
 
 type SliderProps = {
@@ -22,12 +22,9 @@ const cx = classnames.bind(classes);
 const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
 	return (
 		<div className={cx('wrapper', className)}>
-			<Atropos
-				rotateTouch="scroll-y"
+			<AtroposWrapper
 				rotateYMax={6}
 				rotateXMax={6}
-				shadow={false}
-				highlight={false}
 				className={classes.innerWrap}
 			>
 				<Swiper
@@ -61,7 +58,7 @@ const Slider: FC<SliderProps> = ({ children, className, ...props }) => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</Atropos>
+			</AtroposWrapper>
 		</div>
 	);
 };

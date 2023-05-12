@@ -1,5 +1,6 @@
 export { default as Accordion } from './Accordion';
 export { default as AccordionItem } from './AccordionItem';
+export { default as AtroposWrapper } from './AtroposWrapper';
 export { default as Button } from './Button';
 export { default as Description } from './Description';
 export { default as DollsContextProvider } from './DollsContextProvider';
