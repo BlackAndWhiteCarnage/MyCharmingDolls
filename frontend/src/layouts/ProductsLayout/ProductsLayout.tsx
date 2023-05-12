@@ -13,9 +13,13 @@ import classes from './ProductsLayout.module.scss';
 const ProductsLayout: FC = () => {
 	const { filteredDolls, loading, error } = useContext(DollsContext);
 
-	if (loading) return <div>Loading...</div>;
+	if (loading) {
+		return <div>Loading...</div>;
+	}
 
-	if (error) return <div>Error!</div>;
+	if (error) {
+		return <div>Error!</div>;
+	}
 
 	return (
 		<div className={classes.wrapper}>
