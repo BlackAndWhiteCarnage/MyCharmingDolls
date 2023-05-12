@@ -12,6 +12,7 @@ import {
 	Header,
 	PolaroidImage,
 	LinkedIcon,
+	ContactForm,
 } from '@/components';
 import { changeTheme } from '@/utils';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
@@ -94,6 +95,10 @@ const AboutMeLayout: FC = () => {
 					<LinkedIcon href="" icon={EtsyIcon} />
 					<LinkedIcon href="" icon={MessengerIcon} />
 				</div>
+			</div>
+			<div className={classes.contactForm}>
+				<Header title="Or *Contact me* now!" level={2} />
+				<ContactForm />
 			</div>
 		</div>
 	);
