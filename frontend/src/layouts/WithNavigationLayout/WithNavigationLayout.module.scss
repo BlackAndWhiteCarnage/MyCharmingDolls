@@ -17,15 +17,23 @@
 }
 
 .navigation {
+  width: 100%;
+  max-width: u.rem-calc(1600);
   left: 50%;
-  left: u.rem-calc(20);
+  transform: translateX(-50%);
+  padding: 0 u.rem-calc(70);
   margin: auto;
-  position: fixed;
   top: u.rem-calc(20);
   z-index: 9999;
+  position: fixed;
+
+  @include bp.down(lg) {
+    padding: 0 u.rem-calc(20);
+    top: u.rem-calc(20);
+  }
 
   @include bp.down(sm) {
-    left: u.rem-calc(10);
+    padding: 0 u.rem-calc(10);
     top: u.rem-calc(10);
   }
 }
