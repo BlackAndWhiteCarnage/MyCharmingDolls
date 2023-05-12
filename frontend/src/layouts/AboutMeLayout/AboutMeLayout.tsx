@@ -97,7 +97,11 @@ const AboutMeLayout: FC = () => {
 				</div>
 			</div>
 			<div className={classes.contactForm}>
-				<Header title="Or *Contact me* now!" level={2} />
+				<Header
+					title="Or *Contact me* now!"
+					level={2}
+					className={classes.contactFormTitle}
+				/>
 				<ContactForm />
 			</div>
 		</div>

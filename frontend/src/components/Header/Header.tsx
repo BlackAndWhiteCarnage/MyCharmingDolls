@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { FC } from 'react';
+import classnames from 'classnames/bind';
 
 /**
  * Internal dependencies
@@ -9,6 +10,7 @@ import { FC } from 'react';
 import classes from './Header.module.scss';
 
 type HeaderProps = {
+	className?: string;
 	/**
 	 * Everything between "*" will have theme color
 	 */
@@ -16,11 +18,13 @@ type HeaderProps = {
 	level?: 1 | 2;
 };
 
-const Header: FC<HeaderProps> = ({ level = 1, title }) => {
+const cx = classnames.bind(classes);
+
+const Header: FC<HeaderProps> = ({ className, level = 1, title }) => {
 	const H = level === 1 ? 'h1' : 'h2';
 
 	return (
-		<H className={classes.title}>
+		<H className={cx('title', className)}>
 			{title.split('*').map((titleChunk, index) =>
 				index % 2 === 0 ? (
 					titleChunk

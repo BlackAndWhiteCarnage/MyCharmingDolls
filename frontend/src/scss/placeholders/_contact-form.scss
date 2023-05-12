@@ -1,0 +1,14 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+%contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(30);
+  margin-top: u.rem-calc(60);
+
+  @include bp.down(sm) {
+    gap: u.rem-calc(10);
+    margin-top: u.rem-calc(40);
+  }
+}

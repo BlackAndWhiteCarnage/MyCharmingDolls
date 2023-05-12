@@ -1,7 +1,8 @@
 @use 'scss/breakpoint' as bp;
-@use 'scss/unit' as u;
-@use 'scss/placeholders/text';
 @use 'scss/config/variables' as v;
+@use 'scss/placeholders/contact-form';
+@use 'scss/placeholders/text';
+@use 'scss/unit' as u;
 
 .wrapper {
   margin: auto;
@@ -86,13 +87,5 @@
 }
 
 .contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: u.rem-calc(30);
-  margin-top: u.rem-calc(60);
-
-  @include bp.down(sm) {
-    gap: u.rem-calc(10);
-    margin-top: u.rem-calc(40);
-  }
+  @extend %contact-form;
 }
