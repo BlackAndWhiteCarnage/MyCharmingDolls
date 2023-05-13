@@ -7,11 +7,10 @@ import classnames from 'classnames/bind';
 /**
  * External dependencies
  */
-import { ReactComponent as LogoImage } from '@/images/logo.svg';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
 import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';
 import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
-import { Link, Logo, LinkedIcon } from '@/components';
+import { Link, LinkedIcon } from '@/components';
 import classes from './Footer.module.scss';
 
 const cx = classnames.bind(classes);
