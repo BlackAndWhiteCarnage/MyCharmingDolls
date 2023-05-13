@@ -5,13 +5,28 @@
 @use 'scss/config/variables' as v;
 
 .wrapper {
-  margin: auto;
-  max-width: u.rem-calc(800);
-  padding: v.$padding-y;
-  width: 100%;
+  display: flex;
+  gap: u.rem-calc(60);
+  justify-content: space-between;
+  margin-top: u.rem-calc(140);
+  position: relative;
 
   @include bp.down(lg) {
-    padding: v.$padding-y-mobile;
+    flex-direction: column;
+  }
+
+  @include bp.down(xs) {
+    gap: u.rem-calc(20);
+    margin-top: u.rem-calc(100);
+  }
+}
+
+.about {
+  margin: auto;
+  max-width: u.rem-calc(980);
+
+  @include bp.down(lg) {
+    max-width: unset;
   }
 }
 
@@ -20,9 +35,10 @@
 }
 
 .hero {
-  margin-bottom: u.rem-calc(140);
+  margin: 0 auto u.rem-calc(140);
+  max-width: u.rem-calc(800);
 
-  @include bp.down(lg) {
+  @include bp.down(xl) {
     margin-bottom: u.rem-calc(80);
   }
 }
@@ -39,10 +55,21 @@
   }
 }
 
+.contact {
+  height: fit-content;
+  position: sticky;
+  top: u.rem-calc(30);
+  width: 100%;
+
+  @include bp.up(lg) {
+    min-width: u.rem-calc(400);
+  }
+}
+
 .socialMedia {
   display: flex;
   flex-direction: column;
-  gap: u.rem-calc(40);
+  gap: u.rem-calc(20);
   width: fit-content;
 
   @include bp.down(xs) {

@@ -45,53 +45,54 @@ const Product: FC<ProductProps> = ({ data }) => {
 	}, [view, color]);
 
 	return (
-		<Theme
-			secondary={color}
-			id={dollSlug}
-			className={cx('wrapper', {
-				isInView: view,
-			})}
-		>
-			<div className={classes.content} ref={element}>
-				<Header title={`Hi I'm *${name}*`} />
-				<Description text={description} limit />
-				<div className={classes.buttons}>
-					<Button
-						hasArrow
-						className={classes.button}
-						href={`/doll/${dollSlug}`}
-					>
-						Read more & meet {name}
-					</Button>
-					{!isSold ? (
+		<Theme secondary={color} id={dollSlug}>
+			<div
+				className={cx('inner', {
+					isInView: view,
+				})}
+				ref={element}
+			>
+				<div className={classes.content}>
+					<Header title={`Hi I'm *${name}*`} />
+					<Description text={description} limit />
+					<div className={classes.buttons}>
 						<Button
-							variant="secondary"
+							hasArrow
 							className={classes.button}
-							onClick={() =>
-								createCheckoutSession(data.attributes)
-							}
+							href={`/doll/${dollSlug}`}
 						>
-							Adopt her now!
+							Read more & meet {name}
 						</Button>
-					) : (
-						<Info
-							label={`${name} is already adopted or reserved!`}
-						/>
-					)}
+						{!isSold ? (
+							<Button
+								variant="secondary"
+								className={classes.button}
+								onClick={() =>
+									createCheckoutSession(data.attributes)
+								}
+							>
+								Adopt her now!
+							</Button>
+						) : (
+							<Info
+								label={`${name} is already adopted or reserved!`}
+							/>
+						)}
+					</div>
 				</div>
-			</div>
-			<div className={classes.images} ref={ref}>
-				<ImagesPack
-					parentRef={ref}
-					images={images.data
-						.filter(({ attributes }) => attributes.url)
-						.slice(0, 3)
-						.map(({ attributes }) => ({
-							src: attributes.url,
-							alt: '',
-						}))}
-					animate={view}
-				/>
+				<div className={classes.images} ref={ref}>
+					<ImagesPack
+						parentRef={ref}
+						images={images.data
+							.filter(({ attributes }) => attributes.url)
+							.slice(0, 3)
+							.map(({ attributes }) => ({
+								src: attributes.url,
+								alt: '',
+							}))}
+						animate={view}
+					/>
+				</div>
 			</div>
 		</Theme>
 	);

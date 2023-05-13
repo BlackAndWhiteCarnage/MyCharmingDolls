@@ -64,7 +64,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 	} = dollAttributes;
 
 	return (
-		<div className={classes.wrapper}>
+		<>
 			<Slider className={classes.slider}>
 				{images.data.map(({ attributes }, index) => (
 					<PolaroidImage
@@ -152,10 +152,14 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 				</div>
 			</div>
 			<div className={classes.contactForm}>
-				<Header title="Any questions?" level={2} />
+				<Header
+					title="Any questions?"
+					level={2}
+					className={classes.contactTitle}
+				/>
 				<ContactForm />
 			</div>
-		</div>
+		</>
 	);
 };
 

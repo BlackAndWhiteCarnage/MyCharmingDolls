@@ -8,7 +8,7 @@
   margin-top: u.rem-calc(60);
 
   @include bp.down(sm) {
-    gap: u.rem-calc(10);
+    gap: u.rem-calc(20);
     margin-top: u.rem-calc(40);
   }
 }

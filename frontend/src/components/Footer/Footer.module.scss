@@ -9,7 +9,7 @@
   gap: u.rem-calc(10);
   justify-content: space-between;
   margin-top: u.rem-calc(60);
-  padding-top: u.rem-calc(10);
+  padding: u.rem-calc(10) 0 u.rem-calc(30);
 
   @include bp.down(sm) {
     margin-top: u.rem-calc(30);
@@ -25,11 +25,16 @@
 .socialMedia {
   display: flex;
   gap: u.rem-calc(6);
-}
 
-.linkedIcon {
-  max-height: u.rem-calc(48);
-  max-width: u.rem-calc(48);
+  .linkedIcon {
+    max-height: u.rem-calc(48);
+    max-width: u.rem-calc(48);
+
+    @include bp.down(sm) {
+      max-height: u.rem-calc(30);
+      max-width: u.rem-calc(30);
+    }
+  }
 }
 
 .policyLinks {

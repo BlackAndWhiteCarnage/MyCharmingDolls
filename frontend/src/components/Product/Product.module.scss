@@ -3,30 +3,23 @@
 @use 'scss/unit' as u;
 @use 'scss/config/variables' as v;
 
-.wrapper {
+.inner {
   align-items: center;
   display: flex;
   gap: u.rem-calc(60);
   height: 100vh;
-  margin: auto;
+  margin: u.rem-calc(100) auto;
+  min-height: 100vh;
   opacity: 0;
-  padding: 0 u.rem-calc(40);
   transition: transform 0.8s, opacity 0.8s;
 
   @include bp.down(lg) {
     flex-direction: column;
-    padding: v.$padding-y-mobile;
+    height: fit-content;
   }
 
   @include bp.down(md) {
     gap: u.rem-calc(20);
-    padding-left: u.rem-calc(20);
-    padding-right: u.rem-calc(20);
-  }
-
-  @include bp.down(sm) {
-    padding-left: u.rem-calc(15);
-    padding-right: u.rem-calc(15);
   }
 }
 
@@ -46,6 +39,7 @@
 
   @include bp.down(lg) {
     margin-top: u.rem-calc(80);
+    max-width: unset;
     order: 2;
   }
 

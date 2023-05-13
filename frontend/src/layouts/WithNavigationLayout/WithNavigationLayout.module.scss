@@ -2,9 +2,7 @@
 @use 'scss/config/variables' as v;
 @use 'scss/unit' as u;
 
-.wrapper {
-  margin: auto;
-  max-width: u.rem-calc(1600);
+%paddings {
   padding: 0 u.rem-calc(40);
 
   @include bp.down(md) {
@@ -16,11 +14,17 @@
   }
 }
 
+.wrapper {
+  @extend %paddings;
+
+  margin: auto;
+}
+
 .navigation {
+  @extend %paddings;
+
   left: 50%;
   margin: auto;
-  max-width: u.rem-calc(1600);
-  padding: 0 u.rem-calc(70);
   position: fixed;
   top: u.rem-calc(20);
   transform: translateX(-50%);
@@ -28,12 +32,10 @@
   z-index: 9999;
 
   @include bp.down(lg) {
-    padding: 0 u.rem-calc(20);
     top: u.rem-calc(20);
   }
 
   @include bp.down(sm) {
-    padding: 0 u.rem-calc(10);
     top: u.rem-calc(10);
   }
 }

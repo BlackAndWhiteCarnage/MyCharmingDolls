@@ -41,18 +41,18 @@ const AboutMeLayout: FC = () => {
 
 	return (
 		<div className={classes.wrapper}>
-			<AtroposWrapper className={classes.atropos}>
-				<div className={classes.hero}>
-					<PolaroidImage
-						image={{
-							src: MyImage.src,
-							alt: '',
-						}}
-						variant="wide"
-					/>
-				</div>
-			</AtroposWrapper>
-			<article className={classes.aboutMe}>
+			<article className={classes.about}>
+				<AtroposWrapper className={classes.atropos}>
+					<div className={classes.hero}>
+						<PolaroidImage
+							image={{
+								src: MyImage.src,
+								alt: '',
+							}}
+							variant="wide"
+						/>
+					</div>
+				</AtroposWrapper>
 				<Header title="Hi I'm *Weronika*" />
 				<Button
 					hasArrow
@@ -69,21 +69,23 @@ const AboutMeLayout: FC = () => {
 					/>
 				)}
 			</article>
-			<div className={classes.socialMedia}>
-				<Header title="Find me *here*" level={2} />
-				<div className={classes.links}>
-					<LinkedIcon href="" icon={InstagramIcon} />
-					<LinkedIcon href="" icon={EtsyIcon} />
-					<LinkedIcon href="" icon={MessengerIcon} />
+			<div className={classes.contact}>
+				<div className={classes.socialMedia}>
+					<Header title="Find me *here*" level={2} />
+					<div className={classes.links}>
+						<LinkedIcon href="" icon={InstagramIcon} />
+						<LinkedIcon href="" icon={EtsyIcon} />
+						<LinkedIcon href="" icon={MessengerIcon} />
+					</div>
 				</div>
-			</div>
-			<div className={classes.contactForm}>
-				<Header
-					title="Or *Contact me* now!"
-					level={2}
-					className={classes.contactFormTitle}
-				/>
-				<ContactForm />
+				<div className={classes.contactForm}>
+					<Header
+						title="Or *Contact me* now!"
+						level={2}
+						className={classes.contactFormTitle}
+					/>
+					<ContactForm />
+				</div>
 			</div>
 		</div>
 	);
