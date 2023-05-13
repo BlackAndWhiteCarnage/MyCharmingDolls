@@ -3,6 +3,7 @@
 
 .wrapper {
   align-items: flex-end;
+  background: var(--theme-color-background);
   border-top: u.rem-calc(2) solid var(--theme-color-primary);
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +11,8 @@
   justify-content: space-between;
   margin-top: u.rem-calc(60);
   padding: u.rem-calc(10) 0 u.rem-calc(30);
+  position: relative;
+  z-index: 2;
 
   @include bp.down(sm) {
     margin-top: u.rem-calc(30);
