@@ -14,9 +14,9 @@
   transition: transform 0.8s, opacity 0.8s;
 
   @include bp.down(lg) {
-    margin: u.rem-calc(100) 0;
     flex-direction: column;
     height: fit-content;
+    margin: u.rem-calc(100) 0;
   }
 
   @include bp.down(md) {

@@ -8,6 +8,10 @@ import { FC } from 'react';
  */
 import classes from './Loader.module.scss';
 
-const Loader: FC = () => <div className={classes.loader} />;
+const Loader: FC = () => (
+	<div className={classes.wrapper}>
+		<div className={classes.loader} />
+	</div>
+);
 
 export default Loader;
