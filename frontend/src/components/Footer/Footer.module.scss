@@ -1,0 +1,57 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  align-items: flex-end;
+  border-top: u.rem-calc(2) solid var(--theme-color-primary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: u.rem-calc(10);
+  justify-content: space-between;
+  margin-top: u.rem-calc(60);
+  padding-top: u.rem-calc(10);
+
+  @include bp.down(sm) {
+    margin-top: u.rem-calc(30);
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(10);
+}
+
+.socialMedia {
+  display: flex;
+  gap: u.rem-calc(6);
+}
+
+.linkedIcon {
+  max-height: u.rem-calc(48);
+  max-width: u.rem-calc(48);
+}
+
+.policyLinks {
+  display: flex;
+  gap: u.rem-calc(10);
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.text,
+.link {
+  color: var(--theme-color-primary);
+}
+
+.firmInfo {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem-calc(10);
+
+  @include bp.up(sm) {
+    text-align: right;
+  }
+}

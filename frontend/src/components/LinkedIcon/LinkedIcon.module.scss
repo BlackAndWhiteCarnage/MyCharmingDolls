@@ -2,21 +2,20 @@
 @use 'scss/color';
 @use 'scss/unit' as u;
 
-$size: u.rem-calc(66);
-$size-mobile: u.rem-calc(36);
 $transition: 0.2s;
 
-.wrapper,
-.icon {
+.wrapper {
   border-radius: 50%;
   cursor: pointer;
-  height: $size;
+  display: block;
+  max-height: u.rem-calc(66);
+  max-width: u.rem-calc(66);
+  overflow: hidden;
   transition: $transition;
-  width: $size;
 
   @include bp.down(xs) {
-    height: $size-mobile;
-    width: $size-mobile;
+    max-height: u.rem-calc(36);
+    max-width: u.rem-calc(36);
   }
 }
 
