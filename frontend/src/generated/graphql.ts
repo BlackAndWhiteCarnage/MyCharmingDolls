@@ -1019,12 +1019,12 @@ export type AboutMeQueryVariables = Exact<{ [key: string]: never }>;
 
 export type AboutMeQuery = {
 	__typename?: 'Query';
-	aboutMe: {
-		__typename?: 'AboutMeEntityResponse';
-		data: {
+	aboutMes: {
+		__typename?: 'AboutMeEntityResponseCollection';
+		data: Array<{
 			__typename?: 'AboutMeEntity';
 			attributes: { __typename?: 'AboutMe'; description: string };
-		};
+		}>;
 	};
 };
 
@@ -1099,7 +1099,7 @@ export type DollsQuery = {
 
 export const AboutMeDocument = gql`
 	query AboutMe {
-		aboutMe {
+		aboutMes {
 			data {
 				attributes {
 					description

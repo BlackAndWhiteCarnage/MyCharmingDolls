@@ -1,5 +1,5 @@
 query AboutMe {
-  aboutMe {
+  aboutMes {
     data {
       attributes {
         description
