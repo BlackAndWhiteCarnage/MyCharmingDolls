@@ -7,7 +7,7 @@ import Stripe from 'stripe';
 /**
  * Internal dependencies
  */
-import { stripeCountries } from '@/config';
+import { euCountries } from '@/config';
 
 const stripe = new Stripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET || ''}`, {
 	apiVersion: '2022-11-15',
@@ -28,7 +28,7 @@ export default async function handler(
 				},
 				billing_address_collection: 'required',
 				shipping_address_collection: {
-					allowed_countries: stripeCountries,
+					allowed_countries: euCountries,
 				},
 				shipping_options: [
 					{

@@ -1,4 +1,4 @@
-type StripeCountries =
+type StripeEUCountries =
 	| 'AT'
 	| 'BE'
 	| 'BG'
@@ -26,7 +26,7 @@ type StripeCountries =
 	| 'HU'
 	| 'IT';
 
-const stripeCountries: Array<StripeCountries> = [
+const euCountries: Array<StripeEUCountries> = [
 	'AT',
 	'BE',
 	'BG',
@@ -54,4 +54,4 @@ const stripeCountries: Array<StripeCountries> = [
 	'HU',
 	'IT',
 ];
-export default stripeCountries;
+export default euCountries;
