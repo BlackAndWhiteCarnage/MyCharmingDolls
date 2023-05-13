@@ -12,7 +12,7 @@ import { Product, Loader } from '@/components';
 const ProductsLayout: FC = () => {
 	const { filteredDolls, loading, error } = useContext(DollsContext);
 
-	if (loading) {
+	if (loading || !filteredDolls?.length) {
 		return <Loader />;
 	}
 
