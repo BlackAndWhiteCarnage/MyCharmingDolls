@@ -18,13 +18,14 @@ import {
 	Slider,
 	Loader,
 } from '@/components';
-import { changeTheme } from '@/utils';
 import {
 	useGetDollBySlugQuery,
 	useOtherInformationQuery,
 } from '@/generated/graphql';
-import PriceBox from '@/components/PriceBox/PriceBox';
+import { changeTheme, createCheckoutSession } from '@/utils';
+import { Doll } from '@/generated/graphql';
 import classes from './ProductDetailsLayout.module.scss';
+import PriceBox from '@/components/PriceBox/PriceBox';
 
 type ProductDetailsLayoutProps = {
 	slug: string;
@@ -117,7 +118,15 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 				<div className={classes.sticky}>
 					<PriceBox productPrice={price} />
 					{!isSold ? (
-						<Button>Adopt now!</Button>
+						<Button
+							onClick={() =>
+								createCheckoutSession(
+									data.dolls.data[0].attributes as Doll
+								)
+							}
+						>
+							Adopt now!
+						</Button>
 					) : (
 						<Info
 							label={`${name} is already adopted or reserved!`}

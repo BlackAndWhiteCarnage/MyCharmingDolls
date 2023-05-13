@@ -16,6 +16,7 @@ import {
 	Info,
 	Theme,
 } from '@/components';
+import { createCheckoutSession } from '@/utils';
 import { DollEntity } from '@/generated/graphql';
 import classes from './Product.module.scss';
 
@@ -59,7 +60,13 @@ const Product: FC<ProductProps> = ({ data }) => {
 						Read more & meet {name}
 					</Button>
 					{!isSold ? (
-						<Button variant="secondary" className={classes.button}>
+						<Button
+							variant="secondary"
+							className={classes.button}
+							onClick={() =>
+								createCheckoutSession(data.attributes)
+							}
+						>
 							Adopt her now!
 						</Button>
 					) : (
