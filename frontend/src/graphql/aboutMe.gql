@@ -1,0 +1,9 @@
+query AboutMe {
+  aboutMe {
+    data {
+      attributes {
+        description
+      }
+    }
+  }
+}

@@ -24,6 +24,47 @@ export type Scalars = {
 	Upload: any;
 };
 
+export type AboutMe = {
+	__typename?: 'AboutMe';
+	createdAt: Maybe<Scalars['DateTime']>;
+	description: Scalars['String'];
+	publishedAt: Maybe<Scalars['DateTime']>;
+	updatedAt: Maybe<Scalars['DateTime']>;
+};
+
+export type AboutMeEntity = {
+	__typename?: 'AboutMeEntity';
+	attributes: Maybe<AboutMe>;
+	id: Maybe<Scalars['ID']>;
+};
+
+export type AboutMeEntityResponse = {
+	__typename?: 'AboutMeEntityResponse';
+	data: Maybe<AboutMeEntity>;
+};
+
+export type AboutMeEntityResponseCollection = {
+	__typename?: 'AboutMeEntityResponseCollection';
+	data: Array<AboutMeEntity>;
+	meta: ResponseCollectionMeta;
+};
+
+export type AboutMeFiltersInput = {
+	and: InputMaybe<Array<InputMaybe<AboutMeFiltersInput>>>;
+	createdAt: InputMaybe<DateTimeFilterInput>;
+	description: InputMaybe<StringFilterInput>;
+	id: InputMaybe<IdFilterInput>;
+	not: InputMaybe<AboutMeFiltersInput>;
+	or: InputMaybe<Array<InputMaybe<AboutMeFiltersInput>>>;
+	publishedAt: InputMaybe<DateTimeFilterInput>;
+	updatedAt: InputMaybe<DateTimeFilterInput>;
+};
+
+export type AboutMeInput = {
+	description: InputMaybe<Scalars['String']>;
+	publishedAt: InputMaybe<Scalars['DateTime']>;
+};
+
 export type BooleanFilterInput = {
 	and: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
 	between: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
@@ -175,6 +216,7 @@ export type FloatFilterInput = {
 };
 
 export type GenericMorph =
+	| AboutMe
 	| Doll
 	| I18NLocale
 	| UploadFile
@@ -295,6 +337,7 @@ export type Mutation = {
 	__typename?: 'Mutation';
 	/** Change user password. Confirm with the current password. */
 	changePassword: Maybe<UsersPermissionsLoginPayload>;
+	createAboutMe: Maybe<AboutMeEntityResponse>;
 	createDoll: Maybe<DollEntityResponse>;
 	createUploadFile: Maybe<UploadFileEntityResponse>;
 	createUploadFolder: Maybe<UploadFolderEntityResponse>;
@@ -302,6 +345,7 @@ export type Mutation = {
 	createUsersPermissionsRole: Maybe<UsersPermissionsCreateRolePayload>;
 	/** Create a new user */
 	createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
+	deleteAboutMe: Maybe<AboutMeEntityResponse>;
 	deleteDoll: Maybe<DollEntityResponse>;
 	deleteUploadFile: Maybe<UploadFileEntityResponse>;
 	deleteUploadFolder: Maybe<UploadFolderEntityResponse>;
@@ -320,6 +364,7 @@ export type Mutation = {
 	removeFile: Maybe<UploadFileEntityResponse>;
 	/** Reset user password. Confirm with a code (resetToken from forgotPassword) */
 	resetPassword: Maybe<UsersPermissionsLoginPayload>;
+	updateAboutMe: Maybe<AboutMeEntityResponse>;
 	updateDoll: Maybe<DollEntityResponse>;
 	updateFileInfo: UploadFileEntityResponse;
 	updateUploadFile: Maybe<UploadFileEntityResponse>;
@@ -335,6 +380,10 @@ export type MutationChangePasswordArgs = {
 	currentPassword: Scalars['String'];
 	password: Scalars['String'];
 	passwordConfirmation: Scalars['String'];
+};
+
+export type MutationCreateAboutMeArgs = {
+	data: AboutMeInput;
 };
 
 export type MutationCreateDollArgs = {
@@ -355,6 +404,10 @@ export type MutationCreateUsersPermissionsRoleArgs = {
 
 export type MutationCreateUsersPermissionsUserArgs = {
 	data: UsersPermissionsUserInput;
+};
+
+export type MutationDeleteAboutMeArgs = {
+	id: Scalars['ID'];
 };
 
 export type MutationDeleteDollArgs = {
@@ -408,6 +461,11 @@ export type MutationResetPasswordArgs = {
 	code: Scalars['String'];
 	password: Scalars['String'];
 	passwordConfirmation: Scalars['String'];
+};
+
+export type MutationUpdateAboutMeArgs = {
+	data: AboutMeInput;
+	id: Scalars['ID'];
 };
 
 export type MutationUpdateDollArgs = {
@@ -470,6 +528,8 @@ export enum PublicationState {
 
 export type Query = {
 	__typename?: 'Query';
+	aboutMe: Maybe<AboutMeEntityResponse>;
+	aboutMes: Maybe<AboutMeEntityResponseCollection>;
 	doll: Maybe<DollEntityResponse>;
 	dolls: Maybe<DollEntityResponseCollection>;
 	i18NLocale: Maybe<I18NLocaleEntityResponse>;
@@ -483,6 +543,17 @@ export type Query = {
 	usersPermissionsRoles: Maybe<UsersPermissionsRoleEntityResponseCollection>;
 	usersPermissionsUser: Maybe<UsersPermissionsUserEntityResponse>;
 	usersPermissionsUsers: Maybe<UsersPermissionsUserEntityResponseCollection>;
+};
+
+export type QueryAboutMeArgs = {
+	id: InputMaybe<Scalars['ID']>;
+};
+
+export type QueryAboutMesArgs = {
+	filters: InputMaybe<AboutMeFiltersInput>;
+	pagination?: InputMaybe<PaginationArg>;
+	publicationState?: InputMaybe<PublicationState>;
+	sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 export type QueryDollArgs = {
@@ -944,6 +1015,19 @@ export type UsersPermissionsUserRelationResponseCollection = {
 	data: Array<UsersPermissionsUserEntity>;
 };
 
+export type AboutMeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AboutMeQuery = {
+	__typename?: 'Query';
+	aboutMe: {
+		__typename?: 'AboutMeEntityResponse';
+		data: {
+			__typename?: 'AboutMeEntity';
+			attributes: { __typename?: 'AboutMe'; description: string };
+		};
+	};
+};
+
 export type GetDollBySlugQueryVariables = Exact<{
 	slug: Scalars['String'];
 }>;
@@ -1013,6 +1097,60 @@ export type DollsQuery = {
 	};
 };
 
+export const AboutMeDocument = gql`
+	query AboutMe {
+		aboutMe {
+			data {
+				attributes {
+					description
+				}
+			}
+		}
+	}
+`;
+
+/**
+ * __useAboutMeQuery__
+ *
+ * To run a query within a React component, call `useAboutMeQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAboutMeQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAboutMeQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAboutMeQuery(
+	baseOptions?: Apollo.QueryHookOptions<AboutMeQuery, AboutMeQueryVariables>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useQuery<AboutMeQuery, AboutMeQueryVariables>(
+		AboutMeDocument,
+		options
+	);
+}
+export function useAboutMeLazyQuery(
+	baseOptions?: Apollo.LazyQueryHookOptions<
+		AboutMeQuery,
+		AboutMeQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useLazyQuery<AboutMeQuery, AboutMeQueryVariables>(
+		AboutMeDocument,
+		options
+	);
+}
+export type AboutMeQueryHookResult = ReturnType<typeof useAboutMeQuery>;
+export type AboutMeLazyQueryHookResult = ReturnType<typeof useAboutMeLazyQuery>;
+export type AboutMeQueryResult = Apollo.QueryResult<
+	AboutMeQuery,
+	AboutMeQueryVariables
+>;
 export const GetDollBySlugDocument = gql`
 	query getDollBySlug($slug: String!) {
 		dolls(filters: { slug: { eq: $slug } }) {
