@@ -31,12 +31,12 @@
   margin-top: u.rem-calc(40);
 }
 
-.text {
-  @extend %text;
-}
+.description {
+  margin: u.rem-calc(40) 0;
 
-.textBlock {
-  @extend %text-block;
+  @include bp.down(xs) {
+    margin: u.rem-calc(30) 0;
+  }
 }
 
 .socialMedia {
