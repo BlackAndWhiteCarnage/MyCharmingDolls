@@ -219,6 +219,7 @@ export type GenericMorph =
 	| AboutMe
 	| Doll
 	| I18NLocale
+	| OtherInformation
 	| UploadFile
 	| UploadFolder
 	| UsersPermissionsPermission
@@ -339,6 +340,7 @@ export type Mutation = {
 	changePassword: Maybe<UsersPermissionsLoginPayload>;
 	createAboutMe: Maybe<AboutMeEntityResponse>;
 	createDoll: Maybe<DollEntityResponse>;
+	createOtherInformation: Maybe<OtherInformationEntityResponse>;
 	createUploadFile: Maybe<UploadFileEntityResponse>;
 	createUploadFolder: Maybe<UploadFolderEntityResponse>;
 	/** Create a new role */
@@ -347,6 +349,7 @@ export type Mutation = {
 	createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
 	deleteAboutMe: Maybe<AboutMeEntityResponse>;
 	deleteDoll: Maybe<DollEntityResponse>;
+	deleteOtherInformation: Maybe<OtherInformationEntityResponse>;
 	deleteUploadFile: Maybe<UploadFileEntityResponse>;
 	deleteUploadFolder: Maybe<UploadFolderEntityResponse>;
 	/** Delete an existing role */
@@ -367,6 +370,7 @@ export type Mutation = {
 	updateAboutMe: Maybe<AboutMeEntityResponse>;
 	updateDoll: Maybe<DollEntityResponse>;
 	updateFileInfo: UploadFileEntityResponse;
+	updateOtherInformation: Maybe<OtherInformationEntityResponse>;
 	updateUploadFile: Maybe<UploadFileEntityResponse>;
 	updateUploadFolder: Maybe<UploadFolderEntityResponse>;
 	/** Update an existing role */
@@ -390,6 +394,10 @@ export type MutationCreateDollArgs = {
 	data: DollInput;
 };
 
+export type MutationCreateOtherInformationArgs = {
+	data: OtherInformationInput;
+};
+
 export type MutationCreateUploadFileArgs = {
 	data: UploadFileInput;
 };
@@ -411,6 +419,10 @@ export type MutationDeleteAboutMeArgs = {
 };
 
 export type MutationDeleteDollArgs = {
+	id: Scalars['ID'];
+};
+
+export type MutationDeleteOtherInformationArgs = {
 	id: Scalars['ID'];
 };
 
@@ -478,6 +490,11 @@ export type MutationUpdateFileInfoArgs = {
 	info: InputMaybe<FileInfoInput>;
 };
 
+export type MutationUpdateOtherInformationArgs = {
+	data: OtherInformationInput;
+	id: Scalars['ID'];
+};
+
 export type MutationUpdateUploadFileArgs = {
 	data: UploadFileInput;
 	id: Scalars['ID'];
@@ -504,6 +521,47 @@ export type MutationUploadArgs = {
 	info: InputMaybe<FileInfoInput>;
 	ref: InputMaybe<Scalars['String']>;
 	refId: InputMaybe<Scalars['ID']>;
+};
+
+export type OtherInformation = {
+	__typename?: 'OtherInformation';
+	createdAt: Maybe<Scalars['DateTime']>;
+	description: Scalars['String'];
+	publishedAt: Maybe<Scalars['DateTime']>;
+	updatedAt: Maybe<Scalars['DateTime']>;
+};
+
+export type OtherInformationEntity = {
+	__typename?: 'OtherInformationEntity';
+	attributes: Maybe<OtherInformation>;
+	id: Maybe<Scalars['ID']>;
+};
+
+export type OtherInformationEntityResponse = {
+	__typename?: 'OtherInformationEntityResponse';
+	data: Maybe<OtherInformationEntity>;
+};
+
+export type OtherInformationEntityResponseCollection = {
+	__typename?: 'OtherInformationEntityResponseCollection';
+	data: Array<OtherInformationEntity>;
+	meta: ResponseCollectionMeta;
+};
+
+export type OtherInformationFiltersInput = {
+	and: InputMaybe<Array<InputMaybe<OtherInformationFiltersInput>>>;
+	createdAt: InputMaybe<DateTimeFilterInput>;
+	description: InputMaybe<StringFilterInput>;
+	id: InputMaybe<IdFilterInput>;
+	not: InputMaybe<OtherInformationFiltersInput>;
+	or: InputMaybe<Array<InputMaybe<OtherInformationFiltersInput>>>;
+	publishedAt: InputMaybe<DateTimeFilterInput>;
+	updatedAt: InputMaybe<DateTimeFilterInput>;
+};
+
+export type OtherInformationInput = {
+	description: InputMaybe<Scalars['String']>;
+	publishedAt: InputMaybe<Scalars['DateTime']>;
 };
 
 export type Pagination = {
@@ -535,6 +593,8 @@ export type Query = {
 	i18NLocale: Maybe<I18NLocaleEntityResponse>;
 	i18NLocales: Maybe<I18NLocaleEntityResponseCollection>;
 	me: Maybe<UsersPermissionsMe>;
+	otherInformation: Maybe<OtherInformationEntityResponse>;
+	otherInformations: Maybe<OtherInformationEntityResponseCollection>;
 	uploadFile: Maybe<UploadFileEntityResponse>;
 	uploadFiles: Maybe<UploadFileEntityResponseCollection>;
 	uploadFolder: Maybe<UploadFolderEntityResponse>;
@@ -574,6 +634,17 @@ export type QueryI18NLocaleArgs = {
 export type QueryI18NLocalesArgs = {
 	filters: InputMaybe<I18NLocaleFiltersInput>;
 	pagination?: InputMaybe<PaginationArg>;
+	sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type QueryOtherInformationArgs = {
+	id: InputMaybe<Scalars['ID']>;
+};
+
+export type QueryOtherInformationsArgs = {
+	filters: InputMaybe<OtherInformationFiltersInput>;
+	pagination?: InputMaybe<PaginationArg>;
+	publicationState?: InputMaybe<PublicationState>;
 	sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
@@ -1097,6 +1168,22 @@ export type DollsQuery = {
 	};
 };
 
+export type OtherInformationQueryVariables = Exact<{ [key: string]: never }>;
+
+export type OtherInformationQuery = {
+	__typename?: 'Query';
+	otherInformations: {
+		__typename?: 'OtherInformationEntityResponseCollection';
+		data: Array<{
+			__typename?: 'OtherInformationEntity';
+			attributes: {
+				__typename?: 'OtherInformation';
+				description: string;
+			};
+		}>;
+	};
+};
+
 export const AboutMeDocument = gql`
 	query AboutMe {
 		aboutMes {
@@ -1298,4 +1385,65 @@ export type DollsLazyQueryHookResult = ReturnType<typeof useDollsLazyQuery>;
 export type DollsQueryResult = Apollo.QueryResult<
 	DollsQuery,
 	DollsQueryVariables
+>;
+export const OtherInformationDocument = gql`
+	query OtherInformation {
+		otherInformations {
+			data {
+				attributes {
+					description
+				}
+			}
+		}
+	}
+`;
+
+/**
+ * __useOtherInformationQuery__
+ *
+ * To run a query within a React component, call `useOtherInformationQuery` and pass it any options that fit your needs.
+ * When your component renders, `useOtherInformationQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useOtherInformationQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useOtherInformationQuery(
+	baseOptions?: Apollo.QueryHookOptions<
+		OtherInformationQuery,
+		OtherInformationQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useQuery<
+		OtherInformationQuery,
+		OtherInformationQueryVariables
+	>(OtherInformationDocument, options);
+}
+export function useOtherInformationLazyQuery(
+	baseOptions?: Apollo.LazyQueryHookOptions<
+		OtherInformationQuery,
+		OtherInformationQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions };
+	return Apollo.useLazyQuery<
+		OtherInformationQuery,
+		OtherInformationQueryVariables
+	>(OtherInformationDocument, options);
+}
+export type OtherInformationQueryHookResult = ReturnType<
+	typeof useOtherInformationQuery
+>;
+export type OtherInformationLazyQueryHookResult = ReturnType<
+	typeof useOtherInformationLazyQuery
+>;
+export type OtherInformationQueryResult = Apollo.QueryResult<
+	OtherInformationQuery,
+	OtherInformationQueryVariables
 >;

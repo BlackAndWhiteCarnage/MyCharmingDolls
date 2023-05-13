@@ -1,0 +1,9 @@
+query OtherInformation {
+  otherInformations {
+    data {
+      attributes {
+        description
+      }
+    }
+  }
+}
