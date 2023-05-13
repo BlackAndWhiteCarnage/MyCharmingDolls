@@ -5,6 +5,7 @@ export { default as Button } from './Button';
 export { default as ContactForm } from './ContactForm';
 export { default as Description } from './Description';
 export { default as DollsContextProvider } from './DollsContextProvider';
+export { default as Footer } from './Footer';
 export { default as Form } from './Form';
 export { default as FormField } from './FormField';
 export { default as Header } from './Header';
