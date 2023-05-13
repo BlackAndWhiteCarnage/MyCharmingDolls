@@ -35,11 +35,10 @@
 }
 
 .hero {
-  margin: 0 auto u.rem-calc(140);
-  max-width: u.rem-calc(800);
+  margin: 0 auto u.rem-calc(100);
 
   @include bp.down(xl) {
-    margin-bottom: u.rem-calc(80);
+    margin-bottom: u.rem-calc(60);
   }
 }
 

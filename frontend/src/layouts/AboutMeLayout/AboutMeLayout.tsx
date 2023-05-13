@@ -42,7 +42,11 @@ const AboutMeLayout: FC = () => {
 	return (
 		<div className={classes.wrapper}>
 			<article className={classes.about}>
-				<AtroposWrapper className={classes.atropos}>
+				<AtroposWrapper
+					className={classes.atropos}
+					rotateYMax={3}
+					rotateXMax={3}
+				>
 					<div className={classes.hero}>
 						<PolaroidImage
 							image={{
