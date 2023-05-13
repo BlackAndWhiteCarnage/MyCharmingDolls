@@ -9,16 +9,14 @@ import Image from 'next/image';
 /**
  * External dependencies
  */
-import { Theme } from '@/components';
 import { ImageData } from '@/types';
 import classes from './ProductsList.module.scss';
 
 export type ProductsListProps = {
 	products: Array<{
-		color: string;
-		href: string;
 		image: ImageData;
 		isActive?: boolean | null;
+		href: string;
 	}>;
 };
 
@@ -28,9 +26,14 @@ const ProductsList: FC<ProductsListProps> = ({ products }) => (
 	<div className={classes.wrapper}>
 		<Scrollbars>
 			<ul className={classes.products}>
-				{products.map(({ image: { src, alt }, href, color }, index) => (
-					<li key={index}>
-						<Theme primary={color} className={classes.product}>
+				{products.map(
+					({ image: { src, alt }, isActive, href }, index) => (
+						<li
+							key={`${href}-${index}`}
+							className={cx('product', {
+								isActive,
+							})}
+						>
 							<a href={href}>
 								<div className={classes.image}>
 									<Image
@@ -42,9 +45,9 @@ const ProductsList: FC<ProductsListProps> = ({ products }) => (
 									/>
 								</div>
 							</a>
-						</Theme>
-					</li>
-				))}
+						</li>
+					)
+				)}
 			</ul>
 		</Scrollbars>
 	</div>

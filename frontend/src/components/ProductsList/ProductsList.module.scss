@@ -19,18 +19,24 @@
 }
 
 .product {
-  border: u.rem-calc(2) solid var(--theme-color-primary);
+  border: u.rem-calc(3) solid transparent;
   border-radius: 50%;
   box-shadow: v.$shadow;
   box-sizing: content-box;
   height: u.rem-calc(48);
+  opacity: 0.6;
   overflow: hidden;
-  transition: 0.25s;
+  transition: 0.2s;
   width: u.rem-calc(48);
 
   &:hover {
-    transform: scale(0.96);
+    opacity: 1;
   }
+}
+
+.isActive {
+  border: u.rem-calc(3) solid var(--theme-color-secondary);
+  opacity: 1;
 }
 
 .image {

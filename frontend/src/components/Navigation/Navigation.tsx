@@ -25,7 +25,7 @@ const Navigation: FC = () => {
 
 	const { dolls, filteredDolls, setFilteredDolls } = useContext(DollsContext);
 
-	const { filter } = useRouter().query;
+	const { doll, filter } = useRouter().query;
 
 	const link = ({ href, label }: LinkData) => (
 		<Link href={href} className={classes.link}>
@@ -64,8 +64,8 @@ const Navigation: FC = () => {
 											?.url || '',
 									alt: '',
 								},
+								isActive: doll === attributes?.slug,
 								href: `#${attributes?.slug}`,
-								color: attributes.color,
 							}))}
 							switchProps={{
 								onChange: (value) =>
