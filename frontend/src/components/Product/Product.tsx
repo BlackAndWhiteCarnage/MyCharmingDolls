@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { FC, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import classnames from 'classnames/bind';
 
@@ -16,7 +16,7 @@ import {
 	Info,
 	Theme,
 } from '@/components';
-import { createCheckoutSession } from '@/utils';
+import { createCheckoutSession, changeTheme } from '@/utils';
 import { DollEntity } from '@/generated/graphql';
 import classes from './Product.module.scss';
 
@@ -39,6 +39,10 @@ const Product: FC<ProductProps> = ({ data }) => {
 		isSold,
 		color,
 	} = data.attributes;
+
+	useEffect(() => {
+		view && changeTheme(color);
+	}, [view, color]);
 
 	return (
 		<Theme
