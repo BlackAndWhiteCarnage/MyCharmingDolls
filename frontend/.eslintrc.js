@@ -9,17 +9,12 @@ module.exports = {
 	],
 	plugins: ['prettier'],
 	rules: {
-		camelcase: [
-			'error',
-			{
-				ignoreImports: true,
-			},
-		],
 		'import/named': 0,
 		'import/no-extraneous-dependencies': 0,
 		'no-shadow': 0,
 		'no-nested-ternary': 0,
 		'react/display-name': 0,
+		camelcase: 0,
 		'prettier/prettier': [
 			'error',
 			{
