@@ -42,13 +42,18 @@
   gap: u.rem-calc(10);
 }
 
-.link {
-  text-decoration: underline;
-}
-
 .text,
 .link {
   color: var(--theme-color-primary);
+}
+
+.link {
+  text-decoration: underline;
+  transition: 0.25s;
+
+  &:hover {
+    color: var(--theme-color-secondary);
+  }
 }
 
 .firmInfo {
