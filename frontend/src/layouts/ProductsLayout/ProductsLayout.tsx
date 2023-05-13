@@ -7,14 +7,14 @@ import { FC, useContext } from 'react';
  * Internal dependencies
  */
 import { DollsContext } from '@/components/DollsContextProvider/DollsContextProvider';
-import { Product } from '@/components';
+import { Product, Loader } from '@/components';
 import classes from './ProductsLayout.module.scss';
 
 const ProductsLayout: FC = () => {
 	const { filteredDolls, loading, error } = useContext(DollsContext);
 
 	if (loading) {
-		return <div>Loading...</div>;
+		return <Loader />;
 	}
 
 	if (error) {

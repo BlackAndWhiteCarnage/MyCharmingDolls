@@ -1,0 +1,82 @@
+@use 'scss/unit' as u;
+@use 'scss/color';
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: u.rem-calc(30) 0 0 var(--theme-color-primary);
+  }
+
+  50% {
+    box-shadow: 0 0 0 var(--theme-color-primary);
+    margin-bottom: 0;
+    transform: translate(u.rem-calc(15), u.rem-calc(15));
+  }
+
+  100% {
+    box-shadow: u.rem-calc(30) 0 0 var(--theme-color-primary);
+    margin-bottom: u.rem-calc(10);
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: u.rem-calc(30) 0 0 color.get(purple);
+  }
+
+  50% {
+    box-shadow: 0 0 0 color.get(purple);
+    margin-top: u.rem-calc(-20);
+    transform: translate(u.rem-calc(15), u.rem-calc(15));
+  }
+
+  100% {
+    box-shadow: u.rem-calc(30) 0 0 color.get(purple);
+    margin-top: 0;
+  }
+}
+
+.loader {
+  animation: rotate 1s infinite;
+  height: u.rem-calc(50);
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: u.rem-calc(50);
+
+  &::before,
+  &::after {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: u.rem-calc(20);
+    width: u.rem-calc(20);
+  }
+
+  &::before {
+    animation: ball1 1s infinite;
+    background-color: color.get(purple);
+    box-shadow: u.rem-calc(30) 0 0 var(--theme-color-primary);
+    margin-bottom: u.rem-calc(10);
+  }
+
+  &::after {
+    animation: ball2 1s infinite;
+    background-color: var(--theme-color-primary);
+    box-shadow: u.rem-calc(30) 0 0 color.get(purple);
+  }
+}

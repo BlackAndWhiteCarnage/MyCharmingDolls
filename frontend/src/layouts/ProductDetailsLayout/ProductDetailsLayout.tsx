@@ -16,6 +16,7 @@ import {
 	Info,
 	PolaroidImage,
 	Slider,
+	Loader,
 } from '@/components';
 import { changeTheme } from '@/utils';
 import { useGetDollBySlugQuery } from '@/generated/graphql';
@@ -40,7 +41,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 	useEffect(() => changeTheme(dollAttributes?.color), [dollAttributes]);
 
 	if (!data || loading || !dollAttributes) {
-		return <div>Loading...</div>;
+		return <Loader />;
 	}
 
 	if (error) {

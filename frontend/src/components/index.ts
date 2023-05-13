@@ -13,6 +13,7 @@ export { default as Info } from './Info';
 export { default as Input } from './Input';
 export { default as Link } from './Link';
 export { default as LinkedIcon } from './LinkedIcon';
+export { default as Loader } from './Loader';
 export { default as Logo } from './Logo';
 export { default as Navigation } from './Navigation';
 export { default as PolaroidImage } from './PolaroidImage';
