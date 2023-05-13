@@ -19,7 +19,10 @@ import {
 	Loader,
 } from '@/components';
 import { changeTheme } from '@/utils';
-import { useGetDollBySlugQuery } from '@/generated/graphql';
+import {
+	useGetDollBySlugQuery,
+	useOtherInformationQuery,
+} from '@/generated/graphql';
 import PriceBox from '@/components/PriceBox/PriceBox';
 import classes from './ProductDetailsLayout.module.scss';
 
@@ -28,6 +31,7 @@ type ProductDetailsLayoutProps = {
 };
 
 const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
+	const { data: otherInformationsData } = useOtherInformationQuery();
 	const { data, loading, error } = useGetDollBySlugQuery({
 		variables: {
 			slug,
@@ -92,7 +96,20 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 							},
 							{
 								label: 'Other informations',
-								children: 'assa',
+								children: (
+									<>
+										{otherInformationsData && (
+											<Description
+												text={
+													otherInformationsData
+														?.otherInformations
+														.data[0].attributes
+														.description
+												}
+											/>
+										)}
+									</>
+								),
 							},
 						]}
 					/>
