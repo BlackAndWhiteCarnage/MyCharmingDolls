@@ -30,7 +30,7 @@ const ProductsFilters: FC<ProductsFiltersProps> = ({
 		}
 	>
 		<div className={classes.filters}>
-			<Switch label="Filter:" {...switchProps} />
+			<Switch label="Show:" {...switchProps} />
 			<ProductsList products={products} />
 		</div>
 	</Popover>
