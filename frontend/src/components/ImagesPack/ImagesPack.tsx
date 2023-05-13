@@ -43,7 +43,7 @@ const ImagesPack: FC<ImagesPackProps> = ({ animate, images, parentRef }) => {
 		>
 			{images.map((image, index) => (
 				<PolaroidImage
-					key={`${image.src}-${index}`}
+					key={index}
 					image={image}
 					className={cx('image', `image-number-${index + 1}`)}
 				/>

@@ -136,6 +136,7 @@
 .wrapper {
   height: u.rem-calc(1000);
   left: 50%;
+  opacity: 0;
   position: absolute;
   top: 50%;
   transform: scale(var(--scale)) translate(-50%, -50%);
@@ -144,6 +145,8 @@
   z-index: 1;
 
   &.animate {
+    opacity: 1;
+
     .image-number-1 {
       animation: throw-image-1 0.5s 0.5s forwards;
       opacity: 1;
