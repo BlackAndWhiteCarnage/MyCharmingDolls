@@ -36,6 +36,10 @@ export default async function webhookHandler(req, res) {
 		}
 
 		if (event.data.object.status === 'succeeded') {
+			return res.status(400).send(
+				`Webhook error: ${event.data.object.metadata.MarkAsSold}
+					Webhook error: ${event.data.object.metadata.DatabaseUrl} Webhook error: ${event.data.object.metadata.StrapiToken}`
+			);
 			markProductAsSold(
 				event.data.object.metadata.MarkAsSold,
 				event.data.object.metadata.DatabaseUrl,
