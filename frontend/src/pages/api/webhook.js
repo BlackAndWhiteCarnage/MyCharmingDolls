@@ -7,7 +7,7 @@ import { buffer } from 'micro';
 /**
  * Internal dependencies
  */
-import { markProductAsSold } from 'utils';
+import { markProductAsSold } from '@/utils';
 
 export const config = {
 	api: {
