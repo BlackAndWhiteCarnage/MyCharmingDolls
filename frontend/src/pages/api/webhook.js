@@ -38,7 +38,7 @@ export default async function webhookHandler(req, res) {
 		if (event.data.object.status === 'succeeded') {
 			markProductAsSold(
 				event.data.object.metadata.MarkAsSold,
-				event.data.object.metadata.WebhookKey,
+				event.data.object.metadata.DatabaseUrl,
 				event.data.object.metadata.StrapiToken
 			);
 		}
