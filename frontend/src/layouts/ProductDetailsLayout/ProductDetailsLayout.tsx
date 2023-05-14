@@ -23,7 +23,7 @@ import {
 	useGetDollBySlugQuery,
 	useOtherInformationQuery,
 } from '@/generated/graphql';
-import { changeTheme, createCheckoutSession, markProductAsSold } from '@/utils';
+import { changeTheme, createCheckoutSession } from '@/utils';
 import { Doll } from '@/generated/graphql';
 import classes from './ProductDetailsLayout.module.scss';
 import PriceBox from '@/components/PriceBox/PriceBox';
