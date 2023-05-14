@@ -4,11 +4,6 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
 
-/**
- * Internal dependencies
- */
-import { markProductAsSold } from '@/utils';
-
 export const config = {
 	api: {
 		bodyParser: false,
