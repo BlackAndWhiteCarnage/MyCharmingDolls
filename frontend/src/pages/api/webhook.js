@@ -37,8 +37,11 @@ export default async function webhookHandler(req, res) {
 
 		if (event.data.object.status === 'succeeded') {
 			markProductAsSold(event.data.object.metadata.MarkAsSold);
+			return res.status(400).send(`after markProductAsSold`);
 		}
 	}
+
+	return res.status(400).send(`end`);
 
 	res.status(200).send();
 }
