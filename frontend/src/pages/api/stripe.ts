@@ -13,6 +13,8 @@ const stripe = new Stripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET || ''}`, {
 	apiVersion: '2022-11-15',
 });
 
+console.log('sth');
+
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
