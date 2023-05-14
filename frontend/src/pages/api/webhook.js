@@ -37,7 +37,7 @@ export default async function webhookHandler(req, res) {
 
 		if (event.data.object.status === 'succeeded') {
 			const findProduct = await fetch(
-				`${event.data.object.metadata.DatabaseUrl}/api/dolls?filters[slug][$eq]=${event.data.object.metadata.MarkAsSold}`
+				`${process.env.NEXT_PUBLIC_DATABASE_URL}/api/dolls?filters[slug][$eq]=${event.data.object.metadata.MarkAsSold}`
 			);
 
 			const data = await findProduct.json();
@@ -48,11 +48,11 @@ export default async function webhookHandler(req, res) {
 			productData.attributes.isSold = !isSold;
 
 			await fetch(
-				`${event.data.object.metadata.DatabaseUrl}/api/dolls/${productData.id}`,
+				`${process.env.NEXT_PUBLIC_DATABASE_URL}/api/dolls/${productData.id}`,
 				{
 					method: 'PUT',
 					headers: {
-						Authorization: `Bearer ${event.data.object.metadata.StrapiToken}`,
+						Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
 						'Content-Type': 'application/json',
 					},
 					body: JSON.stringify({
