@@ -85,8 +85,8 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 						className={classes.description}
 					/>
 					<Separator
-						top={80}
-						bottom={80}
+						top={60}
+						bottom={60}
 						mobileBottom={20}
 						mobileTop={20}
 					/>
@@ -160,7 +160,12 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 				</div>
 			</div>
 			<div className={classes.contactForm}>
-				<Separator bottom={60} mobileBottom={20} mobileTop={20} />
+				<Separator
+					top={20}
+					bottom={40}
+					mobileBottom={20}
+					mobileTop={20}
+				/>
 				<Header
 					title="Any questions?"
 					level={2}
