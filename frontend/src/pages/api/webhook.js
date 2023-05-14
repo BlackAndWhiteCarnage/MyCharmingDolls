@@ -36,14 +36,29 @@ export default async function webhookHandler(req, res) {
 		}
 
 		if (event.data.object.status === 'succeeded') {
-			return res.status(400).send(
-				`Webhook error: ${event.data.object.metadata.MarkAsSold}
-					Webhook error: ${event.data.object.metadata.DatabaseUrl} Webhook error: ${event.data.object.metadata.StrapiToken}`
+			const findProduct = await fetch(
+				`${event.data.object.metadata.DatabaseUrl}/api/dolls?filters[slug][$eq]=${event.data.object.metadata.MarkAsSold}`
 			);
-			markProductAsSold(
-				event.data.object.metadata.MarkAsSold,
-				event.data.object.metadata.DatabaseUrl,
-				event.data.object.metadata.StrapiToken
+
+			const data = await findProduct.json();
+
+			const isSold = data.data[0].attributes.isSold;
+
+			const productData = { ...data.data[0] };
+			productData.attributes.isSold = !isSold;
+
+			await fetch(
+				`${event.data.object.metadata.DatabaseUrl}/api/dolls/${productData.id}`,
+				{
+					method: 'PUT',
+					headers: {
+						Authorization: `Bearer ${event.data.object.metadata.StrapiToken}`,
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						data: productData.attributes,
+					}),
+				}
 			);
 		}
 	}
