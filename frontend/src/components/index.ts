@@ -24,6 +24,7 @@ export { default as Product } from './Product';
 export { default as ProductsFilters } from './ProductsFilters';
 export { default as ProductsList } from './ProductsList';
 export { default as Providers } from './Providers';
+export { default as Separator } from './Separator';
 export { default as Slider } from './Slider';
 export { default as Switch } from './Switch';
 export { default as Textarea } from './Textarea';
