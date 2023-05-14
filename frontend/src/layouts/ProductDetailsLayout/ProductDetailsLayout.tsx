@@ -66,7 +66,6 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 
 	return (
 		<>
-			<button onClick={() => markProductAsSold(slug)}>update</button>
 			<Slider className={classes.slider}>
 				{images.data.map(({ attributes }, index) => (
 					<PolaroidImage
