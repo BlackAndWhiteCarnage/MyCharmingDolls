@@ -5,6 +5,10 @@ interface CustomCSSProperties {
 	'--theme-color-background': string;
 	'--theme-color-primary': string;
 	'--theme-color-secondary': string;
+	'--margin-top': string;
+	'--margin-bottom': string;
+	'--margin-mobile-top': string;
+	'--margin-mobile-bottom': string;
 }
 
 declare module 'react' {

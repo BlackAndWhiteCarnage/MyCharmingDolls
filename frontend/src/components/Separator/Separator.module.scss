@@ -1,0 +1,21 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.separator {
+  display: flex;
+  margin-bottom: var(--margin-bottom);
+  margin-top: var(--margin-top);
+
+  @include bp.down(sm) {
+    margin-bottom: var(--margin-mobile-bottom);
+    margin-top: var(--margin-mobile-top);
+  }
+
+  &::after {
+    background: var(--theme-color-primary);
+    content: '';
+    display: inline-block;
+    height: u.rem-calc(2);
+    width: 100%;
+  }
+}
