@@ -29,7 +29,7 @@
     "graphql": "^16.6.0",
     "micro": "^10.0.1",
     "next": "^12",
-    "node-sass": "^8.0.0",
+    "node-sass": "^7.0.0",
     "react": "18.2.0",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "18.2.0",
