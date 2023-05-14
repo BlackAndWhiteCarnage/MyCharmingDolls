@@ -33,7 +33,7 @@ export default async function handler(
 				payment_intent_data: {
 					metadata: {
 						MarkAsSold: req.body.slug,
-						WebhookKey: process.env.NEXT_PUBLIC_STRAPI_WEBHOOK_KEY!,
+						WebhookKey: process.env.NEXT_PUBLIC_DATABASE_URL!,
 						StrapiToken: process.env.NEXT_PUBLIC_STRAPI_TOKEN!,
 					},
 				},
