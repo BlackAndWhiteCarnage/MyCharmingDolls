@@ -25,9 +25,7 @@
     "babel-loader": "^9.1.2",
     "classnames": "^2.3.2",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^10.12.10",
     "graphql": "^16.6.0",
-    "micro": "^10.0.1",
     "next": "^12",
     "node-sass": "^7.0.0",
     "react": "18.2.0",
@@ -41,6 +39,8 @@
     "stripe": "^12.5.0",
     "swiper": "^9.2.2",
     "typescript": "^5.0.4",
+    "framer-motion": "^10.12.10",
+    "micro": "^10.0.1",
     "yup": "^1.1.1"
   },
   "devDependencies": {
@@ -78,8 +78,7 @@
     "sass-loader": "^13.2.2",
     "storybook": "^7.0.0-rc.5",
     "storybook-addon-swc": "^1.1.9",
-    "stylelint": "^15.3.0",
-    "stylelint-config-prettier": "^9.0.5",
+    "stylelint": "^15.6.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-recommended": "^11.0.0",
     "stylelint-config-recommended-scss": "^9.0.1",
@@ -87,7 +86,7 @@
     "stylelint-prettier": "^3.0.0",
     "svgo-loader": "^4.0.0",
     "ts-node": "^10.9.1",
-    "undici": "^5.22.1",
+    "undici": "5.5.1",
     "url-loader": "^4.1.1"
   }
 }
