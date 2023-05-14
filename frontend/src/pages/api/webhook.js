@@ -36,7 +36,11 @@ export default async function webhookHandler(req, res) {
 		}
 
 		if (event.data.object.status === 'succeeded') {
-			markProductAsSold(event.data.object.metadata.MarkAsSold);
+			markProductAsSold(
+				event.data.object.metadata.MarkAsSold,
+				process.env.process.env.NEXT_PUBLIC_DATABASE_URL,
+				process.env.NEXT_PUBLIC_STRAPI_TOKEN
+			);
 		}
 	}
 

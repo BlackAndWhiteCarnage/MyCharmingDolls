@@ -1,6 +1,10 @@
-const markProductAsSold = async (slug: string) => {
+const markProductAsSold = async (
+	slug: string,
+	databaseUrl: string,
+	strapiToken: string
+) => {
 	const findProduct = await fetch(
-		`${process.env.NEXT_PUBLIC_DATABASE_URL}/api/dolls?filters[slug][$eq]=${slug}`
+		`${databaseUrl}/api/dolls?filters[slug][$eq]=${slug}`
 	);
 
 	const data = await findProduct.json();
@@ -10,19 +14,16 @@ const markProductAsSold = async (slug: string) => {
 	const productData = { ...data.data[0] };
 	productData.attributes.isSold = !isSold;
 
-	await fetch(
-		`${process.env.NEXT_PUBLIC_DATABASE_URL}/api/dolls/${productData.id}`,
-		{
-			method: 'PUT',
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				data: productData.attributes,
-			}),
-		}
-	);
+	await fetch(`${databaseUrl}/api/dolls/${productData.id}`, {
+		method: 'PUT',
+		headers: {
+			Authorization: `Bearer ${strapiToken}`,
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			data: productData.attributes,
+		}),
+	});
 };
 
 export default markProductAsSold;
