@@ -1,0 +1,40 @@
+@use 'scss/breakpoint' as bp;
+@use 'scss/unit' as u;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: u.rem-calc(80);
+  width: fit-content;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: u.rem-calc(50);
+}
+
+.description {
+  color: var(--theme-color-primary);
+  max-width: u.rem-calc(900);
+
+  ul {
+    margin-bottom: u.rem-calc(20);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: u.rem-calc(10);
+  margin-top: u.rem-calc(60);
+
+  @include bp.down(sm) {
+    margin-top: u.rem-calc(30);
+  }
+}
