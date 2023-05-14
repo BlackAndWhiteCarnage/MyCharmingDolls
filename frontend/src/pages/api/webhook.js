@@ -21,7 +21,10 @@ export default async function webhookHandler(req, res) {
 	});
 
 	if (req.method === 'POST') {
-		const buf = await buffer(req);
+		const buf = await buffer(req, {
+			limit: '1mb',
+			encoding: 'utf-8',
+		});
 		const sig = req.headers['stripe-signature'];
 		const webhookSecret = process.env.NEXT_PUBLIC_STRAPI_WEBHOOK_KEY;
 
@@ -30,7 +33,11 @@ export default async function webhookHandler(req, res) {
 		try {
 			if (!sig || !webhookSecret) return;
 
-			event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
+			event = stripe.webhooks.constructEvent(
+				buf.toString(),
+				sig,
+				webhookSecret
+			);
 		} catch (error) {
 			return res.status(400).send(`Webhook error: ${error.message}`);
 		}
