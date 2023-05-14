@@ -30,6 +30,9 @@ export default async function handler(
 				shipping_address_collection: {
 					allowed_countries: euCountries,
 				},
+				metadata: {
+					MarkAsSold: req.body.slug,
+				},
 				shipping_options: [
 					{
 						shipping_rate_data: {

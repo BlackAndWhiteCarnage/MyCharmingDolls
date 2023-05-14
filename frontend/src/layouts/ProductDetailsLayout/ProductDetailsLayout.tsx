@@ -23,7 +23,7 @@ import {
 	useGetDollBySlugQuery,
 	useOtherInformationQuery,
 } from '@/generated/graphql';
-import { changeTheme, createCheckoutSession } from '@/utils';
+import { changeTheme, createCheckoutSession, markProductAsSold } from '@/utils';
 import { Doll } from '@/generated/graphql';
 import classes from './ProductDetailsLayout.module.scss';
 import PriceBox from '@/components/PriceBox/PriceBox';
@@ -66,6 +66,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 
 	return (
 		<>
+			<button onClick={() => markProductAsSold(slug)}>update</button>
 			<Slider className={classes.slider}>
 				{images.data.map(({ attributes }, index) => (
 					<PolaroidImage

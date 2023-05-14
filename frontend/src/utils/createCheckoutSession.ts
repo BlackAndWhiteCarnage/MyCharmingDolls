@@ -7,6 +7,8 @@ import { getStripe } from '@/utils';
 const createCheckoutSession = async (product: Doll) => {
 	const stripe = await getStripe();
 
+	console.log(product);
+
 	const response = await fetch('/api/stripe', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
