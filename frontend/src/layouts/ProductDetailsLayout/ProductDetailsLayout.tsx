@@ -14,9 +14,10 @@ import {
 	Description,
 	Header,
 	Info,
-	PolaroidImage,
-	Slider,
 	Loader,
+	PolaroidImage,
+	Separator,
+	Slider,
 } from '@/components';
 import {
 	useGetDollBySlugQuery,
@@ -83,6 +84,12 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 						text={description}
 						className={classes.description}
 					/>
+					<Separator
+						top={80}
+						bottom={80}
+						mobileBottom={20}
+						mobileTop={20}
+					/>
 					<Accordion
 						className={classes.accordions}
 						items={[
@@ -115,6 +122,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 						]}
 					/>
 				</div>
+				<Separator bottom={20} top={20} mobileBottom={40} />
 				<div className={classes.sticky}>
 					<PriceBox productPrice={price} />
 					{!isSold ? (
@@ -152,6 +160,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 				</div>
 			</div>
 			<div className={classes.contactForm}>
+				<Separator bottom={60} mobileBottom={20} mobileTop={20} />
 				<Header
 					title="Any questions?"
 					level={2}

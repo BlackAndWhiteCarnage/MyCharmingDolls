@@ -9,12 +9,13 @@ import { FC, useEffect } from 'react';
 import {
 	AtroposWrapper,
 	Button,
-	Header,
-	PolaroidImage,
-	LinkedIcon,
 	ContactForm,
 	Description,
+	Header,
+	LinkedIcon,
 	Loader,
+	PolaroidImage,
+	Separator,
 } from '@/components';
 import { changeTheme } from '@/utils';
 import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
@@ -57,7 +58,19 @@ const AboutMeLayout: FC = () => {
 						/>
 					</div>
 				</AtroposWrapper>
+				<Separator
+					top={0}
+					bottom={60}
+					mobileBottom={30}
+					mobileTop={0}
+				/>
 				<Header title="Hi I'm *Weronika*" />
+				{data && (
+					<Description
+						className={classes.description}
+						text={data.aboutMes.data[0].attributes.description}
+					/>
+				)}
 				<Button
 					hasArrow
 					hasFullWidth
@@ -66,13 +79,8 @@ const AboutMeLayout: FC = () => {
 				>
 					See My Workarts
 				</Button>
-				{data && (
-					<Description
-						className={classes.description}
-						text={data.aboutMes.data[0].attributes.description}
-					/>
-				)}
 			</article>
+			<Separator mobileBottom={20} mobileTop={20} />
 			<div className={classes.contact}>
 				<div className={classes.socialMedia}>
 					<Header title="Find me *here*" level={2} />

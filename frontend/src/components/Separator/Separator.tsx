@@ -23,7 +23,7 @@ const cx = classnames.bind(classes);
 const Separator: FC<SeparatorProps> = ({
 	bottom,
 	className,
-	margin = 20,
+	margin = 40,
 	mobileBottom,
 	mobileTop,
 	top,
