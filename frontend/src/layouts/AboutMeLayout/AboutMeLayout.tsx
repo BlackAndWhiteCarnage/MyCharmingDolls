@@ -59,12 +59,6 @@ const AboutMeLayout: FC = () => {
 						/>
 					</div>
 				</AtroposWrapper>
-				<Separator
-					top={0}
-					bottom={60}
-					mobileBottom={30}
-					mobileTop={0}
-				/>
 				<Header title="Hi I'm *Weronika*" />
 				{data && (
 					<Description
