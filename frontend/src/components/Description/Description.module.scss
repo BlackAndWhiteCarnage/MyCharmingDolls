@@ -37,5 +37,13 @@
   ul,
   li {
     padding-left: u.rem-calc(20);
+
+    &:not(:last-child) {
+      margin-bottom: u.rem-calc(20);
+
+      @include bp.down(xs) {
+        margin-bottom: u.rem-calc(8);
+      }
+    }
   }
 }
