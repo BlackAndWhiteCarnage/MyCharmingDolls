@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "other_informations",
+  "info": {
+    "singularName": "other-information",
+    "pluralName": "other-informations",
+    "displayName": "OtherInformation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
