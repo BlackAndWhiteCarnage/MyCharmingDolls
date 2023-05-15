@@ -9,6 +9,22 @@
     margin-bottom: u.rem-calc(20);
 
     @include bp.down(xs) {
+      margin-bottom: u.rem-calc(15);
+    }
+  }
+
+  h2 {
+    margin-bottom: u.rem-calc(30);
+
+    @include bp.down(xs) {
+      margin-bottom: u.rem-calc(20);
+    }
+  }
+
+  h3 {
+    margin-bottom: u.rem-calc(20);
+
+    @include bp.down(xs) {
       margin-bottom: u.rem-calc(10);
     }
   }
