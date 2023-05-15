@@ -35,7 +35,7 @@ const Footer: FC = () => (
 					Privacy Policy
 				</Link>
 				<Link
-					href="https://drive.google.com/file/d/10PmTsJzqsnltxw7GkZILjGKxmYODvQl4/view?usp=sharing"
+					href="https://drive.google.com/file/d/1GR_aTpav0lJFrleOFJfeiHxzlHK8uFUb/view?usp=sharing"
 					target="_blank"
 					className={cx('link', 'is-style-p')}
 				>
