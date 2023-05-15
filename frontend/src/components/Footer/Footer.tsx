@@ -27,7 +27,11 @@ const Footer: FC = () => (
 				))}
 			</div>
 			<div className={classes.policyLinks}>
-				<Link href="/" className={cx('link', 'is-style-p')}>
+				<Link
+					href="https://drive.google.com/file/d/10A7EGpxqkh2rtScLW1Wx99lstTTBLJOw/view?usp=sharing"
+					target="_blank"
+					className={cx('link', 'is-style-p')}
+				>
 					Privacy Policy
 				</Link>
 				<Link href="/" className={cx('link', 'is-style-p')}>
