@@ -1,13 +1,22 @@
 /**
+ * External dependencies
+ */
+import Head from 'next/head';
+
+/**
  * Internal dependencies
  */
-import { SuccessCanceledLayout } from '@/layouts';
-import { WithNavigationLayout } from '@/layouts';
+import { SuccessCanceledLayout, WithNavigationLayout } from '@/layouts';
 
-const Success = () => (
-	<WithNavigationLayout>
-		<SuccessCanceledLayout />
-	</WithNavigationLayout>
+const Canceled = () => (
+	<>
+		<Head>
+			<title>Order Canceled | MyCharmingDolls</title>
+		</Head>
+		<WithNavigationLayout>
+			<SuccessCanceledLayout />
+		</WithNavigationLayout>
+	</>
 );
 
-export default Success;
+export default Canceled;

@@ -1,8 +1,12 @@
 /**
+ * External dependencies
+ */
+import Head from 'next/head';
+
+/**
  * Internal dependencies
  */
-import { SuccessCanceledLayout } from '@/layouts';
-import { WithNavigationLayout } from '@/layouts';
+import { SuccessCanceledLayout, WithNavigationLayout } from '@/layouts';
 
 const stripe = require('stripe')(`${process.env.NEXT_PUBLIC_STRIPE_SECRET}`);
 
@@ -18,9 +22,16 @@ export async function getServerSideProps(params: any) {
 }
 
 const Success = ({ order }: any) => (
-	<WithNavigationLayout>
-		<SuccessCanceledLayout order={order} />
-	</WithNavigationLayout>
+	<>
+		<Head>
+			<title>
+				Success! You have Just Adopted a Charming Doll | MyCharmingDolls
+			</title>
+		</Head>
+		<WithNavigationLayout>
+			<SuccessCanceledLayout order={order} />
+		</WithNavigationLayout>
+	</>
 );
 
 export default Success;
