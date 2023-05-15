@@ -5,12 +5,10 @@ import { FC } from 'react';
 import classnames from 'classnames/bind';
 
 /**
- * External dependencies
+ * Internal dependencies
  */
-import { ReactComponent as EtsyIcon } from '@/images/icons/etsy.svg';
-import { ReactComponent as InstagramIcon } from '@/images/icons/instagram.svg';
-import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
 import { Link, LinkedIcon } from '@/components';
+import { socialMedia } from '@/config';
 import classes from './Footer.module.scss';
 
 const cx = classnames.bind(classes);
@@ -19,21 +17,14 @@ const Footer: FC = () => (
 	<div className={classes.wrapper}>
 		<div className={classes.links}>
 			<div className={classes.socialMedia}>
-				<LinkedIcon
-					className={classes.linkedIcon}
-					href=""
-					icon={InstagramIcon}
-				/>
-				<LinkedIcon
-					className={classes.linkedIcon}
-					href=""
-					icon={EtsyIcon}
-				/>
-				<LinkedIcon
-					className={classes.linkedIcon}
-					href=""
-					icon={MessengerIcon}
-				/>
+				{socialMedia.map(({ icon, href }, index) => (
+					<LinkedIcon
+						key={index}
+						className={classes.linkedIcon}
+						href={href}
+						icon={icon}
+					/>
+				))}
 			</div>
 			<div className={classes.policyLinks}>
 				<Link href="/" className={cx('link', 'is-style-p')}>

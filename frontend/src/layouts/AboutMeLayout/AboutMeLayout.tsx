@@ -24,6 +24,7 @@ import { ReactComponent as MessengerIcon } from '@/images/icons/messenger.svg';
 import { useAboutMeQuery } from '@/generated/graphql';
 import classes from './AboutMeLayout.module.scss';
 import MyImage from '@/images/me.jpg';
+import { socialMedia } from '@/config';
 
 const AboutMeLayout: FC = () => {
 	useEffect(() => {
@@ -85,9 +86,9 @@ const AboutMeLayout: FC = () => {
 				<div className={classes.socialMedia}>
 					<Header title="Find me *here*" level={2} />
 					<div className={classes.links}>
-						<LinkedIcon href="" icon={InstagramIcon} />
-						<LinkedIcon href="" icon={EtsyIcon} />
-						<LinkedIcon href="" icon={MessengerIcon} />
+						{socialMedia.map(({ icon, href }, index) => (
+							<LinkedIcon key={index} href={href} icon={icon} />
+						))}
 					</div>
 				</div>
 				<div className={classes.contactForm}>
