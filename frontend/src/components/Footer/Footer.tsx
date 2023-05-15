@@ -34,8 +34,12 @@ const Footer: FC = () => (
 				>
 					Privacy Policy
 				</Link>
-				<Link href="/" className={cx('link', 'is-style-p')}>
-					Refund Policy
+				<Link
+					href="https://drive.google.com/file/d/10PmTsJzqsnltxw7GkZILjGKxmYODvQl4/view?usp=sharing"
+					target="_blank"
+					className={cx('link', 'is-style-p')}
+				>
+					Terms and Conditions
 				</Link>
 			</div>
 		</div>
