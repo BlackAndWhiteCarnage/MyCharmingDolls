@@ -11,6 +11,7 @@ import classes from './WithNavigationLayout.module.scss';
 
 const WithNavigationLayout: FC<PropsWithChildren> = ({ children }) => (
 	<>
+		<div className={classes.background} />
 		<div className={classes.navigation} style={{ maxWidth: 1600 }}>
 			<div className={classes.inner}>
 				<Navigation />
