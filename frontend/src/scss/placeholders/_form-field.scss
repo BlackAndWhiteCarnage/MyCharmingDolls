@@ -3,9 +3,10 @@
 @use 'scss/unit' as u;
 
 %form-field {
+  -webkit-appearance: none;
   background: var(--theme-color-background);
-  border: u.rem-calc(2) solid transparent;
   border-radius: u.rem-calc(12);
+  border: u.rem-calc(2) solid transparent;
   box-shadow: 0 u.rem-calc(4) u.rem-calc(10) rgba(0, 0, 0, 0.1);
   color: var(--theme-color-primary);
   font-family: font.get(primary);
