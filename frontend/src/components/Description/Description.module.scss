@@ -26,7 +26,8 @@
     }
   }
 
-  h3 {
+  h3,
+  h4 {
     margin-bottom: u.rem-calc(20);
 
     @include bp.down(xs) {
