@@ -14,7 +14,8 @@
     "lint": "npm-run-all lint:*",
     "storybook": "storybook dev -p 6006",
     "generate:schema": "graphql-codegen --config codegen.yml",
-    "generate:types": "graphql-codegen -c codegen.types.yml"
+    "generate:types": "graphql-codegen -c codegen.types.yml",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
