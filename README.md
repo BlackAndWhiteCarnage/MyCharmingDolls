@@ -24,6 +24,7 @@ Checkout `devDependencies` & `dependencies`:
 <br />
 
 Frontend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/frontend/package.json
+<br />
 Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/backend/package.json
 
 <br />
