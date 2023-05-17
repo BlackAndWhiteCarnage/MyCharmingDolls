@@ -7,7 +7,7 @@
 
 Live: https://my-charming-dolls.vercel.app/
 <br />
-Storybook: soon
+Storybook: https://my-charming-dolls.netlify.app
 
 <br />
 
