@@ -6,6 +6,8 @@
 @use 'scss/font';
 @use 'scss/breakpoint' as bp;
 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Pacifico&display=swap');
+
 :root {
   --theme-color-background: #{color.get(grey-3)};
   --theme-color-primary: #{color.get(grey)};
