@@ -27,7 +27,7 @@ Frontend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/f
 
 <br />
 
-Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/backend/package.json (mostly Strapi)
+Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/backend/package.json
 
 <br />
 
@@ -53,28 +53,26 @@ Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/ba
   git clone https://github.com/BlackAndWhiteCarnage/MyCharmingDolls.git
 ```
 
-2. Install & run frontend (use 19.5.0 Node)
+2. Install & run frontend (use 19.5.0 Node) (from frontend folder)
 
 ```bash
-  cd frontend // (from root folder)
   npm install
   npm run dev
 ```
 
-3. Install & run backend (use 17.3.0 Node)
+3. Install & run backend (use 17.3.0 Node) (from backend folder)
 
 ```bash
-  cd backend // (from root folder)
   yarn install
   yarn dev
 ```
 
 ## How to run storybook?
 
-1. Run after previous steps
+1. Run after previous steps (from frontend folder)
 
 ```bash
-  npm run storybook // (from frontend folder)
+  npm run storybook
 ```
 
 <br />
