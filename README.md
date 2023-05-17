@@ -20,9 +20,13 @@ I proudly present a fully operational website dedicated to my wife's business of
 ## Used Technologies
 
 Checkout `devDependencies` & `dependencies`:
+
 <br />
+
 Frontend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/frontend/package.json
+
 <br />
+
 Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/backend/package.json (mostly Strapi)
 
 <br />
@@ -52,7 +56,7 @@ Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/ba
 2. Install & run frontend (use 19.5.0 Node)
 
 ```bash
-  cd frontend (from root folder)
+  cd frontend // (from root folder)
   npm install
   npm run dev
 ```
@@ -60,7 +64,7 @@ Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/ba
 3. Install & run backend (use 17.3.0 Node)
 
 ```bash
-  cd backend (from root folder)
+  cd backend // (from root folder)
   yarn install
   yarn dev
 ```
@@ -70,7 +74,7 @@ Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/ba
 1. Run after previous steps
 
 ```bash
-  npm run storybook (from frontend folder)
+  npm run storybook // (from frontend folder)
 ```
 
 <br />
