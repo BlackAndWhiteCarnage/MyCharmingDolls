@@ -1,4 +1,4 @@
-<img src="https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/assets/71930296/c18e936b-d757-4f76-80ba-c49db35427b5" alt="" width='100%'/>
+<img src="https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/assets/71930296/d45ed3f1-9307-4786-ad79-27e4ebfe56d2" alt="" width='100%'/>
 
 <br />
 <br />
