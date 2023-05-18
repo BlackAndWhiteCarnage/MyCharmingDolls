@@ -7,7 +7,7 @@
 
 Live: https://my-charming-dolls.vercel.app/
 <br />
-Storybook: soon
+Storybook: https://my-charming-dolls.netlify.app
 
 <br />
 
@@ -51,14 +51,14 @@ Backend: https://github.com/BlackAndWhiteCarnage/MyCharmingDolls/blob/develop/ba
   git clone https://github.com/BlackAndWhiteCarnage/MyCharmingDolls.git
 ```
 
-2. Install & run frontend (use 19.5.0 Node) (from frontend folder)
+2. Install frontend dependencies & run (use 19.5.0 Node) (from frontend folder)
 
 ```bash
   npm install
   npm run dev
 ```
 
-3. Install & run backend (use 17.3.0 Node) (from backend folder)
+3. Install backend dependencies & run (use 17.3.0 Node) (from backend folder)
 
 ```bash
   yarn install
