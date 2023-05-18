@@ -66,7 +66,7 @@ const ProductDetailsLayout: FC<ProductDetailsLayoutProps> = ({ slug }) => {
 
 	return (
 		<>
-			<Slider className={classes.slider}>
+			<Slider className={classes.slider} loop>
 				{images.data.map(({ attributes }, index) => (
 					<PolaroidImage
 						key={index}
