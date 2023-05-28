@@ -33,6 +33,7 @@
   flex-direction: column;
   gap: u.rem-calc(30);
   max-width: u.rem-calc(700);
+  width: 100%;
 
   @include bp.down(xl) {
     max-width: u.rem-calc(600);
