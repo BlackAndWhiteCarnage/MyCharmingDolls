@@ -55,10 +55,10 @@
 
 .contact {
   height: fit-content;
+  max-width: u.rem-calc(500);
   position: sticky;
   top: u.rem-calc(30);
   width: 100%;
-  max-width: u.rem-calc(500);
 
   @include bp.up(lg) {
     min-width: u.rem-calc(400);

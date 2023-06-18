@@ -27,7 +27,7 @@ type ProductProps = {
 const cx = classnames.bind(classes);
 
 const Product: FC<ProductProps> = ({ data }) => {
-	const [element, view] = useInView({ threshold: 0.35 });
+	const [element, view] = useInView({ threshold: 0.1 });
 
 	const ref = useRef<HTMLDivElement>(null);
 
