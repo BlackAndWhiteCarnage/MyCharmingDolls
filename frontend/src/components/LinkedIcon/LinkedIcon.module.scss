@@ -13,6 +13,11 @@ $transition: 0.2s;
   overflow: hidden;
   transition: $transition;
 
+  @include bp.down(xl) {
+    max-height: u.rem-calc(42);
+    max-width: u.rem-calc(42);
+  }
+
   @include bp.down(xs) {
     max-height: u.rem-calc(36);
     max-width: u.rem-calc(36);

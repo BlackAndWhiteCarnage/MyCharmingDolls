@@ -14,11 +14,6 @@
 .wrapper {
   position: relative;
 
-  :global(.swiper-pagination) {
-    margin-top: u.rem-calc(40);
-    position: static;
-  }
-
   :global(.swiper) {
     overflow: visible !important;
   }
@@ -42,6 +37,10 @@
 
 .slideWrapper {
   max-width: u.rem-calc(542);
+
+  @include bp.down(xl) {
+    max-width: u.rem-calc(400);
+  }
 }
 
 .slide {
@@ -49,6 +48,10 @@
   max-width: u.rem-calc(542);
   transition: 0.4s;
   width: 100%;
+
+  @include bp.down(xl) {
+    max-width: u.rem-calc(400);
+  }
 
   &:not(.isActive, .isPrev, .isNext) {
     opacity: 0;

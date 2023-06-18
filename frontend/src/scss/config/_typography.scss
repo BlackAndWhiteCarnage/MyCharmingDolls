@@ -10,6 +10,9 @@ $styles: (
     line-height: 110,
     font-weight: 400,
     font-family: 'secondary',
+    xl: (
+      font-size: 68,
+    ),
     xs: (
       font-size: 40,
       line-height: 46,
@@ -20,6 +23,10 @@ $styles: (
     line-height: 56,
     font-weight: 400,
     font-family: 'secondary',
+    xl: (
+      font-size: 40,
+      line-height: 36,
+    ),
     xs: (
       font-size: 32,
       line-height: 36,

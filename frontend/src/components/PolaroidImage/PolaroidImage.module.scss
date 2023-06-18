@@ -16,7 +16,7 @@
   padding: u.rem-calc(30) u.rem-calc(34);
   width: 100%;
 
-  @include bp.down(sm) {
+  @include bp.down(xl) {
     padding: u.rem-calc(25) u.rem-calc(15);
   }
 

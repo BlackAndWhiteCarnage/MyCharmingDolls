@@ -10,6 +10,10 @@ $max-content-width: u.rem-calc(980);
   margin: u.rem-calc(140) 0;
   width: 100%;
 
+  @include bp.down(xl) {
+    margin-top: u.rem-calc(40);
+  }
+
   @include bp.down(lg) {
     margin-bottom: u.rem-calc(80);
   }

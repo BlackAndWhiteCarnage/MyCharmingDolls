@@ -28,7 +28,7 @@ const ImagesPack: FC<ImagesPackProps> = ({ animate, images, parentRef }) => {
 
 		parent &&
 			setScale(
-				Math.min(parent.offsetWidth / 1000, parent.offsetHeight / 1000)
+				Math.min(parent.offsetWidth / 1150, parent.offsetHeight / 1150)
 			);
 	}, true);
 
