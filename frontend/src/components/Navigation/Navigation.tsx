@@ -15,9 +15,9 @@ import { useUpdateUrl } from '@/hooks';
 import classes from './Navigation.module.scss';
 
 const options = {
-	all: 'All',
-	adopted: 'Adopted',
 	'not-adopted': 'Not Adopted',
+	adopted: 'Adopted',
+	all: 'All',
 };
 
 const Navigation: FC = () => {
@@ -76,7 +76,9 @@ const Navigation: FC = () => {
 						/>
 					</li>
 				) : (
-					<li>{link({ href: '/dolls/all', label: 'Dolls' })}</li>
+					<li>
+						{link({ href: '/dolls/not-adopted', label: 'Dolls' })}
+					</li>
 				)}
 			</ul>
 		</div>
