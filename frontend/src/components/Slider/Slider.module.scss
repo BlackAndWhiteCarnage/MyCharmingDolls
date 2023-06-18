@@ -36,7 +36,7 @@
 }
 
 .slideWrapper {
-  max-width: u.rem-calc(542);
+  max-width: u.rem-calc(500);
 
   @include bp.down(xl) {
     max-width: u.rem-calc(400);
@@ -45,7 +45,7 @@
 
 .slide {
   cursor: pointer;
-  max-width: u.rem-calc(542);
+  max-width: u.rem-calc(500);
   transition: 0.4s;
   width: 100%;
 

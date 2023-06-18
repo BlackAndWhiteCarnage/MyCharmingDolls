@@ -80,6 +80,10 @@
   display: flex;
   gap: u.rem-calc(30);
 
+  @include bp.down(xl) {
+    gap: u.rem-calc(15);
+  }
+
   @include bp.down(xs) {
     gap: u.rem-calc(10);
   }

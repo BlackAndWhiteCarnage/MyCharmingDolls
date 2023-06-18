@@ -5,6 +5,12 @@
   color: var(--theme-color-primary);
   position: relative;
 
+  p {
+    @include bp.down(xl) {
+      font-size: u.rem-calc(20);
+    }
+  }
+
   p:not(:last-child) {
     margin-bottom: u.rem-calc(20);
 
@@ -30,15 +36,25 @@
   h4 {
     margin-bottom: u.rem-calc(20);
 
+    @include bp.down(xl) {
+      margin-bottom: u.rem-calc(15);
+    }
+
     @include bp.down(xs) {
       margin-bottom: u.rem-calc(10);
     }
   }
 
-  ul,
-  li {
+  ul {
     padding-left: u.rem-calc(20);
 
+    @include bp.down(xs) {
+      padding-left: u.rem-calc(10);
+    }
+  }
+
+  ul,
+  li {
     &:not(:last-child) {
       margin-bottom: u.rem-calc(20);
 

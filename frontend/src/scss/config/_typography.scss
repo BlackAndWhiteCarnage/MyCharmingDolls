@@ -11,7 +11,7 @@ $styles: (
     font-weight: 400,
     font-family: 'secondary',
     xl: (
-      font-size: 68,
+      font-size: 76,
     ),
     xs: (
       font-size: 40,
@@ -36,6 +36,10 @@ $styles: (
     font-size: 24,
     line-height: 28,
     font-weight: 600,
+    xl: (
+      font-size: 20,
+      line-height: 18,
+    ),
     xs: (
       font-size: 16,
       line-height: 18,
