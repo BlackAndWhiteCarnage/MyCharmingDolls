@@ -35,15 +35,17 @@ const Navigation: FC = () => {
 
 	useEffect(() => {
 		setFilteredDolls(
-			dolls?.filter(({ attributes }) => {
-				const { isSold } = attributes || {};
+			dolls
+				?.filter(({ attributes }) => {
+					const { isSold } = attributes || {};
 
-				return (
-					(filter === 'adopted' && isSold) ||
-					(filter === 'not-adopted' && !isSold) ||
-					filter === 'all'
-				);
-			})
+					return (
+						(filter === 'adopted' && isSold) ||
+						(filter === 'not-adopted' && !isSold) ||
+						filter === 'all'
+					);
+				})
+				.reverse()
 		);
 	}, [dolls, filter, setFilteredDolls]);
 
